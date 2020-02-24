@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Fira+Sans|Spectral&display=swap');
+@import "./variables";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans";
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+h1 {
+  font-family: "Exo 2";
+  font-weight:700;
+}
