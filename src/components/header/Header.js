@@ -1,8 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import headerStyle from "./Header.module.scss";
 import { headerSvg } from "./headerSvg";
-const Header = props => {
+const Header = () => {
   const borderSvg = (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
@@ -27,6 +26,11 @@ const Header = props => {
             AlexRoth <br /> productions.
           </h1>
           <p>Professional Web Development.</p>
+          <div className={headerStyle.services}>
+            <p>Responsive Design.</p>
+            <p>Unique Layouts.</p>
+            <p>Interactive Experiences.</p>
+          </div>
         </div>
       </div>
 
@@ -38,7 +42,5 @@ const Header = props => {
     </header>
   );
 };
-
-Header.propTypes = {};
 
 export default Header;

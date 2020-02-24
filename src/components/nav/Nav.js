@@ -9,6 +9,9 @@ const Nav = props => {
         <a>Services</a>
       </li>
       <li>
+        <a>Process</a>
+      </li>
+      <li>
         <a>About</a>
       </li>
       <li>
