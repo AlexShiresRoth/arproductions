@@ -1,0 +1,102 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5rem;
+  background: #000;
+  -webkit-box-shadow: 0 3px 3px #0a0a0a;
+          box-shadow: 0 3px 3px #0a0a0a;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+
+.nav .nav__left {
+  margin-left: 1rem;
+}
+
+.nav .nav__left a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.nav .nav__right {
+  margin-right: 1rem;
+  height: 100%;
+}
+
+.nav .nav__right ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100%;
+  margin: 0;
+  gap: 2rem;
+}
+
+.nav .nav__right ul li {
+  color: #f3f3f3;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+}
+
+.nav .nav__right ul li a {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.nav .nav__right ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  display: block;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.nav .nav__right ul li a:hover::after {
+  width: 100%;
+  background: #400082;
+}
+
+.nav .nav__right ul li a:hover {
+  cursor: pointer;
+  color: #400082;
+}
+/*# sourceMappingURL=Nav.module.css.map */
