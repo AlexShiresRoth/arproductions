@@ -1,83 +1,120 @@
-@import "../../../sass/variables";
+@import '../../../sass/variables';
 
 .section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-    overflow:hidden;
-  & svg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
-    z-index: 0;
-  }
-  & .heading {
-    z-index: 2;
-    margin-top: 30vh;
-    & h2 {
-      color: #fff;
-      font-size: 4vw;
-    }
-  }
-  & .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    justify-items: center;
-    align-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    z-index: 2;
-    width: 100%;
-    & .col {
-      display: grid;
-      grid-template-columns: repeat(2, 40vw);
-      grid-template-rows: 1fr;
-      justify-items: center;
-      gap: 1rem;
-      margin: 2rem 0;
-      & .text__box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: $brand-main;
-        width:100%;
-        padding:4rem;
-        & .inner {
-          & h3 {
-            color: #fff;
-            font-size: 3vw;
-            &::after {
-              content: "";
-              width: 50%;
-              height: 3px;
-              display: block;
-              margin-top: 1rem;
-              background: lighten($brand-main, 10%);
-            }
-          }
-          & p {
-            color: #fff;
-            font-size: 1.5vw;
-          }
-        }
-      }
-    }
-    & .img__container {
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-      transform: translate(0vw,-5vh);
-      background: transparent;
-      padding:4rem;
-      & iframe {
-        height: 100%;
-        width: 100%;
-      }
-    }
-  }
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+	& svg {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		left: 0;
+		z-index: 0;
+	}
+	& .heading {
+		z-index: 2;
+		margin-top: 30vh;
+		& h2 {
+			color: #fff;
+			font-size: 4vw;
+		}
+	}
+	& .grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		justify-items: center;
+		align-content: center;
+		gap: 2rem;
+		margin-top: 2rem;
+		z-index: 2;
+		width: 100%;
+		& .col {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2fr, 100%);
+			justify-items: center;
+			margin: 2rem 0;
+			& .col_grid {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				gap: 2rem;
+				background: $brand-main;
+				width: 100%;
+				padding: 4rem;
+				& .inner_left {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: flex-start;
+					width: 40vw;
+					& h3 {
+						color: #fff;
+						font-size: 3vw;
+						&::after {
+							content: '';
+							width: 50%;
+							height: 3px;
+							display: block;
+							margin-top: 1rem;
+							background: lighten($brand-main, 10%);
+						}
+					}
+					& p {
+						color: #fff;
+						font-size: 1.5vw;
+					}
+				}
+				& .inner_right {
+					overflow: hidden;
+					background: transparent;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					flex: 1;
+					height: 100%;
+					width: 40vw;
+					& img {
+						width: 100%;
+					}
+				}
+				& .inner__img__grid {
+					display: grid;
+					grid-template-columns: 1fr;
+					grid-template-rows: repeat(2, auto);
+
+					width: 40vw;
+					& img {
+						width: 100%;
+						grid-row: 1;
+						grid-column: 1;
+					}
+					& .grid__inner {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						grid-template-rows: 1fr;
+						margin-top: 1rem;
+						& img {
+							max-width: calc(100% * 33%);
+						}
+						& img:nth-child(1) {
+							grid-row: 1;
+							grid-column: 1;
+						}
+						& img:nth-child(2) {
+							grid-row: 1;
+							grid-column: 2;
+						}
+						& img:nth-child(3) {
+							grid-row: 1;
+							grid-column: 3;
+						}
+					}
+				}
+			}
+		}
+	}
 }
