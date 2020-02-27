@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import serviceStyle from "./Services.module.scss";
 import { servicesArray } from "./servicesArray";
+import ServiceImgsSlide from "./ServiceImgsSlide";
 
 const Services = () => {
   const serviceSvg = (
@@ -41,32 +41,12 @@ const Services = () => {
             >
               {service.imgs !== null ? (
                 <div class={serviceStyle.grid__inner}>
-                  {service.imgs.map((img, i) => {
-                    return (
-                      <>
-                        <img
-                          src={service.imgs[currentIndex]}
-                          alt="website"
-                          onClick={e => changeIndex(i)}
-                        />
-                        <img
-                          src={service.imgs[currentIndex + i]}
-                          alt="website"
-                          onClick={e => changeIndex(i)}
-                        />
-                        <img
-                          src={service.imgs[currentIndex + i]}
-                          alt="website"
-                          onClick={e => changeIndex(i)}
-                        />
-                        <img
-                          src={service.imgs[currentIndex + i]}
-                          alt="website"
-                          onClick={e => changeIndex(i)}
-                        />
-                      </>
-                    );
-                  })}
+                  <img src={service.imgs[currentIndex]} alt="website" />
+                  <ServiceImgsSlide
+                    imgs={service.imgs}
+                    onClick={changeIndex}
+                    currentIndex={currentIndex}
+                  />
                 </div>
               ) : (
                 service.img
@@ -87,7 +67,5 @@ const Services = () => {
     </section>
   );
 };
-
-Services.propTypes = {};
 
 export default Services;
