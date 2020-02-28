@@ -1,20 +1,29 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const ServiceImgsSlide = ({ imgs, onClick, currentIndex }) => {
-  return imgs
-    .filter((img, i) => {
-      return i !== currentIndex;
-    })
-    .map((img, i) => (
-      <img src={img} alt={img} key={i} onClick={e => onClick(i)} />
-    ));
+const ServiceImgsSlide = ({ imgs, onClick, currentIndex, serviceStyle, transition }) => {
+	return imgs
+		.map((img, i) => (
+			<div
+				className={
+					transition
+						? `${serviceStyle.img_container} ${serviceStyle.img_container_transition}`
+						: serviceStyle.img_container
+				}
+				onClick={e => onClick(i)}
+			>
+				<img src={img} alt={img} key={i} />
+			</div>
+		))
+		.filter((img, i) => i !== currentIndex);
 };
 
 ServiceImgsSlide.propTypes = {
-  imgs: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
-  currentIndex: PropTypes.number.isRequired
+	imgs: PropTypes.array.isRequired,
+	onClick: PropTypes.func.isRequired,
+	serviceStyle: PropTypes.object.isRequired,
+	currentIndex: PropTypes.number.isRequired,
+	transition: PropTypes.bool.isRequired,
 };
 
 export default ServiceImgsSlide;
