@@ -1,0 +1,17 @@
+.section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+
+	& .heading {
+		z-index: 2;
+		margin-top: 30vh;
+		& h2 {
+			color: #fff;
+			font-size: 4vw;
+		}
+	}
+}

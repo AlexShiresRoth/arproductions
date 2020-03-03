@@ -1,0 +1,12 @@
+.work__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 2rem;
+	& .item {
+		max-width: 30vw;
+		& img {
+			width: 100%;
+		}
+	}
+}
