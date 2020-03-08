@@ -28,8 +28,8 @@ export const servicesArray = [
     ]
   },
   {
-    title: "Interactive Experiences",
-    text: `Each site is developed to maintain user engagement, with simple and easy to use user interfaces. `,
+    title: "Basic to complex websites.",
+    text: `Need an informational website or something a bit more complex requiring a database?`,
     img: null,
     imgs: null
   }
