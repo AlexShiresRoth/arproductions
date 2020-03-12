@@ -1,56 +1,59 @@
 @import '../../../sass/variables';
 .form {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(5, auto);
-	gap: 1rem;
-	width: 90%;
-	& .row {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		& label {
-			color: #fff;
-		}
-		& input {
-			background: transparent;
-			color: #fff;
-			border: 0;
-			border-bottom: 2px solid $brand-main;
-			padding: 1rem;
-			font-size: 16px;
-			&:focus {
-				outline: 0px solid $brand-main;
-			}
-		}
-		& textarea {
-			background: transparent;
-			color: #fff;
-			border: 2px solid $brand-main;
-			height: 10vh;
-			padding: 1rem;
-			font-size: 16px;
-			&:focus {
-				outline: 0px solid $brand-main;
-			}
-		}
-	}
-	& button {
-		height: 5vh;
-		background: linear-gradient(40deg, $brand-main 33%, darken($brand-main, 2%) 33%, darken($brand-main, 5%) 53%);
-		background-position: 0px 0;
-		color: #fff;
-		font-size: 1vw;
-		border: 0px solid transparent;
-		transition: all 0.3s ease-in-out;
-		text-transform: uppercase;
-		border-radius: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+  gap: 1rem;
+  width: 80%;
+  & .row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    & label {
+      color: #fff;
+    }
+    & input {
+      background: transparent;
+      color: #fff;
+      border: 0;
+      border-bottom: 2px solid $brand-main;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      &:focus {
+        outline: 0px solid $brand-main;
+      }
+    }
+    & textarea {
+      background: transparent;
+      color: #fff;
+      border: 2px solid $brand-main;
+      height: 10vh;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      &:focus {
+        outline: 0px solid $brand-main;
+      }
+    }
+  }
+  & button {
+    height: 3rem;
+    background: linear-gradient(
+      40deg,
+      $brand-main 33%,
+      darken($brand-main, 2%) 33%,
+      darken($brand-main, 5%) 53%
+    );
+    background-position: 0px 0;
+    color: #fff;
+    font-size: 1vw;
+    border: 0px solid transparent;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
 
-		&:hover {
-			cursor: pointer;
-			background-position: -100px 00px;
-			transform: scale(1.01);
-			border-radius: 100px;
-		}
-	}
+    &:hover {
+      cursor: pointer;
+      background-position: -100px 00px;
+      transform: scale(1.01);
+    }
+  }
 }
