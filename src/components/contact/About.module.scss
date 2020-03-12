@@ -1,0 +1,19 @@
+@import '../../../sass/variables';
+
+.about_column {
+	& .col {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		& img {
+			width: 10vw;
+			border-radius: 50%;
+		}
+		& p {
+			color: #fff;
+			max-width: 30vw;
+			font-size: 2vw;
+		}
+	}
+}
