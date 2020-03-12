@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import navStyles from "./Nav.module.scss";
+import React from 'react';
+import navStyles from './Nav.module.scss';
 
 const Nav = props => {
   const navList = (
@@ -9,13 +8,10 @@ const Nav = props => {
         <a>Services</a>
       </li>
       <li>
-        <a>Process</a>
+        <a>Work</a>
       </li>
       <li>
         <a>About</a>
-      </li>
-      <li>
-        <a>Work</a>
       </li>
       <li>
         <a>Contact</a>
@@ -31,7 +27,5 @@ const Nav = props => {
     </nav>
   );
 };
-
-Nav.propTypes = {};
 
 export default Nav;
