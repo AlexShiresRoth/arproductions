@@ -23,7 +23,7 @@ const Header = () => {
 			<div className={headerStyle.text__box}>
 				<div className={headerStyle.inner}>
 					<h1>
-						AlexRoth <br /> productions.
+						AlexRoth <br /> productions
 					</h1>
 					<p>Professional Web Development.</p>
 					<div className={headerStyle.services}>

@@ -1,5 +1,8 @@
 @import '../../../sass/variables';
-
+@font-face {
+	font-family: 'Space';
+	src: url('../../fonts/Potra.ttf') format('truetype');
+}
 .header {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
@@ -29,6 +32,7 @@
 			& h1 {
 				color: #fff;
 				font-size: 5vw;
+				font-family: 'Space';
 				&::after {
 					content: '';
 					width: 30vw;
@@ -44,26 +48,30 @@
 				margin: 1rem 0rem;
 			}
 			& .services {
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-start;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2rem;
 				& button {
-					margin-right: 1rem;
-					color: #297ca0;
+					color: #fff;
 					font-size: 1.2vw;
 					width: 17vw;
 					height: 8vh;
 					font-weight: 700;
-					background: transparent;
+					background: darken($brand-accent, 5%);
 					box-shadow: 0 2px 2px darken($brand-main, 5%);
-					border: 5px solid #297ca0;
-					border-radius: 0px;
+					border: 5px solid darken($brand-accent, 5%);
 					transition: all 0.3s ease-in-out;
+					position: relative;
+					z-index: 1;
 					&:hover {
 						cursor: pointer;
 						color: #fff;
 						background: #297ca0;
-						border-radius: 300px;
+					}
+					&:hover:after {
+						top: 0;
+						left: 0;
+						background: $brand-accent;
 					}
 					&:focus {
 						outline: 0px solid transparent;
@@ -72,12 +80,18 @@
 						transform: scale(1);
 						animation: pop-btn 0.2s linear forwards;
 					}
-				}
-				& button:nth-child(1) {
-					color: #fff;
-					background: #297ca0;
-					&:hover {
-						border-radius: 300px;
+					&:after {
+						content: ' ';
+						display: block;
+						height: 100%;
+						width: 100%;
+						background: $brand-accent;
+						border: 5px solid $brand-accent;
+						position: absolute;
+						top: 0.5vh;
+						left: 0.5vw;
+						z-index: -1;
+						transition: all 0.2s ease-in-out;
 					}
 				}
 			}
