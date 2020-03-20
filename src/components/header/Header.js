@@ -1,7 +1,8 @@
 import React from 'react';
 import headerStyle from './Header.module.scss';
 import { headerSvg } from './headerSvg';
-const Header = () => {
+import { connect } from 'react-redux';
+const Header = ({ refs: { refs } }) => {
 	const borderSvg = (
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 			<path
@@ -18,6 +19,14 @@ const Header = () => {
 			></path>
 		</svg>
 	);
+	const scrollToSections = ref => {
+		console.log(ref);
+		window.scrollTo({
+			top: ref ? ref.current.offsetTop : 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+	};
 	return (
 		<header className={headerStyle.header}>
 			<div className={headerStyle.text__box}>
@@ -27,8 +36,12 @@ const Header = () => {
 					</h1>
 					<p>Professional Web Development.</p>
 					<div className={headerStyle.services}>
-						<button>Contact</button>
-						<button>See Work</button>
+						<button onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'contact')[0])}>
+							Contact
+						</button>
+						<button onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'work')[0])}>
+							See Work
+						</button>
 					</div>
 				</div>
 			</div>
@@ -42,4 +55,10 @@ const Header = () => {
 	);
 };
 
-export default Header;
+const mapStateToProps = state => {
+	console.log(state);
+	return {
+		refs: state.refs,
+	};
+};
+export default connect(mapStateToProps, null)(Header);

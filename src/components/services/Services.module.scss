@@ -1,10 +1,5 @@
 @import '../../../sass/variables';
 
-.section:nth-child(3) {
-	& .inner_right {
-		box-shadow: 0 25px 25px darken($brand-main, 5%);
-	}
-}
 .section {
 	position: relative;
 	display: flex;

@@ -1,0 +1,191 @@
+////////////////////////////////
+//svg animations///////////////
+///////////////////////////////
+path.right_arm {
+	transform-origin: 50% 50%;
+	transform: translate(-330.78049px, -315.505938px) rotate(-50deg);
+	animation: animrightarm 1.5s linear forwards;
+}
+path.torso {
+	transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	animation: animtorso 1.5s linear forwards;
+}
+circle.head {
+	transform: translate(-10px, 10px);
+	animation: animhead 1.5s linear forwards;
+}
+path.hair {
+	transform: translate(-58.78049px, -215.05938px);
+	animation: animhair 1.5s linear forwards;
+}
+circle.ear {
+	transform: translate(-10px, 10px);
+	animation: animhead 1.5s linear forwards;
+}
+path.neck {
+	transform: translate(-58.78049px, -225.05938px);
+	animation: animtorso 1.5s linear forwards;
+}
+polygon.leg {
+	transform-origin: 50% 50%;
+	transform: rotate(-1deg);
+	animation: animleg 1.5s linear forwards;
+}
+polygon.ankle {
+	transform-origin: 50% 50%;
+	transform: rotate(-1deg);
+	animation: animleg 1.5s linear forwards;
+}
+path.shoe {
+	transform-origin: 50% 50%;
+	transform: translate(-55.78049px, -225.05938px) rotate(-1deg);
+	animation: animshoe 1.5s linear forwards;
+}
+rect.box {
+	transform: translate(150px, 130px) rotate(45deg);
+	animation: animbox 1.5s linear forwards;
+}
+rect.box2 {
+	transform: translate(403.98758px, -61.23638px) rotate(74.06317deg);
+	animation: animbox2 1.5s linear forwards;
+}
+path.box {
+	transform: translate(-58.78049px, -225.05938px);
+	animation: animpath 1.5s linear forwards;
+}
+path.box2 {
+	transform: translate(-58.78049px, -225.05938px);
+	animation: animpath2 1.5s linear forwards;
+}
+rect.box3 {
+	transform: translate(349.04671px, 103.9752px) rotate(133.06281);
+	animation: animbox3 1.5s linear forwards;
+}
+path.box3 {
+	transform: translate(-58.78049px, -225.05938px);
+	animation: animpath3 1.5s linear forwards;
+}
+
+@keyframes animbox {
+	0% {
+		transform: translate(150px, 130px) rotate(45deg);
+	}
+	85% {
+		transform: translate(-5px, -5px) rotate(-5deg);
+	}
+	100% {
+		transform: translate(0px, 0px) rotate(0deg);
+	}
+}
+@keyframes animbox2 {
+	0% {
+		transform: translate(403.98758px, -61.23638px) rotate(0.06317deg);
+	}
+	85% {
+		transform: translate(403.98758px, -61.23638px) rotate(80.06317deg);
+	}
+	100% {
+		transform: translate(403.98758px, -61.23638px) rotate(74.06317deg);
+	}
+}
+@keyframes animbox3 {
+	0% {
+		transform: translate(349.04671px, 103.9752px) rotate(0.06281deg);
+	}
+	85% {
+		transform: translate(349.04671px, 103.9752px) rotate(138.06281deg);
+	}
+	100% {
+		transform: translate(349.04671px, 103.9752px) rotate(133.06281deg);
+	}
+}
+@keyframes animpath3 {
+	0% {
+		transform: translate(-58.78049px, -225.05938px) rotate(45deg);
+	}
+	85% {
+		transform: translate(-58.78049px, -225.05938px) rotate(-5deg);
+	}
+	100% {
+		transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	}
+}
+@keyframes animpath2 {
+	0% {
+		transform: translate(-58.78049px, -225.05938px) rotate(-45deg);
+	}
+	85% {
+		transform: translate(-58.78049px, -225.05938px) rotate(-5deg);
+	}
+	100% {
+		transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	}
+}
+@keyframes animpath {
+	0% {
+		transform: translate(-58.78049px, -225.05938px) rotate(55deg);
+	}
+	80% {
+		transform: translate(-58.78049px, -225.05938px) rotate(-5deg);
+	}
+	100% {
+		transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	}
+}
+
+@keyframes animshoe {
+	0% {
+		transform: translate(-55.78049px, -225.05938px) rotate(-1deg);
+	}
+	100% {
+		transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	}
+}
+
+@keyframes animleg {
+	0% {
+		transform: rotate(-1deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes animrightarm {
+	0% {
+		transform-origin: 50% 50%;
+		transform: translate(-330.78049px, -315.505938px) rotate(-50deg);
+	}
+	100% {
+		transform-origin: 38% 25%;
+		transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	}
+}
+
+@keyframes animtorso {
+	0% {
+		transform-origin: 50% 50%;
+		transform: translate(-58.78049px, -225.05938px) rotate(-1deg);
+	}
+	100% {
+		transform-origin: 50% 50%;
+		transform: translate(-58.78049px, -225.05938px) rotate(0deg);
+	}
+}
+@keyframes animhead {
+	0% {
+		transform: translate(-5px, 5px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+@keyframes animhair {
+	0% {
+		transform: translate(-65.78049px, -220.05938px);
+	}
+	100% {
+		transform: translate(-58.78049px, -225.05938px);
+	}
+}

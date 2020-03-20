@@ -1,3 +1,5 @@
+@import '../../../sass/variables';
+
 .modal {
 	position: absolute;
 	display: flex;
@@ -27,6 +29,24 @@
 	background: rgba(221, 68, 68, 0.567);
 	visibility: visible;
 	opacity: 1;
+}
+
+.loading {
+	display: block;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	border-top: 3px solid $brand-main;
+	border-bottom: 3px solid $brand-main;
+	animation: spin 0.8s linear forwards infinite;
+	justify-self: center;
+	align-self: center;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes fadein {

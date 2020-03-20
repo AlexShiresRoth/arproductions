@@ -12,15 +12,16 @@ const Form = () => {
 		message: '',
 		status: '',
 		response: '',
+		loading: false,
 	});
 
-	const { name, email, subject, deadline, message, status, response } = formData;
+	const { name, email, subject, deadline, message, status, response, loading } = formData;
 
 	const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
 	const formSubmit = async e => {
 		e.preventDefault();
-
+		setFormData({ ...formData, loading: true });
 		const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
 
 		await axios({
@@ -35,7 +36,7 @@ const Form = () => {
 		})
 			.then(res => {
 				console.log(res);
-				setFormData({ status: 'success' });
+				setFormData({ status: 'success', loading: false });
 				setTimeout(() => {
 					setFormData({ name: '', email: '', message: '', subject: '', deadline: '', status: '' });
 				}, 3000);
@@ -47,10 +48,8 @@ const Form = () => {
 					...formData,
 					status: 'error',
 					response: JSON.parse(errMsg).message,
+					loading: false,
 				});
-				setTimeout(() => {
-					setFormData({ ...formData, status: '' });
-				}, 7000);
 			});
 	};
 
@@ -66,7 +65,7 @@ const Form = () => {
 
 	return (
 		<form className={formStyle.form} onSubmit={e => formSubmit(e)}>
-			<PopModal status={status} error={response} />
+			<PopModal status={status} error={response} loading={loading} />
 			<div className={formStyle.row}>
 				<label>Name</label>
 				<input type="text" name="name" value={name} onChange={e => onChange(e)} required />

@@ -54,12 +54,12 @@
 				& button {
 					color: #fff;
 					font-size: 1.2vw;
-					width: 17vw;
-					height: 8vh;
-					font-weight: 700;
+					width: 15vw;
+					height: 7vh;
+					font-weight: 100;
 					background: darken($brand-accent, 5%);
 					box-shadow: 0 2px 2px darken($brand-main, 5%);
-					border: 5px solid darken($brand-accent, 5%);
+					border: 0px solid darken($brand-accent, 5%);
 					transition: all 0.3s ease-in-out;
 					position: relative;
 					z-index: 1;
@@ -86,9 +86,9 @@
 						height: 100%;
 						width: 100%;
 						background: $brand-accent;
-						border: 5px solid $brand-accent;
+						border: 0px solid $brand-accent;
 						position: absolute;
-						top: 0.5vh;
+						top: 1vh;
 						left: 0.5vw;
 						z-index: -1;
 						transition: all 0.2s ease-in-out;
