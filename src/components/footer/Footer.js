@@ -14,9 +14,27 @@ const Footer = props => {
           <p>AlexRoth productions &copy; 2020</p>
         </div>
         <div className={footerStyle.col}>
-          <TiSocialInstagram />
-          <TiSocialFacebookCircular />
-          <TiSocialTwitterCircular />
+          <a
+            href="https://www.instagram.com/alexroth_productions/"
+            target="_blank"
+            rel="noopener noreferer"
+          >
+            <TiSocialInstagram />
+          </a>
+          <a
+            href="https://www.facebook.com/AlexRoth-productions-103812384596069/"
+            target="_blank"
+            rel="noopener noreferer"
+          >
+            <TiSocialFacebookCircular />
+          </a>
+          <a
+            href="https://twitter.com/AlexShiresRoth"
+            target="_blank"
+            rel="noopener noreferer"
+          >
+            <TiSocialTwitterCircular />
+          </a>
         </div>
       </div>
     </footer>
