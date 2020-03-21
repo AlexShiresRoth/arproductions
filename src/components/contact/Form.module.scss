@@ -53,3 +53,11 @@
 		}
 	}
 }
+
+@media screen and (max-width: 700px) {
+	.form {
+		& button {
+			font-size: 4vw;
+		}
+	}
+}

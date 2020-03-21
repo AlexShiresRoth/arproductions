@@ -3,5 +3,15 @@
 	grid-template-columns: repeat(2, 1fr);
 	justify-items: center;
 	align-content: center;
-	height: 100vh;
+	min-height: 100vh;
+}
+
+@media screen and (max-width: 700px) {
+	.section {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		min-height: 100vh;
+		margin: 10vh 0;
+	}
 }

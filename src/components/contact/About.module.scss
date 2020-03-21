@@ -17,3 +17,26 @@
 		}
 	}
 }
+
+@media screen and (max-width: 700px) {
+	.about_column {
+		margin: 10vh 0;
+		& .col {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			& img {
+				width: 50vw;
+				border-radius: 50%;
+				margin: 5vh 0;
+			}
+			& p {
+				color: #fff;
+				max-width: 80vw;
+				font-size: 4vw;
+				line-height: 2;
+			}
+		}
+	}
+}
