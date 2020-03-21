@@ -9,6 +9,7 @@ const Nav = ({ refs: { refs, active } }) => {
 	const setResize = e => window.addEventListener('resize', e => setMobile(window.innerWidth <= 700));
 
 	useEffect(() => {
+		setMobile(window.innerWidth <= 700);
 		setResize();
 	}, []);
 
