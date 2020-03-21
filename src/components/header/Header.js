@@ -21,7 +21,6 @@ const Header = ({ refs: { refs }, setActive }) => {
     </svg>
   );
   const scrollToSections = ref => {
-    console.log(ref);
     window.scrollTo({
       top: ref ? ref.current.offsetTop : 0,
       left: 0,
@@ -85,7 +84,6 @@ const Header = ({ refs: { refs }, setActive }) => {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     refs: state.refs
   };

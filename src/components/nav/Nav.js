@@ -1,8 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import navStyles from './Nav.module.scss';
 import { connect } from 'react-redux';
 
 const Nav = ({ refs: { refs, active } }) => {
+  const [isMobile, setMobile] = useState(false);
+
+  const setResize = e =>
+    window.addEventListener('resize', e => setMobile(window.innerWidth <= 700));
+
+  useEffect(() => {
+    setResize();
+  }, [setResize]);
+
   const scrollToSections = ref => {
     window.scrollTo({
       top: ref ? ref.current.offsetTop : 0,
@@ -10,6 +19,16 @@ const Nav = ({ refs: { refs, active } }) => {
       behavior: 'smooth'
     });
   };
+
+  const mobileMenu = (
+    <svg viewBox="0 0 100 100" class="menu">
+      <g>
+        <path d="M 0 50 L100 50 Z" stroke-width="2px" stroke="#fff" />
+        <path d="M 0, 30 L100, 30 Z" stroke-width="2px" stroke="#fff" />
+        <path d="M 0, 70 L100, 70 Z" stroke-width="2px" stroke="#fff" />
+      </g>
+    </svg>
+  );
 
   const navList = (
     <ul>
@@ -45,13 +64,16 @@ const Nav = ({ refs: { refs, active } }) => {
       <div className={navStyles.nav__left}>
         <a>AlexRoth productions</a>
       </div>
-      <div className={navStyles.nav__right}>{navList}</div>
+      {isMobile ? (
+        <div className={navStyles.mobile_nav__right}>{mobileMenu}</div>
+      ) : (
+        <div className={navStyles.nav__right}>{navList}</div>
+      )}
     </nav>
   );
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     refs: state.refs,
     active: state.active
