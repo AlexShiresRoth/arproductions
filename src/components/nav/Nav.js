@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import navStyles from './Nav.module.scss';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Nav = ({ refs: { refs, active } }) => {
@@ -67,6 +68,16 @@ const Nav = ({ refs: { refs, active } }) => {
 			>
 				<a>Contact</a>
 			</li>
+			<li>
+				<NavLink
+					exact
+					to="/store"
+					onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'contact')[0])}
+					activeClassName={navStyles.active}
+				>
+					Store
+				</NavLink>
+			</li>
 		</ul>
 	);
 
@@ -81,7 +92,7 @@ const Nav = ({ refs: { refs, active } }) => {
 	return (
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
-				<a>AlexRoth productions</a>
+				<NavLink to="/">AlexRoth productions</NavLink>
 			</div>
 			{isMobile ? (
 				<>

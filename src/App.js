@@ -1,11 +1,8 @@
 import React from 'react';
 import './css/main.css';
-import Nav from './components/nav/Nav';
-import Header from './components/header/Header';
-import Services from './components/services/Services';
-import Work from './components/work/Work';
-import Contact from './components/contact/Contact';
-import Footer from './components/footer/Footer';
+import Home from './components/layout/Home';
+import Store from './components/store/Store';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -13,14 +10,12 @@ import store from './store';
 function App() {
 	return (
 		<Provider store={store}>
-			<main>
-				<Nav />
-				<Header />
-				<Services />
-				<Work />
-				<Contact />
-				<Footer />
-			</main>
+			<HashRouter>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/store" component={Store} />
+				</Switch>
+			</HashRouter>
 		</Provider>
 	);
 }
