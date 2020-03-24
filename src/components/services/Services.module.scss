@@ -65,7 +65,7 @@
 					}
 					& p {
 						color: #fff;
-						font-size: 1.5vw;
+						font-size: 1.7vw;
 					}
 				}
 				& .inner_right {
@@ -200,12 +200,10 @@
 		}
 	}
 }
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
 	.section {
 		& .heading {
 			z-index: 2;
-			margin-top: 20vh;
 			& h2 {
 				color: #fff;
 				font-size: 8vw;
@@ -244,7 +242,7 @@
 						}
 						& p {
 							color: #fff;
-							font-size: 3.5vw;
+							font-size: 2.5vw;
 						}
 					}
 					& .inner_right {
@@ -269,6 +267,23 @@
 
 					& .inner__img__grid {
 						width: 80vw;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.section {
+		& .grid {
+			& .col {
+				& .col_grid {
+					& .inner_left {
+						& p {
+							color: #fff;
+							font-size: 3.5vw;
+						}
 					}
 				}
 			}
