@@ -4,14 +4,18 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fira Sans';
+  font-family: 'Fira Sans'; }
+
+html {
+  height: 100%; }
+
+body {
   overflow-x: hidden; }
 
 main {
   display: flex;
   flex-direction: column;
-  background: #000;
-  min-height: 100vh; }
+  background: #000; }
 
 h1 {
   font-family: 'Exo 2';

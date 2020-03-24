@@ -14,6 +14,9 @@
 	width: 100%;
 	position: fixed;
 	z-index: 9999;
+	opacity: 0;
+	animation: fadein 1s linear forwards;
+	animation-delay: 2s;
 	& .nav__left {
 		margin-left: 1rem;
 		& a {
@@ -166,5 +169,14 @@
 		flex-direction: row;
 		transform: translateX(-100vw);
 		transition: all 0.3s ease-in-out;
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

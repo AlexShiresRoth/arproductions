@@ -12,6 +12,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	useEffect(() => {
 		setMobile(window.innerWidth <= 700);
 		setResize();
+		window.scrollTo({ top: 0 });
 	}, []);
 
 	const scrollToSections = refs => {

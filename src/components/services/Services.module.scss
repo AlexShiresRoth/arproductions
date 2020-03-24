@@ -7,6 +7,9 @@
 	align-items: center;
 	min-height: 100vh;
 	overflow: hidden;
+	animation: fadein 1.5s linear forwards;
+	animation-delay: 2s;
+	opacity: 0;
 	& svg {
 		position: absolute;
 		top: 0;

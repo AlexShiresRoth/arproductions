@@ -42,7 +42,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 		if (headerRef.current) {
 			observer.observe(headerRef.current);
 		}
-	}, []);
+	}, [setActive]);
 
 	return (
 		<header className={headerStyle.header} ref={headerRef}>

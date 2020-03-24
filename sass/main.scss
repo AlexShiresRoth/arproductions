@@ -7,6 +7,11 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Fira Sans';
+}
+html {
+	height: 100%;
+}
+body {
 	overflow-x: hidden;
 }
 
@@ -14,7 +19,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	background: #000;
-	min-height: 100vh;
 }
 
 h1 {

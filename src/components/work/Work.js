@@ -6,39 +6,39 @@ import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
 
 const Work = ({ addRef, setActive }) => {
-  const workRef = useRef();
+	const workRef = useRef();
 
-  useEffect(() => {
-    addRef(workRef);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActive(workRef.current.id);
-        }
-      },
-      { rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
-    );
-    if (workRef.current) {
-      observer.observe(workRef.current);
-    }
-  }, [workRef, addRef]);
+	useEffect(() => {
+		addRef(workRef);
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setActive(workRef.current.id);
+				}
+			},
+			{ rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
+		);
+		if (workRef.current) {
+			observer.observe(workRef.current);
+		}
+	}, [workRef, addRef, setActive]);
 
-  return (
-    <section className={workStyles.section} ref={workRef} id="work">
-      <div className={workStyles.heading}>
-        <h2>Work Examples.</h2>
-      </div>
-      <WorkMap />
-    </section>
-  );
+	return (
+		<section className={workStyles.section} ref={workRef} id="work">
+			<div className={workStyles.heading}>
+				<h2>Work Examples.</h2>
+			</div>
+			<WorkMap />
+		</section>
+	);
 };
 
 Work.propTypes = { addRef: PropTypes.func.isRequired };
 
 const mapStateToProps = state => {
-  return {
-    refs: state.refs
-  };
+	return {
+		refs: state.refs,
+	};
 };
 
 export default connect(mapStateToProps, { addRef, setActive })(Work);

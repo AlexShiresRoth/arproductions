@@ -11,6 +11,9 @@ import { connect } from 'react-redux';
 const Home = ({ history, getLocation }) => {
 	useEffect(() => {
 		getLocation(history.location.pathname);
+		setTimeout(() => {
+			window.scrollTo({ top: 0 });
+		}, 500);
 	}, [getLocation, history]);
 
 	return (
