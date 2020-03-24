@@ -16,7 +16,7 @@
 	overflow: hidden;
 	padding-top: 3rem;
 	background-color: #000;
-	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctNzMnIGs0PScuMDEnIC8+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDAwJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmZmJyBmaWx0ZXI9J3VybCgjbiknIG9wYWNpdHk9JzEnLz4KPHJlY3QgeD0nLTElJyB5PSctMSUnIHdpZHRoPScxMDIlJyBoZWlnaHQ9JzEwMiUnIGZpbGw9JyMwMDAnIGZpbHRlcj0ndXJsKCNpKScgb3BhY2l0eT0nMScvPgo8L3N2Zz4=');
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctMTYwJyBrND0nLjAxJyAvPgo8L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nIzAwMCcvPgo8cmVjdCB4PSctMSUnIHk9Jy0xJScgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nI2ZmZicgZmlsdGVyPSd1cmwoI24pJyBvcGFjaXR5PScxJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDAwJyBmaWx0ZXI9J3VybCgjaSknIG9wYWNpdHk9JzEnLz4KPC9zdmc+);
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
@@ -44,7 +44,7 @@
 					height: 3px;
 					display: block;
 					margin-top: 1rem;
-					background: #297ca0;
+					background: $brand-accent;
 					border-bottom: 5px solid lighten($brand-main, 23%);
 				}
 			}
@@ -63,22 +63,21 @@
 					width: 15vw;
 					height: 7vh;
 					font-weight: 100;
-					background: lighten($brand-main, 10%);
+					background: $brand-accent;
 					box-shadow: 0 2px 2px darken($brand-main, 10%);
-					border: 0px solid lighten($brand-main, 10%);
+					border: 0px solid $brand-accent;
 					transition: all 0.3s ease-in-out;
 					position: relative;
+					text-transform: uppercase;
 					font-family: 'Fira Sans';
 					z-index: 1;
 					&:hover {
 						cursor: pointer;
 						color: #fff;
-						background: #297ca0;
 					}
 					&:hover:after {
 						top: 0;
 						left: 0;
-						background: $brand-accent;
 					}
 					&:focus {
 						outline: 0px solid transparent;
@@ -92,8 +91,8 @@
 						display: block;
 						height: 100%;
 						width: 100%;
-						background: $brand-accent;
-						border: 0px solid $brand-accent;
+						background: lighten($brand-main, 10%);
+						border: 0px solid lighten($brand-main, 10%);
 						position: absolute;
 						top: 0.5rem;
 						left: 0.5rem;
@@ -215,11 +214,11 @@
 						width: 35vw;
 						height: 7vh;
 						font-weight: 500;
-						text-transform: uppercase;
 
 						&:after {
-							top: 1.5vh;
-							left: 3vw;
+							top: 0.4rem;
+							left: 0.4rem;
+							transition: all 0.2s ease-in-out;
 						}
 					}
 				}
