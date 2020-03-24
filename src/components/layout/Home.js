@@ -13,7 +13,7 @@ const Home = ({ history, getLocation }) => {
 		getLocation(history.location.pathname);
 		setTimeout(() => {
 			window.scrollTo({ top: 0 });
-		}, 500);
+		}, 1000);
 	}, [getLocation, history]);
 
 	return (
