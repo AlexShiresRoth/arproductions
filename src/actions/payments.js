@@ -1,20 +1,20 @@
 import { CHARGE } from './types';
 import axios from 'axios';
 
-import { CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe } from 'react-stripe-elements';
-
-export const sendPayment = ({ price, item, stripe }) => async dispatch => {
+export const sendPayment = ({ title, desc, price }) => async dispatch => {
 	const config = {
 		accept: 'application/json',
 		headers: { 'Content-Type': `application/json` },
 	};
-	const { token } = await stripe.createToken();
-
-	const res = await axios.post('/payments/', config, {
+	console.log(title, desc, price);
+	const res = await axios.post('/payments/', {
+		config,
+		title,
 		price,
-		item,
+		desc,
 		email: 'alex@alexshiresroth.com',
-		source: token,
+		source: '11111',
+		cardElement: '123456789',
 	});
 
 	try {

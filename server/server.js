@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const paymentRouter = require('./routes/payments');
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ extended: true }));
 app.use((_, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

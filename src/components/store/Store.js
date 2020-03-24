@@ -1,49 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../layout/Layout';
-import {
-	StripeProvider,
-	Elements,
-	CardNumberElement,
-	CardExpiryElement,
-	CardCVCElement,
-	injectStripe,
-} from 'react-stripe-elements';
+import Products from './Products';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { sendPayment } from '../../actions/payments';
+import { getLocation } from '../../actions/location';
 import { connect } from 'react-redux';
 
-const Store = ({ sendPayment }) => {
+const Store = ({ sendPayment, history, getLocation }) => {
+	const stripe = useStripe();
+	const elements = useElements();
+
 	const products = [
-		{ title: 'Basic Template', price: '10.00', desc: 'A simple, dynamic template built with react/redux' },
+		{ title: 'Basic Template', price: 100, desc: 'A simple, dynamic template built with react/redux', id: '34525' },
+		{ title: 'Basic Template', price: 100, desc: 'A simple, dynamic template built with react/redux', id: '34525' },
+		{ title: 'Basic Template', price: 100, desc: 'A simple, dynamic template built with react/redux', id: '34525' },
 	];
 
-	const order = ({ price, title }) => {
-		sendPayment(price, title);
+	const order = item => {
+		sendPayment(item);
 	};
 
-	const productsMap = products.map((item, i) => {
-		return (
-			<>
-				<p>{item.title}</p>
-				<p>{item.price}</p>
-				<button onClick={e => order(item)}>Checkout</button>
-			</>
-		);
-	});
+	useEffect(() => {
+		getLocation(history.location.pathname);
+	}, [history, getLocation]);
+
 	return (
-		<StripeProvider apiKey="pk_test_Jna8Q4gbVOZxEMpVCDPdT6160041FZDtEe">
-			<Elements>
-				<Layout>{productsMap}</Layout>
-			</Elements>
-		</StripeProvider>
+		<Layout>
+			<Products products={products} order={order} />
+		</Layout>
 	);
 };
 
-Store.propTypes = {};
+Store.propTypes = { sendPayment: PropTypes.func.isRequired };
 
 const mapStateToProps = state => {
 	return {
 		charge: state.charge,
+		loaction: state.loaction,
 	};
 };
-export default connect(mapStateToProps, { sendPayment })(Store);
+export default connect(mapStateToProps, { sendPayment, getLocation })(Store);

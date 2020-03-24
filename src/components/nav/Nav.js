@@ -3,7 +3,7 @@ import navStyles from './Nav.module.scss';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Nav = ({ refs: { refs, active } }) => {
+const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	const [isMobile, setMobile] = useState(false);
 	const [navState, toggleNav] = useState(false);
 
@@ -14,13 +14,32 @@ const Nav = ({ refs: { refs, active } }) => {
 		setResize();
 	}, []);
 
-	const scrollToSections = ref => {
+	const scrollToSections = refs => {
 		toggleNav(!navState);
-		window.scrollTo({
-			top: ref ? (ref.current.id === 'services' ? ref.current.offsetTop + 900 : ref.current.offsetTop) : 0,
-			left: 0,
-			behavior: 'smooth',
-		});
+		if (refs.length <= 0) return;
+		const ref = refs[0];
+		switch (true) {
+			case ref.current.id === 'services':
+				return window.scrollTo({
+					top: ref.current.offsetTop + 900,
+					left: 0,
+					behavior: 'smooth',
+				});
+			case ref.current.id === 'contact':
+				return window.scrollTo({
+					top: ref.current.offsetTop,
+					left: 0,
+					behavior: 'smooth',
+				});
+			case ref.current.id === 'work':
+				return window.scrollTo({
+					top: ref.current.offsetTop,
+					left: 0,
+					behavior: 'smooth',
+				});
+			default:
+				return window.scrollTo({ top: 0 });
+		}
 	};
 
 	const mobileMenu = (
@@ -51,30 +70,44 @@ const Nav = ({ refs: { refs, active } }) => {
 	const navList = (
 		<ul>
 			<li
-				onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'services')[0])}
+				onClick={() =>
+					scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'services'))
+				}
 				className={active === 'services' ? navStyles.active : ''}
 			>
 				<a>Services</a>
 			</li>
 			<li
-				onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'work')[0])}
+				onClick={() => scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'work'))}
 				className={active === 'work' ? navStyles.active : ''}
 			>
 				<a>Work</a>
 			</li>
 			<li
-				onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'contact')[0])}
+				onClick={() =>
+					scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'contact'))
+				}
 				className={active === 'contact' ? navStyles.active : ''}
 			>
 				<a>Contact</a>
 			</li>
+			{/* <li>
+				<NavLink exact to="/store" activeClassName={navStyles.active} style={{ textDecoration: 'none' }}>
+					Store
+				</NavLink>
+			</li> */}
+		</ul>
+	);
+
+	const storeNav = (
+		<ul>
 			<li>
-				<NavLink
-					exact
-					to="/store"
-					onClick={() => scrollToSections(refs.filter(ref => ref.current.id === 'contact')[0])}
-					activeClassName={navStyles.active}
-				>
+				<NavLink exact to="/">
+					Home
+				</NavLink>
+			</li>
+			<li>
+				<NavLink exact to="/store" activeClassName={navStyles.active} style={{ textDecoration: 'none' }}>
 					Store
 				</NavLink>
 			</li>
@@ -88,7 +121,6 @@ const Nav = ({ refs: { refs, active } }) => {
 		</div>
 	);
 
-	console.log(navState);
 	return (
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
@@ -100,7 +132,7 @@ const Nav = ({ refs: { refs, active } }) => {
 					{sideMenu}
 				</>
 			) : (
-				<div className={navStyles.nav__right}>{navList}</div>
+				<div className={navStyles.nav__right}>{location === '/store' ? storeNav : navList} </div>
 			)}
 		</nav>
 	);
@@ -110,6 +142,7 @@ const mapStateToProps = state => {
 	return {
 		refs: state.refs,
 		active: state.active,
+		location: state.location,
 	};
 };
 

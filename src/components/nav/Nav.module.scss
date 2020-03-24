@@ -49,6 +49,8 @@
 					align-items: center;
 					position: relative;
 					transition: all 0.3s ease-in-out;
+					color: #f3f3f3;
+					text-decoration: none;
 					&::after {
 						content: '';
 						position: absolute;

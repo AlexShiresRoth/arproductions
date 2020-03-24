@@ -1,0 +1,24 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	& .heading {
+		margin-top: 10vh;
+		color: #f3f3f3;
+	}
+	& .grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		gap: 1rem;
+		width: 100%;
+		& .item {
+			display: flex;
+			flex-direction: column;
+			& p {
+				color: #fff;
+			}
+		}
+	}
+}
