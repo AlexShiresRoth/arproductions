@@ -187,6 +187,7 @@ header {
 		align-items: flex-start;
 		position: relative;
 		padding-top: 0rem;
+		margin: 8rem 0;
 		& .text__box {
 			justify-content: flex-start;
 			align-items: center;
@@ -214,6 +215,67 @@ header {
 						font-size: 2.5vw;
 						width: 28vw;
 						height: 3rem;
+						font-weight: 500;
+						min-height: 0;
+						&:after {
+							top: 0.4rem;
+							left: 0.4rem;
+							transition: all 0.2s ease-in-out;
+						}
+					}
+				}
+			}
+		}
+		& .bg_svg {
+			visibility: hidden;
+		}
+		& .svg__container {
+			width: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			position: relative;
+			visibility: hidden;
+			& svg:nth-child(1) {
+				width: 40%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	header {
+		overflow: hidden;
+		background: #000;
+		min-height: 100vh;
+		& .bg_svg {
+			& svg {
+				height: 100%;
+				fill: $brand-main;
+			}
+		}
+	}
+	.header {
+		margin: 10rem 0;
+		& .text__box {
+			& .inner {
+				& h1 {
+					font-size: 12vw;
+					&::after {
+						width: 100%;
+					}
+				}
+				& p {
+					color: #eee;
+					font-size: 6vw;
+				}
+				& .services {
+					& button {
+						color: #fff;
+						font-size: 3vw;
+						width: 35vw;
+						height: 3.2rem;
 						font-weight: 500;
 						min-height: 0;
 						&:after {

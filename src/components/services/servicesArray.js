@@ -18,7 +18,7 @@ export const servicesArray = [
 		title: 'Unique Layouts.',
 		text: `To make your business standout, you need a custom layout that sets your bussiness apart from all the cookie-cutter
 							template sites. I build unique sites from scratch,
-                            tailored to your business' needs and interests.`,
+                            tailored to your business's needs and interests.`,
 		img: null,
 		imgs: [
 			'https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_51,w_994/v1582755367/business%20site/2020-02-26_p0vg8y.png',
