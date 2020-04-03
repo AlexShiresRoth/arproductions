@@ -9,13 +9,7 @@
 	animation: fadein 1.5s linear forwards;
 	animation-delay: 2s;
 	opacity: 0;
-	& svg {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		left: 0;
-		z-index: 0;
-	}
+
 	& .heading {
 		z-index: 2;
 		margin-top: 30vh;
