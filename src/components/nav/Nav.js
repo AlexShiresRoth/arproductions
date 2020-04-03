@@ -7,10 +7,10 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	const [isMobile, setMobile] = useState(false);
 	const [navState, toggleNav] = useState(false);
 
-	const setResize = e => window.addEventListener('resize', e => setMobile(window.innerWidth <= 700));
+	const setResize = e => window.addEventListener('resize', e => setMobile(window.innerWidth <= 900));
 
 	useEffect(() => {
-		setMobile(window.innerWidth <= 700);
+		setMobile(window.innerWidth <= 900);
 		setResize();
 		window.scrollTo({ top: 0 });
 	}, []);
@@ -22,7 +22,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		switch (true) {
 			case ref.current.id === 'services':
 				return window.scrollTo({
-					top: ref.current.offsetTop + 900,
+					top: ref.current.offsetTop + 800,
 					left: 0,
 					behavior: 'smooth',
 				});

@@ -17,14 +17,13 @@ header {
 	justify-items: center;
 	align-items: center;
 	position: relative;
-	height: 100vh;
+	min-height: 90vh;
 	width: 100%;
 	padding: 0;
-	z-index: 1;
+	z-index: 99;
 	overflow: hidden;
 	padding-top: 3rem;
 	& .text__box {
-		height: 100%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -65,6 +64,7 @@ header {
 					font-size: 1.2vw;
 					width: 15vw;
 					height: 7vh;
+					min-height: 3rem;
 					font-weight: 100;
 					background: $brand-accent;
 					box-shadow: 0 2px 2px darken($brand-main, 10%);
@@ -108,18 +108,16 @@ header {
 	}
 	& .bg_svg {
 		position: absolute;
-		width: 100vw;
-		height: 100vh;
-		bottom: 0;
+		height: 100%;
+		width: 100%;
+		top: 0;
 		left: 0;
 		z-index: 0;
 		opacity: 0;
 		animation: fadein 2s linear forwards;
 		animation-delay: 2s;
 		& svg {
-			animation: changebgcolor 0.5s linear forwards;
-			animation-delay: 4s;
-			fill: lighten($brand-main, 10%);
+			fill: $brand-main;
 		}
 	}
 	& .svg__container {
@@ -138,16 +136,18 @@ header {
 }
 @media screen and (max-width: 1350px) {
 	.header {
+		min-height: 70vh;
 		& .bg_svg {
 			& svg {
-				height: 100%;
+				width: 100%;
 			}
 		}
 	}
 }
 
-@media screen and (max-width: 1001px) {
+@media screen and (max-width: 1051px) {
 	.header {
+		min-height: 40vh;
 		& .text__box {
 			& .inner {
 				& .services {
@@ -165,18 +165,16 @@ header {
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 	.header {
-		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, auto);
 		justify-items: flex-start;
 		align-items: flex-start;
 		position: relative;
-		min-height: 65vh;
-		height: auto;
-		z-index: 1000;
-		background: #000;
+		background: $brand-main;
+		padding-top: 5rem;
+		min-height: 80vh;
 		& .text__box {
 			height: auto;
 			justify-content: flex-start;
@@ -225,14 +223,10 @@ header {
 			}
 		}
 		& .bg_svg {
-			position: absolute;
-			width: 100vw;
-			height: 100vh;
-			transform: translate(-30%, 0);
+			visibility: hidden;
 		}
 		& .svg__container {
 			width: 100%;
-			min-height: 40vh;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
@@ -244,27 +238,7 @@ header {
 		}
 	}
 }
-@media screen and (max-width: 650px) {
-	.header {
-		& .bg_svg {
-			transform: translate(-30%, 0);
-		}
-	}
-}
-@media screen and (max-width: 550px) {
-	.header {
-		& .bg_svg {
-			transform: translate(-50%, 0);
-		}
-	}
-}
-@media screen and (max-width: 450px) {
-	.header {
-		& .bg_svg {
-			transform: translate(-90%, 0);
-		}
-	}
-}
+
 @keyframes pop-btn {
 	0% {
 		transform: scale(0.9);
@@ -299,14 +273,5 @@ header {
 	}
 	100% {
 		opacity: 1;
-	}
-}
-
-@keyframes changebgcolor {
-	0% {
-		fill: lighten($brand-main, 10%);
-	}
-	100% {
-		fill: $brand-main;
 	}
 }
