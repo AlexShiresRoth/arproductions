@@ -45,38 +45,38 @@ const Header = ({ refs: { refs }, setActive }) => {
 	}, [setActive]);
 
 	return (
-		<header className={headerStyle.header} ref={headerRef}>
-			<div className={headerStyle.text__box}>
-				<div className={headerStyle.inner}>
-					<h1>
-						AlexRoth <br /> productions
-					</h1>
-					<p>Professional Web Development.</p>
-					<div className={headerStyle.services}>
-						<button
-							onClick={() =>
-								scrollToSections(
-									refs.filter(ref => ref.current !== null && ref.current.id === 'contact')
-								)
-							}
-						>
-							Contact
-						</button>
-						<button
-							onClick={() =>
-								scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'work'))
-							}
-						>
-							See Work
-						</button>
+		<header ref={headerRef}>
+			<div className={headerStyle.header}>
+				<div className={headerStyle.text__box}>
+					<div className={headerStyle.inner}>
+						<h1>
+							AlexRoth <br /> productions
+						</h1>
+						<p>Professional Web Development.</p>
+						<div className={headerStyle.services}>
+							<button
+								onClick={() =>
+									scrollToSections(
+										refs.filter(ref => ref.current !== null && ref.current.id === 'contact')
+									)
+								}
+							>
+								Contact
+							</button>
+							<button
+								onClick={() =>
+									scrollToSections(
+										refs.filter(ref => ref.current !== null && ref.current.id === 'work')
+									)
+								}
+							>
+								See Work
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div className={headerStyle.svg__container}>
-				{headerSvg}
-				<div className={headerStyle.border__top}>{borderSvg}</div>
-				<div className={headerStyle.border__btm}>{borderBtm}</div>
+				<div className={headerStyle.svg__container}>{headerSvg}</div>
 			</div>
 		</header>
 	);

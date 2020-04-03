@@ -74,13 +74,13 @@ export const headerSvg = (
 			fill="#3f3d56"
 			className={svgStyle.box}
 		/>
-		<rect x="108.80838" y="374.61657" width="28" height="28" fill="#400082" className={svgStyle.box2} />
+		<rect x="108.80838" y="374.61657" width="28" height="28" fill="#297ca0" className={svgStyle.box2} />
 		<path
 			d="M133.24341,417.87594l-9.33563-32.69321,32.69321-9.33564,9.33563,32.69321Zm-7.50829-31.67767,8.52384,29.85032,29.85032-8.52383-8.52384-29.85033Z"
 			fill="#3f3d56"
 			className={svgStyle.box2}
 		/>
-		<rect x="118.48664" y="239.04858" width="28" height="28" fill="#400082" className={svgStyle.box3} />
+		<rect x="118.48664" y="239.04858" width="28" height="28" fill="#297ca0" className={svgStyle.box3} />
 		<path
 			d="M112.78106,277.063l23.21519-24.8406,24.84059,23.21519-23.21518,24.84059Zm23.28586-22.75121-21.19647,22.68054L137.551,298.18876l21.19647-22.68054Z"
 			fill="#3f3d56"

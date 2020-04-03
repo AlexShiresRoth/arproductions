@@ -3,6 +3,13 @@
 	font-family: 'Space';
 	src: url('../../fonts/Potra.ttf') format('truetype');
 }
+header {
+	background-color: #000;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctMTYwJyBrND0nLjAxJyAvPgo8L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nIzAwMCcvPgo8cmVjdCB4PSctMSUnIHk9Jy0xJScgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nI2ZmZicgZmlsdGVyPSd1cmwoI24pJyBvcGFjaXR5PScxJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDAwJyBmaWx0ZXI9J3VybCgjaSknIG9wYWNpdHk9JzEnLz4KPC9zdmc+);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
 .header {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
@@ -10,16 +17,15 @@
 	justify-items: center;
 	align-items: center;
 	position: relative;
-	height: 95vh;
+	height: 100vh;
+	width: 100%;
 	padding: 0;
 	z-index: 1;
 	overflow: hidden;
 	padding-top: 3rem;
-	background-color: #000;
-	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctMTYwJyBrND0nLjAxJyAvPgo8L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nIzAwMCcvPgo8cmVjdCB4PSctMSUnIHk9Jy0xJScgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nI2ZmZicgZmlsdGVyPSd1cmwoI24pJyBvcGFjaXR5PScxJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDAwJyBmaWx0ZXI9J3VybCgjaSknIG9wYWNpdHk9JzEnLz4KPC9zdmc+);
+	background-image: url('../../bg-productions.png');
 	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
+	animation: fadeinborders 2s linear forwards;
 	& .text__box {
 		height: 100%;
 		width: 100%;
@@ -27,7 +33,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background: $brand-main;
+
 		padding-left: 2rem;
 		position: relative;
 		opacity: 0;
