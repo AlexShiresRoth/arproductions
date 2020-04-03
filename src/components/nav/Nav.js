@@ -7,7 +7,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	const [isMobile, setMobile] = useState(false);
 	const [navState, toggleNav] = useState(false);
 
-	const setResize = e => window.addEventListener('resize', e => setMobile(window.innerWidth <= 900));
+	const setResize = (e) => window.addEventListener('resize', (e) => setMobile(window.innerWidth <= 900));
 
 	useEffect(() => {
 		setMobile(window.innerWidth <= 900);
@@ -15,7 +15,9 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		window.scrollTo({ top: 0 });
 	}, []);
 
-	const scrollToSections = refs => {
+	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+	const scrollToSections = (refs) => {
 		toggleNav(!navState);
 		if (refs.length <= 0) return;
 		const ref = refs[0];
@@ -72,21 +74,23 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		<ul>
 			<li
 				onClick={() =>
-					scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'services'))
+					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'services'))
 				}
 				className={active === 'services' ? navStyles.active : ''}
 			>
 				<a>Services</a>
 			</li>
 			<li
-				onClick={() => scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'work'))}
+				onClick={() =>
+					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'work'))
+				}
 				className={active === 'work' ? navStyles.active : ''}
 			>
 				<a>Work</a>
 			</li>
 			<li
 				onClick={() =>
-					scrollToSections(refs.filter(ref => ref.current !== null && ref.current.id === 'contact'))
+					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
 				}
 				className={active === 'contact' ? navStyles.active : ''}
 			>
@@ -125,7 +129,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	return (
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
-				<NavLink to="/">AlexRoth productions</NavLink>
+				<a onClick={(e) => scrollToTop()}>AlexRoth productions</a>
 			</div>
 			{isMobile ? (
 				<>
@@ -139,7 +143,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	);
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		refs: state.refs,
 		active: state.active,

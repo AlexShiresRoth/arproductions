@@ -9,7 +9,7 @@ const Services = ({ addRef, setActive }) => {
 	const [currentIndex, setIndex] = useState(0);
 
 	const [transition, setTransition] = useState(false);
-	const changeIndex = index => setIndex(index);
+	const changeIndex = (index) => setIndex(index);
 
 	const serviceRef = useRef();
 
@@ -78,7 +78,7 @@ const Services = ({ addRef, setActive }) => {
 							) : service.img !== null ? (
 								service.img
 							) : (
-								service.icons.map(icon => icon.icon)
+								service.icons.map((icon) => icon.icon)
 							)}
 						</div>
 					</div>
@@ -96,7 +96,7 @@ const Services = ({ addRef, setActive }) => {
 	);
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		refs: state.refs,
 	};

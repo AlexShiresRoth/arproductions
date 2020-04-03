@@ -9,10 +9,10 @@
 	animation: fadein 1.5s linear forwards;
 	animation-delay: 2s;
 	opacity: 0;
-
+	margin-top: 10rem;
 	& .heading {
 		z-index: 2;
-		margin-top: 30vh;
+
 		& h2 {
 			color: #fff;
 			font-size: 4vw;
@@ -78,6 +78,7 @@
 						width: 100%;
 					}
 					& svg {
+						width: 10vw;
 						height: 20vh;
 						color: #fff;
 						position: relative;
@@ -198,11 +199,12 @@
 }
 @media screen and (max-width: 1000px) {
 	.section {
+		margin-top: 5rem;
 		& .heading {
 			z-index: 2;
 			& h2 {
 				color: #fff;
-				font-size: 8vw;
+				font-size: 4vw;
 				text-align: center;
 			}
 		}
@@ -226,7 +228,7 @@
 						width: 80vw;
 						& h3 {
 							color: #fff;
-							font-size: 6vw;
+							font-size: 4vw;
 							&::after {
 								content: '';
 								width: 50%;
@@ -238,7 +240,7 @@
 						}
 						& p {
 							color: #fff;
-							font-size: 2.5vw;
+							font-size: 2.3vw;
 						}
 					}
 					& .inner_right {
@@ -255,6 +257,7 @@
 							width: 100%;
 						}
 						& svg {
+							width: 10vw;
 							height: 10vh;
 							color: #fff;
 							position: relative;
@@ -270,15 +273,20 @@
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 	.section {
+		& .heading {
+			& h2 {
+				font-size: 8vw;
+			}
+		}
 		& .grid {
 			& .col {
 				& .col_grid {
 					& .inner_left {
 						& p {
 							color: #fff;
-							font-size: 3.5vw;
+							font-size: 3.2vw;
 						}
 					}
 				}

@@ -18,7 +18,7 @@
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 	.about_column {
 		margin: 10vh 0;
 		& .col {
@@ -27,7 +27,7 @@
 			justify-content: center;
 			align-items: center;
 			& img {
-				width: 50vw;
+				width: 40vw;
 				border-radius: 50%;
 				margin: 5vh 0;
 			}
