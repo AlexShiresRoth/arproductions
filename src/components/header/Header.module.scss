@@ -23,9 +23,6 @@ header {
 	z-index: 1;
 	overflow: hidden;
 	padding-top: 3rem;
-	background-image: url('../../bg-productions.png');
-	background-size: cover;
-	animation: fadeinborders 2s linear forwards;
 	& .text__box {
 		height: 100%;
 		width: 100%;
@@ -33,12 +30,12 @@ header {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-
 		padding-left: 2rem;
 		position: relative;
 		opacity: 0;
 		animation: fadeintextbox 1.5s linear forwards;
 		animation-delay: 1.5s;
+		z-index: 1;
 		& .inner {
 			& h1 {
 				color: #fff;
@@ -56,7 +53,7 @@ header {
 			}
 			& p {
 				color: #eee;
-				font-size: 3vw;
+				font-size: 2.8vw;
 				margin: 1rem 0rem;
 			}
 			& .services {
@@ -109,6 +106,22 @@ header {
 			}
 		}
 	}
+	& .bg_svg {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		opacity: 0;
+		animation: fadein 2s linear forwards;
+		animation-delay: 2s;
+		& svg {
+			animation: changebgcolor 0.5s linear forwards;
+			animation-delay: 4s;
+			fill: lighten($brand-main, 10%);
+		}
+	}
 	& .svg__container {
 		width: 100%;
 		height: 100%;
@@ -121,32 +134,13 @@ header {
 		& svg:nth-child(1) {
 			width: 45vw;
 		}
-		& .border__top {
-			position: absolute;
-			top: 2rem;
-			right: 0;
-			z-index: 0;
-			width: 100%;
-			animation: fadeinborders 1s linear forwards;
-			animation-delay: 2.5s;
-			opacity: 0;
+	}
+}
+@media screen and (max-width: 1350px) {
+	.header {
+		& .bg_svg {
 			& svg {
-				width: 100%;
-				fill: $brand-main;
-			}
-		}
-		& .border__btm {
-			position: absolute;
-			bottom: -0.3rem;
-			right: 0;
-			z-index: 0;
-			width: 100%;
-			animation: fadeinborders 1s linear forwards;
-			animation-delay: 2.5s;
-			opacity: 0;
-			& svg {
-				width: 100%;
-				fill: $brand-main;
+				height: 100%;
 			}
 		}
 	}
@@ -187,7 +181,6 @@ header {
 			height: auto;
 			justify-content: flex-start;
 			align-items: center;
-			background: $brand-main;
 			position: relative;
 			padding: 1rem 0;
 			order: 2;
@@ -231,6 +224,12 @@ header {
 				}
 			}
 		}
+		& .bg_svg {
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			transform: translate(-30%, 0);
+		}
 		& .svg__container {
 			width: 100%;
 			min-height: 40vh;
@@ -242,30 +241,30 @@ header {
 				width: 60%;
 				height: 100%;
 			}
-			& .border__top {
-				width: 100%;
-				animation: fadeinborders 2s linear forwards;
-				animation-delay: 3s;
-				opacity: 0;
-				& svg {
-					width: 100%;
-					fill: $brand-main;
-				}
-			}
-			& .border__btm {
-				width: 100%;
-				animation: fadeinborders 2s linear forwards;
-				animation-delay: 3s;
-				opacity: 0;
-				& svg {
-					width: 100%;
-					fill: $brand-main;
-				}
-			}
 		}
 	}
 }
-
+@media screen and (max-width: 650px) {
+	.header {
+		& .bg_svg {
+			transform: translate(-30%, 0);
+		}
+	}
+}
+@media screen and (max-width: 550px) {
+	.header {
+		& .bg_svg {
+			transform: translate(-50%, 0);
+		}
+	}
+}
+@media screen and (max-width: 450px) {
+	.header {
+		& .bg_svg {
+			transform: translate(-90%, 0);
+		}
+	}
+}
 @keyframes pop-btn {
 	0% {
 		transform: scale(0.9);
@@ -294,11 +293,20 @@ header {
 		opacity: 1;
 	}
 }
-@keyframes fadeinborders {
+@keyframes fadein {
 	0% {
 		opacity: 0;
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes changebgcolor {
+	0% {
+		fill: lighten($brand-main, 10%);
+	}
+	100% {
+		fill: $brand-main;
 	}
 }
