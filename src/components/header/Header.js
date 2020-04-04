@@ -31,6 +31,7 @@ const Header = ({ refs: { refs }, setActive }) => {
   return (
     <header ref={headerRef}>
       <div className={headerStyle.bg_svg}>{bgWave}</div>
+      <div className={headerStyle.bg_svg_2}>{bgWave}</div>
       <div className={headerStyle.header}>
         <div className={headerStyle.text__box}>
           <div className={headerStyle.inner}>

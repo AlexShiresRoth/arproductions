@@ -15,14 +15,24 @@ header {
   justify-content: center;
   min-height: 100vh;
   & .bg_svg {
-    z-index: 0;
+    z-index: 1;
     fill: $brand-main;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
-    transform: translate(0%, -40%);
+    transform: translate(0%, -45%);
+  }
+  & .bg_svg_2 {
+    z-index: 0;
+    fill: $brand-accent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: translate(0%, -39%);
   }
 }
 .header {
@@ -122,6 +132,9 @@ header {
     & .bg_svg {
       transform: translate(0%, -30%);
     }
+    & .bg_svg_2 {
+      transform: translate(0%, -25%);
+    }
   }
 }
 
@@ -152,7 +165,10 @@ header {
     background: #000;
     min-height: 100vh;
     & .bg_svg {
-      transform: translate(0%, -35%);
+      transform: translate(0%, -15%);
+    }
+    & .bg_svg_2 {
+      transform: translate(0%, -9%);
     }
   }
   .header {
@@ -194,14 +210,14 @@ header {
       & .actions {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, auto);
         gap: 0.5rem;
         justify-items: center;
         & button {
           color: #fff;
-          font-size: 2.5vw;
-          width: 28vw;
-          height: 3rem;
+          font-size: 3vw;
+          width: 35vw;
+          height: 3.5rem;
           font-weight: 500;
           min-height: 0;
           &:after {
@@ -225,6 +241,9 @@ header {
         height: 100%;
         fill: $brand-main;
       }
+    }
+    & .bg_svg_2 {
+      transform: translate(0%, 0%);
     }
   }
   .header {

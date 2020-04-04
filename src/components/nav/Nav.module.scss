@@ -186,6 +186,35 @@
   }
 }
 
+@media screen and (max-width: 1300px) {
+  .nav {
+    & .nav__left {
+      & .logo {
+        max-width: 6vw;
+        & svg {
+          height: 100%;
+          width: 100%;
+          fill: $brand-main;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav {
+    & .nav__left {
+      & .logo {
+        max-width: 9vw;
+        & svg {
+          height: 100%;
+          width: 100%;
+          fill: $brand-main;
+        }
+      }
+    }
+  }
+}
 @keyframes fadein {
   0% {
     opacity: 0;
