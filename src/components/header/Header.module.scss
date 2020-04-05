@@ -23,6 +23,9 @@ header {
     width: 100%;
     overflow: hidden;
     transform: translate(0%, -45%);
+    opacity: 0;
+    animation: fadein 2.2s linear forwards;
+    animation-delay: 2.5s;
   }
   & .bg_svg_2 {
     z-index: 0;
@@ -33,6 +36,9 @@ header {
     width: 100%;
     overflow: hidden;
     transform: translate(0%, -39%);
+    opacity: 0;
+    animation: fadein 2s linear forwards;
+    animation-delay: 2.5s;
   }
 }
 .header {
@@ -57,7 +63,7 @@ header {
     position: relative;
     opacity: 0;
     animation: fadeintextbox 1.5s linear forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
     z-index: 1;
 
     & .inner {
@@ -79,7 +85,9 @@ header {
   & .services {
     display: flex;
     flex-direction: column;
-
+    opacity: 0;
+    animation: fadein 1.5s linear forwards;
+    animation-delay: 2s;
     & .text {
       & p {
         color: #eee;
