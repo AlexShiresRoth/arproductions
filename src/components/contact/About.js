@@ -14,7 +14,7 @@ const About = (props) => {
         {profilPic}
         <p>
           Hello, I'm Alex Rothenberg and I created fillthevoid.io to help people
-          meet their web presence needs. I design for web, mobile and build
+          meet their web development needs. I design for web, mobile and build
           games using the Unreal Engine, I also enjoy hot sauce. If you like my
           work and would like to do something together, please fill out the form
           and send me a message!

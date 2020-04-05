@@ -1,17 +1,18 @@
 .section {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	justify-items: center;
-	align-content: center;
-	min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-content: center;
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 @media screen and (max-width: 900px) {
-	.section {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: auto;
-		min-height: 100vh;
-		margin: 10vh 0;
-	}
+  .section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 100vh;
+    margin: 10vh 0;
+  }
 }
