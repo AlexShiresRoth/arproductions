@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import navStyles from './Nav.module.scss';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
 import { navSvg } from '../header/headerSvg';
 const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	const [isMobile, setMobile] = useState(false);
@@ -138,8 +139,25 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	return (
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
-				<div className={navStyles.logo}>{navSvg}</div>
-				<a onClick={(e) => scrollToTop()}>FillTheVoid.io</a>
+				<a onClick={(e) => scrollToTop()}>
+					<div className={navStyles.logo}>{navSvg}</div>
+					FillTheVoid.io
+				</a>
+				<div className={navStyles.col}>
+					<a href="https://www.instagram.com/alexroth_productions/" target="_blank" rel="noopener noreferrer">
+						<TiSocialInstagram />
+					</a>
+					<a
+						href="https://www.facebook.com/AlexRoth-productions-103812384596069/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<TiSocialFacebookCircular />
+					</a>
+					<a href="https://twitter.com/AlexShiresRoth" target="_blank" rel="noopener noreferrer">
+						<TiSocialTwitterCircular />
+					</a>
+				</div>
 			</div>
 			{isMobile ? (
 				<>

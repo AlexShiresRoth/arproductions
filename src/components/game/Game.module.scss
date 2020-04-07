@@ -3,25 +3,34 @@
 .section {
 	position: relative;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, auto);
 	overflow: hidden;
+	justify-items: center;
+	align-content: center;
 	margin: 5rem 0;
-	padding: 5rem;
-	min-height: 50vh;
-	background: linear-gradient(125deg, $brand-main 50%, darken($brand-main, 3%) -50%);
+	min-height: 100vh;
+	background: darken($brand-main, 5%);
+	padding: 4rem 0;
+	& svg:nth-child(1) {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		width: 100%;
+	}
+	& svg:nth-of-type(2) {
+		position: absolute;
+		z-index: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
 	& .heading {
 		z-index: 2;
 		& h2 {
 			color: #fff;
 			font-size: 4vw;
-			&::after {
-				content: '';
-				width: 70%;
-				height: 3px;
-				display: block;
-				margin-top: 1rem;
-				background: lighten($brand-main, 10%);
-			}
 		}
 	}
 
@@ -32,16 +41,19 @@
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
-		padding: 2rem;
 		background: $brand-main;
-		box-shadow: 0 5px 5px darken($brand-main, 5%);
+		box-shadow: 0 15px 15px darken($brand-main, 10%);
+		height: auto;
+		min-height: 55rem;
+		width: 100%;
+		z-index: 2;
 		& img {
 			position: absolute;
 			top: 0;
 			left: 0;
 			transition: all 1s ease-in-out;
-			width: 100%;
 			height: 100%;
+			width: 100%;
 		}
 		& .hidden {
 			opacity: 0;
@@ -57,7 +69,7 @@
 			align-items: center;
 			width: 100%;
 			height: 3rem;
-			background: lighten(rgba(56, 0, 112, 0.8), 5%);
+			background: lighten(rgba(56, 0, 112, 0), 5%);
 			position: absolute;
 			bottom: 0;
 			left: 0;
@@ -89,6 +101,22 @@
 				color: #fff;
 				font-size: 8vw;
 			}
+		}
+		& .img_container {
+			min-height: 30rem;
+		}
+	}
+}
+@media screen and (max-width: 600px) {
+	.section {
+		& .heading {
+			& h2 {
+				color: #fff;
+				font-size: 6vw;
+			}
+		}
+		& .img_container {
+			min-height: 20rem;
 		}
 	}
 }
