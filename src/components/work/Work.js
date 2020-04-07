@@ -26,7 +26,7 @@ const Work = ({ addRef, setActive }) => {
 	return (
 		<section className={workStyles.section} ref={workRef} id="work">
 			<div className={workStyles.heading}>
-				<h2>Work Examples.</h2>
+				<h2>Web Apps/Sites.</h2>
 			</div>
 			<WorkMap />
 		</section>
@@ -35,7 +35,7 @@ const Work = ({ addRef, setActive }) => {
 
 Work.propTypes = { addRef: PropTypes.func.isRequired };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		refs: state.refs,
 	};

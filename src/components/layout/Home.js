@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from '../header/Header';
 import Services from '../services/Services';
 import Work from '../work/Work';
+import Game from '../game/Game';
 import Contact from '../contact/Contact';
 import Footer from '../footer/Footer';
 import Layout from './Layout';
@@ -21,13 +22,14 @@ const Home = ({ history, getLocation }) => {
 			<Header />
 			<Services />
 			<Work />
+			<Game />
 			<Contact />
 			<Footer />
 		</Layout>
 	);
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		location: state.location,
 	};
