@@ -17,9 +17,9 @@ const Form = () => {
 
 	const { name, email, subject, deadline, message, status, response, loading } = formData;
 
-	const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-	const formSubmit = async e => {
+	const formSubmit = async (e) => {
 		e.preventDefault();
 		setFormData({ ...formData, loading: true });
 		const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
@@ -34,14 +34,14 @@ const Form = () => {
 				},
 			},
 		})
-			.then(res => {
+			.then((res) => {
 				console.log(res);
 				setFormData({ status: 'success', loading: false });
 				setTimeout(() => {
 					setFormData({ name: '', email: '', message: '', subject: '', deadline: '', status: '' });
 				}, 3000);
 			})
-			.catch(err => {
+			.catch((err) => {
 				const errMsg = JSON.stringify(err);
 				console.error(JSON.parse(errMsg).message);
 				setFormData({
@@ -64,29 +64,63 @@ const Form = () => {
 	}, []);
 
 	return (
-		<form className={formStyle.form} onSubmit={e => formSubmit(e)}>
+		<form className={formStyle.form} onSubmit={(e) => formSubmit(e)}>
 			<PopModal status={status} error={response} loading={loading} />
 			<div className={formStyle.row}>
 				<label>Name</label>
-				<input type="text" name="name" value={name} onChange={e => onChange(e)} required />
+				<input
+					type="text"
+					name="name"
+					value={name}
+					placeholder="Enter your name"
+					onChange={(e) => onChange(e)}
+					required
+				/>
 			</div>
 			<div className={formStyle.row}>
 				<label>Email</label>
-				<input type="email" name="email" value={email} onChange={e => onChange(e)} required />
+				<input
+					type="email"
+					name="email"
+					value={email}
+					placeholder="Enter your email"
+					onChange={(e) => onChange(e)}
+					required
+				/>
 			</div>
 			<div className={formStyle.row}>
 				<label>Subject</label>
-				<input type="text" name="subject" value={subject} onChange={e => onChange(e)} required />
+				<input
+					type="text"
+					name="subject"
+					value={subject}
+					placeholder="Enter your project type"
+					onChange={(e) => onChange(e)}
+					required
+				/>
 			</div>
 			<div className={formStyle.row}>
 				<label>Deadline</label>
-				<input type="text" name="deadline" value={deadline} onChange={e => onChange(e)} required />
+				<input
+					type="text"
+					name="deadline"
+					value={deadline}
+					placeholder="Enter your project deadline"
+					onChange={(e) => onChange(e)}
+					required
+				/>
 			</div>
 			<div className={formStyle.row}>
 				<label>Message</label>
-				<textarea name="message" value={message} onChange={e => onChange(e)} required></textarea>
+				<textarea
+					name="message"
+					value={message}
+					placeholder="Enter your message"
+					onChange={(e) => onChange(e)}
+					required
+				></textarea>
 			</div>
-			<button onClick={e => formSubmit(e)}>Send</button>
+			<button onClick={(e) => formSubmit(e)}>Send</button>
 		</form>
 	);
 };

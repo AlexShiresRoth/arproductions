@@ -102,12 +102,12 @@ header {
 			gap: 1rem;
 			& button {
 				color: #fff;
-				font-size: 1.2vw;
+				font-size: 1.5rem;
 				width: 15vw;
 				height: 3.5rem;
 				font-weight: 100;
-				background: $brand-main;
-				box-shadow: 0 2px 2px darken($brand-main, 2%);
+				background: lighten($brand-main, 10%);
+				box-shadow: 0 1px 25px lighten($brand-main, 5%);
 				border: 0px solid $brand-main;
 				transition: all 0.3s ease-in-out;
 				position: relative;
@@ -117,8 +117,9 @@ header {
 				&:hover {
 					cursor: pointer;
 					color: #fff;
-					box-shadow: 0 5px 5px darken($brand-main, 5%);
-					background: darken($brand-main, 5%);
+					box-shadow: 0 4px 25px darken($brand-main, 1%);
+					background: lighten($brand-main, 5%);
+					transform: scale(1.05);
 				}
 				&:hover:after {
 					top: 0;
@@ -142,6 +143,15 @@ header {
 		}
 		& .bg_svg_2 {
 			transform: translate(0%, -25%);
+		}
+	}
+	.header {
+		& .services {
+			& .actions {
+				& button {
+					font-size: 1.3rem;
+				}
+			}
 		}
 	}
 }
@@ -223,7 +233,7 @@ header {
 				justify-items: center;
 				& button {
 					color: #fff;
-					font-size: 3vw;
+					font-size: 1.2rem;
 					width: 35vw;
 					height: 3.5rem;
 					font-weight: 500;

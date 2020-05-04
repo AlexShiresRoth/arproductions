@@ -97,19 +97,19 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 			</li>
 			<li
 				onClick={() =>
-					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
-				}
-				className={active === 'contact' ? navStyles.active : ''}
-			>
-				<a>Contact</a>
-			</li>
-			<li
-				onClick={() =>
 					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'game'))
 				}
 				className={active === 'game' ? navStyles.active : ''}
 			>
 				<a>Game Development</a>
+			</li>
+			<li
+				onClick={() =>
+					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
+				}
+				className={active === 'contact' ? navStyles.active : ''}
+			>
+				<a>Contact</a>
 			</li>
 		</ul>
 	);

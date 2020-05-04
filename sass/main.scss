@@ -20,7 +20,12 @@ main {
 	flex-direction: column;
 	background: #000;
 }
-
+input,
+textarea,
+label,
+p {
+	font-family: 'Fira Sans';
+}
 h1 {
 	font-family: 'Exo 2';
 	font-weight: 700;

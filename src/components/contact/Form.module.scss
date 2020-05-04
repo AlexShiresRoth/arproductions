@@ -3,8 +3,8 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(5, auto);
-	gap: 1rem;
-	width: 80%;
+	gap: 2rem;
+	width: 100%;
 	position: relative;
 	& .row {
 		width: 100%;
@@ -12,12 +12,13 @@
 		flex-direction: column;
 		& label {
 			color: #fff;
+			margin: 0.5rem 0;
 		}
 		& input {
 			background: transparent;
 			color: #fff;
 			border: 0;
-			border-bottom: 2px solid $brand-main;
+			border-bottom: 3px solid $brand-main;
 			padding: 0.5rem 1rem;
 			font-size: 16px;
 			&:focus {
@@ -27,8 +28,8 @@
 		& textarea {
 			background: transparent;
 			color: #fff;
-			border: 2px solid $brand-main;
-			height: 10vh;
+			border: 3px solid $brand-main;
+			height: 10rem;
 			padding: 0.5rem 1rem;
 			font-size: 16px;
 			&:focus {
@@ -37,17 +38,23 @@
 		}
 	}
 	& button {
-		height: 3rem;
-		background: linear-gradient(40deg, $brand-main 33%, darken($brand-main, 2%) 33%, darken($brand-main, 5%) 53%);
+		height: 3.5rem;
+		background: lighten($brand-main, 10%);
 		background-position: 0px 0;
 		color: #fff;
 		font-size: 1vw;
+		width: 15rem;
+		border-radius: 150px;
 		border: 0px solid transparent;
 		transition: all 0.3s ease-in-out;
 		text-transform: uppercase;
-
+		letter-spacing: 2px;
+		justify-self: flex-end;
+		box-shadow: 0 2px 25px lighten($brand-main, 15%);
 		&:hover {
 			cursor: pointer;
+			background: lighten($brand-main, 5%);
+			box-shadow: 0 2px 35px lighten($brand-main, 10%);
 			background-position: -100px 00px;
 			transform: scale(1.01);
 		}
@@ -56,6 +63,7 @@
 
 @media screen and (max-width: 900px) {
 	.form {
+		width: 80%;
 		& button {
 			font-size: 3.2vw;
 		}

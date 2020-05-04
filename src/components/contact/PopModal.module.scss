@@ -10,15 +10,12 @@
 	width: 100%;
 	color: #fff;
 	border-radius: 5px;
-	top: -20%;
+	top: -10%;
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
 	animation: fadein 0.5s linear forwards;
 	transform: scale(1);
-	& p {
-		font-family: 'Fira Sans';
-	}
 }
 .success {
 	background: rgba(99, 216, 99, 0.535);

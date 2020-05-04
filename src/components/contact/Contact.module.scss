@@ -1,9 +1,21 @@
 .section {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	justify-items: center;
-	align-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding: 4rem 0;
+	& .heading {
+		margin: 2rem 0;
+		& h2 {
+			font-size: 4vw;
+		}
+	}
+	& .grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		align-content: center;
+		gap: 4rem;
+	}
 }
 
 @media screen and (max-width: 900px) {
@@ -13,5 +25,17 @@
 		grid-template-rows: auto;
 		min-height: 100vh;
 		margin: 2vh 0;
+		& .heading {
+			margin: 1rem 0;
+			& h2 {
+				font-size: 8vw;
+				text-align: center;
+			}
+		}
+		& .grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+		}
 	}
 }
