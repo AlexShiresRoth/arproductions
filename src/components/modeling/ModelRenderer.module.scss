@@ -1,0 +1,78 @@
+@import '../../../sass/variables';
+
+.canvas {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem 0;
+	& .heading {
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		& h2 {
+			color: #fff;
+			font-size: 4vw;
+		}
+		& p {
+			color: lighten($brand-main, 15%);
+			font-size: 2rem;
+		}
+	}
+	& .model_container {
+		height: 70%;
+		width: 70%;
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 5px solid lighten($brand-bg, 5%);
+		box-shadow: 0 1px 20px lighten($brand-bg, 5%);
+		border-radius: 10px;
+		& canvas {
+			max-width: 100%;
+		}
+	}
+}
+@media screen and (max-width: 900px) {
+	.canvas {
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem 0;
+		& .heading {
+			z-index: 2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+			& h2 {
+				color: #fff;
+				font-size: 8vw;
+			}
+			& p {
+				color: lighten($brand-main, 15%);
+				font-size: 1.5rem;
+				text-align: center;
+			}
+		}
+		& .model_container {
+			height: 60%;
+			width: 80%;
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 5px solid lighten($brand-bg, 5%);
+			box-shadow: 0 1px 20px lighten($brand-bg, 5%);
+			border-radius: 10px;
+			& canvas {
+				max-width: 100%;
+			}
+		}
+	}
+}

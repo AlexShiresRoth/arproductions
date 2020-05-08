@@ -15,7 +15,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background: #000; }
+  background: #112; }
 
 input,
 textarea,

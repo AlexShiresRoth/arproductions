@@ -27,6 +27,17 @@ export const workArray = [
 		url: 'https://www.progressjournalsapp.com/',
 	},
 	{
+		title: 'SATACTSENSE',
+		src:
+			'https://res.cloudinary.com/snackmanproductions/image/upload/q_79/v1588867398/business%20site/2020-05-07_ueslzo.png',
+		url: 'https://www.satactsense.com/',
+	},
+	{
+		title: 'Rothenberg Law Offices',
+		src: `https://res-console.cloudinary.com/snackmanproductions/thumbnails/transform/v1/image/upload//v1588867517/YnVzaW5lc3Mgc2l0ZS8yMDIwLTA1LTA3XzFfemY5NXlt/drilldown`,
+		url: 'https://www.urmyattorney.com/',
+	},
+	{
 		title: 'Send Noods App',
 		src:
 			'https://res.cloudinary.com/snackmanproductions/image/upload/v1575660519/portfolio/2019-12-06_1_awxsjf.png',
