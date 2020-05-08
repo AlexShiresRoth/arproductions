@@ -42,10 +42,8 @@ const WorkMap = (_) => {
 
 	const works = shuffledArr.slice(0, end).map((item, i) => {
 		return (
-			<a href={item.url} target="_blank" rel="noopener noreferrer">
-				<div className={workStyle.item} key={i}>
-					<img src={item.src} alt={item.title}></img>
-				</div>
+			<a href={item.url} target="_blank" rel="noopener noreferrer" className={workStyle.item} key={i}>
+				<img src={item.src} alt={item.title}></img>
 			</a>
 		);
 	});
