@@ -26,15 +26,15 @@ const ModelRender = (props) => {
 			let newScene = new THREE.Scene();
 
 			let newCamera = new THREE.PerspectiveCamera(
-				105, //Field of view
+				75, //Field of view
 				width / height,
-				0.1,
-				2000
+				0.01,
+				1000
 			);
 
 			let newControls = new OrbitControls(newCamera, modelerRef);
-			newCamera.position.z = 300;
-			newCamera.position.y = 100;
+			newCamera.position.z = 1;
+			newCamera.position.y = 0;
 			newCamera.position.x = 0;
 
 			let newRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -61,7 +61,7 @@ const ModelRender = (props) => {
 		});
 		const loader = new GLTFLoader();
 		loader.load(
-			'models/PYRAMID.glb',
+			'models/gun-prototype.glb',
 			function (gltf) {
 				addToScene((prev) => ({ ...prev, model: gltf.scene, scene: prev.scene.add(gltf.scene) }));
 			},
@@ -74,13 +74,13 @@ const ModelRender = (props) => {
 		let newCube = new THREE.Mesh(geometry, material);
 
 		const lights = [];
-		lights[0] = new THREE.PointLight(0xffffff, 4);
-		lights[1] = new THREE.PointLight(0xffffff, 4);
-		lights[2] = new THREE.PointLight(0xffffff, 4);
+		lights[0] = new THREE.PointLight(0x41057e, 5);
+		lights[1] = new THREE.PointLight(0x4169e1, 10);
+		lights[2] = new THREE.PointLight(0x4169e1, 10);
 
-		lights[0].position.set(0, 300, 0);
-		lights[1].position.set(100, 300, 100);
-		lights[2].position.set(-100, -300, -100);
+		lights[0].position.set(0, 10, 0);
+		lights[1].position.set(10, 10, 10);
+		lights[2].position.set(-10, -10, -10);
 
 		addToScene((prev) => ({ ...prev, model: newCube, scene: prev.scene.add(...lights) }));
 	};
@@ -88,8 +88,8 @@ const ModelRender = (props) => {
 	useEffect(() => {
 		const startAnimationLoop = () => {
 			if (renderer.render) {
-				model.rotation.x += 0.01;
-				model.rotation.y += 0.01;
+				model.rotation.x -= 0.001;
+				model.rotation.y += 0.001;
 				renderer.render(scene, camera);
 			}
 			window.requestAnimationFrame(startAnimationLoop);
@@ -123,6 +123,7 @@ const ModelRender = (props) => {
 		<section className={modelStyle.canvas}>
 			<div className={modelStyle.heading}>
 				<h2>3D Modeling</h2>
+				<p>Scifi gun game asset prototype.</p>
 				<p>Use your cursor or fingers to move the scene around!</p>
 			</div>
 			<div className={modelStyle.model_container} ref={(ref) => (modelerRef = ref)}></div>
