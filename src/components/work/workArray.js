@@ -31,8 +31,7 @@ export const workArray = [
 	},
 	{
 		title: 'SATACTSENSE',
-		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,h_1080,w_1755/v1588867398/business%20site/2020-05-07_ueslzo.png',
+		src: `https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,h_1080,w_1755/v1589306417/business%20site/2020-05-12_1_rd0z2l.png`,
 		url: 'https://www.satactsense.com/',
 	},
 	{

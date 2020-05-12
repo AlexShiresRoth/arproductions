@@ -144,7 +144,11 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 					FillTheVoid.io
 				</a>
 				<div className={navStyles.col}>
-					<a href="https://www.instagram.com/alexroth_productions/" target="_blank" rel="noopener noreferrer">
+					<a
+						href="https://www.instagram.com/fillthevoid_productions/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<TiSocialInstagram />
 					</a>
 					<a

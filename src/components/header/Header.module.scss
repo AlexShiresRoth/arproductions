@@ -24,7 +24,7 @@ header {
 		overflow: hidden;
 		transform: translate(0%, -45%);
 		opacity: 0;
-		animation: fadein 2.2s linear forwards;
+		animation: fadein 2.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 		animation-delay: 2.5s;
 	}
 	& .bg_svg_2 {
@@ -37,7 +37,7 @@ header {
 		overflow: hidden;
 		transform: translate(0%, -39%);
 		opacity: 0;
-		animation: fadein 2s linear forwards;
+		animation: fadein 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
 		animation-delay: 2.5s;
 	}
 }
@@ -62,7 +62,8 @@ header {
 		padding-left: 2rem;
 		position: relative;
 		opacity: 0;
-		animation: fadeintextbox 1.5s linear forwards;
+		perspective: 3000px;
+		animation: fadeandrotate 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
 		animation-delay: 1s;
 		z-index: 1;
 
@@ -71,6 +72,7 @@ header {
 				color: #fff;
 				font-size: 5vw;
 				font-family: 'Space';
+
 				&::after {
 					content: '';
 					width: 30vw;
@@ -86,7 +88,7 @@ header {
 		display: flex;
 		flex-direction: column;
 		opacity: 0;
-		animation: fadein 1.5s linear forwards;
+		animation: fadein 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
 		animation-delay: 2s;
 		& .text {
 			& p {
@@ -347,5 +349,15 @@ header {
 	}
 	100% {
 		opacity: 1;
+	}
+}
+@keyframes fadeandrotate {
+	0% {
+		opacity: 0;
+		transform: rotateX(75deg) rotateZ(55deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotateX(0deg) rotateZ(0deg);
 	}
 }
