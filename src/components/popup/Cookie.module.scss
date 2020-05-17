@@ -1,0 +1,59 @@
+@import '../../../sass/variables';
+
+.popup {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	min-height: 5rem;
+	background: lighten($brand-bg, 2%);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	animation: fadein 2s cubic-bezier(1, 0, 0, 1) forwards;
+	animation-delay: 3s;
+	z-index: 99999999;
+	& p {
+		max-width: 60%;
+		color: #fff;
+	}
+	& button:nth-of-type(1) {
+		height: 3rem;
+		width: 7rem;
+		border-radius: 5px;
+		background: lighten($brand-bg, 15%);
+		color: #fff;
+		border: 2px solid lighten($brand-bg, 15%);
+		box-shadow: 0 1px 5px lighten($brand-bg, 15%);
+		margin-right: 0.5rem;
+		text-transform: uppercase;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	& button:nth-of-type(2) {
+		height: 3rem;
+		width: 7rem;
+		border-radius: 5px;
+		background: #eb3333a2;
+		color: #fff;
+		border: 2px solid #eb3333a2;
+		box-shadow: 0 1px 5px #eb3333a2;
+		text-transform: uppercase;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
