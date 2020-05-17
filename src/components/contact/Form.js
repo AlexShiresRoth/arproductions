@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PopModal from './PopModal';
 import formStyle from './Form.module.scss';
-
-const Form = () => {
+import { sendConfirmation } from '../../actions/email';
+import { connect } from 'react-redux';
+const Form = ({ sendConfirmation }) => {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -22,21 +23,22 @@ const Form = () => {
 	const formSubmit = async (e) => {
 		e.preventDefault();
 		setFormData({ ...formData, loading: true });
-		const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
 
 		await axios({
 			method: 'POST',
-			url: `${corsAnywhere}https://asrserver.herokuapp.com/api/arproductions/send-email?&name=${name}&email=${email}&subject=${subject}&deadline=${deadline}&message=${message}`,
+			url: `https://asrserver.herokuapp.com/api/arproductions/send-email`,
 			data: {
 				headers: {
 					'Access-Control-Allow-Origin': 'http://localhost:3000/',
 					'Content-Type': 'application/x-www-form-urlencoded',
 				},
+				...formData,
 			},
 		})
 			.then((res) => {
 				console.log(res);
 				setFormData({ status: 'success', loading: false });
+				sendConfirmation(formData);
 				setTimeout(() => {
 					setFormData({ name: '', email: '', message: '', subject: '', deadline: '', status: '' });
 				}, 3000);
@@ -125,4 +127,4 @@ const Form = () => {
 	);
 };
 
-export default Form;
+export default connect(null, { sendConfirmation })(Form);

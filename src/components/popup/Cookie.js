@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cookieStyle from './Cookie.module.scss';
 import { giveOrDenyConsent } from '../../actions/cookies';
 import { connect } from 'react-redux';
+
 const Cookie = ({ giveOrDenyConsent }) => {
 	const [consent, setConsentState] = useState(localStorage.getItem('consent') === 'true');
 	const [declined, setDecline] = useState(false);
