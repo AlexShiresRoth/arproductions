@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import headerStyle from './Header.module.scss';
-import { logoSvg, bgWave } from './headerSvg';
 import { setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
 const Header = ({ refs: { refs }, setActive }) => {
@@ -30,11 +29,13 @@ const Header = ({ refs: { refs }, setActive }) => {
 
 	return (
 		<header ref={headerRef}>
-			<div className={headerStyle.bg_svg}>{bgWave}</div>
-			<div className={headerStyle.bg_svg_2}>{bgWave}</div>
 			<div className={headerStyle.header}>
 				<div className={headerStyle.text__box}>
 					<div className={headerStyle.inner}>
+						<img
+							src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1589830770/business%20site/fillthevoid_me61wt.png`}
+							alt="logo"
+						/>
 						<h1>
 							Fill The Void <br /> productions.
 						</h1>
@@ -42,9 +43,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 				</div>
 				<div className={headerStyle.services}>
 					<div className={headerStyle.text}>
-						<p>Web App Development.</p>
-						<p>Mobile App Development.</p>
-						<p>Unreal Engine Game Development.</p>
+						<p>Web App Development. Mobile App Development. Unreal Engine Game Development.</p>
 					</div>
 					<div className={headerStyle.actions}>
 						<button
@@ -54,7 +53,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 								)
 							}
 						>
-							Contact
+							Contact Us
 						</button>
 						<button
 							onClick={() =>
@@ -63,7 +62,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 								)
 							}
 						>
-							Work
+							Portfolio
 						</button>
 					</div>
 				</div>

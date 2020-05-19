@@ -3,7 +3,8 @@ import navStyles from './Nav.module.scss';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
-import { navSvg } from '../header/headerSvg';
+import { logo } from '../logo/logoSvg';
+
 const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	const [isMobile, setMobile] = useState(false);
 	const [navState, toggleNav] = useState(false);
@@ -140,7 +141,12 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
 				<a onClick={(e) => scrollToTop()}>
-					<div className={navStyles.logo}>{navSvg}</div>
+					<div className={navStyles.logo}>
+						<img
+							src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1589830770/business%20site/fillthevoid_me61wt.png`}
+							alt="logo"
+						/>
+					</div>
 					FillTheVoid.io
 				</a>
 				<div className={navStyles.col}>

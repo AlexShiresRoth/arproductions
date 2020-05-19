@@ -9,22 +9,9 @@
 	justify-items: center;
 	align-content: center;
 	margin: 5rem 0;
-	background: darken($brand-main, 5%);
+	background: linear-gradient(65deg, lighten($brand-main, 5%), $brand-main, $brand-secondary);
 	padding: 4rem 0;
-	& svg:nth-child(1) {
-		position: absolute;
-		z-index: 0;
-		top: 0;
-		right: 0;
-		width: 100%;
-	}
-	& svg:nth-of-type(2) {
-		position: absolute;
-		z-index: 0;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-	}
+
 	& .heading {
 		z-index: 2;
 		& h2 {

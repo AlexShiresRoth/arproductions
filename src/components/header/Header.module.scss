@@ -14,37 +14,11 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	min-height: 100vh;
-	& .bg_svg {
-		z-index: 1;
-		fill: $brand-main;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		overflow: hidden;
-		transform: translate(0%, -45%);
-		opacity: 0;
-		animation: fadein 2.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-		animation-delay: 2.5s;
-	}
-	& .bg_svg_2 {
-		z-index: 0;
-		fill: $brand-accent;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		overflow: hidden;
-		transform: translate(0%, -39%);
-		opacity: 0;
-		animation: fadein 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
-		animation-delay: 2.5s;
-	}
 }
 .header {
 	display: grid;
-	grid-template-columns: repeat(2, auto);
-	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
 	justify-items: center;
 	align-items: center;
 	position: relative;
@@ -52,14 +26,13 @@ header {
 	z-index: 99;
 	padding: 0;
 	z-index: 20;
-	margin-top: 8rem;
+	margin-top: 0rem;
 	& .text__box {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding-left: 2rem;
 		position: relative;
 		opacity: 0;
 		perspective: 3000px;
@@ -68,59 +41,68 @@ header {
 		z-index: 1;
 
 		& .inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+			& img {
+				max-width: 12rem;
+			}
+
 			& h1 {
 				color: #fff;
 				font-size: 5vw;
 				font-family: 'Space';
-
-				&::after {
-					content: '';
-					width: 30vw;
-					height: 3px;
-					display: block;
-					margin-top: 1rem;
-					border-bottom: 5px solid lighten($brand-main, 23%);
-				}
+				text-align: center;
+				margin: 0.5rem;
 			}
 		}
 	}
 	& .services {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		opacity: 0;
 		animation: fadein 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
 		animation-delay: 2s;
 		& .text {
+			margin-bottom: 1rem;
+			display: flex;
+			justify-content: center;
 			& p {
 				color: #eee;
 				font-size: 2vw;
-				margin: 1rem 0rem;
+				margin: 0.2rem 0rem;
+				text-align: center;
+				max-width: 40%;
+				font-weight: 100;
 			}
 		}
 		& .actions {
-			width: 100%;
+			margin-top: 2rem;
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, auto);
 			gap: 1rem;
+			justify-items: center;
+			align-items: center;
 			& button {
 				color: #fff;
-				font-size: 1.5rem;
-				width: 15vw;
+				font-size: 2.5rem;
 				height: 3.5rem;
-				font-weight: 100;
-				background: lighten($brand-main, 10%);
-				box-shadow: 0 1px 25px lighten($brand-main, 5%);
-				border: 0px solid $brand-main;
+				font-weight: 700;
+				background: linear-gradient(45deg, $brand-accent, $brand-main);
+				box-shadow: 0 1px 5px darken($brand-main, 15%);
+				border: 0;
 				transition: all 0.3s ease-in-out;
 				position: relative;
 				text-transform: uppercase;
 				font-family: 'Space';
 				z-index: 1;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
 				&:hover {
 					cursor: pointer;
 					color: #fff;
-					box-shadow: 0 4px 25px darken($brand-main, 1%);
-					background: lighten($brand-main, 5%);
 					transform: scale(1.05);
 				}
 				&:hover:after {
@@ -135,20 +117,29 @@ header {
 					animation: pop-btn 0.2s linear forwards;
 				}
 			}
+			& button:nth-child(2) {
+				background: linear-gradient(45deg, $brand-main, $brand-secondary);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
 		}
 	}
 }
 @media screen and (max-width: 1350px) {
-	header {
-		& .bg_svg {
-			transform: translate(0%, -30%);
-		}
-		& .bg_svg_2 {
-			transform: translate(0%, -25%);
-		}
-	}
 	.header {
+		& .text__box {
+			& .inner {
+				& h1 {
+					font-size: 6vw;
+				}
+			}
+		}
 		& .services {
+			& .text {
+				& p {
+					font-size: 2vw;
+				}
+			}
 			& .actions {
 				& button {
 					font-size: 1.3rem;
@@ -159,20 +150,22 @@ header {
 }
 
 @media screen and (max-width: 1151px) {
-	header {
-		min-height: 60vh;
-	}
 	.header {
 		& .text__box {
 			& .inner {
-				& .services {
-					& button {
-						color: #fff;
-						font-size: 2vw;
-						width: 20vw;
-						font-weight: 500;
-						text-transform: uppercase;
-					}
+				& button {
+					color: #fff;
+					font-size: 2vw;
+					width: 20vw;
+					font-weight: 500;
+					text-transform: uppercase;
+				}
+			}
+		}
+		& .services {
+			& .text {
+				& p {
+					font-size: 2.5vw;
 				}
 			}
 		}
@@ -180,17 +173,6 @@ header {
 }
 
 @media screen and (max-width: 900px) {
-	header {
-		overflow: hidden;
-		background: #000;
-		min-height: 100vh;
-		& .bg_svg {
-			transform: translate(0%, -15%);
-		}
-		& .bg_svg_2 {
-			transform: translate(0%, -9%);
-		}
-	}
 	.header {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, auto);
@@ -206,10 +188,13 @@ header {
 			padding: 1rem 0;
 			& .inner {
 				& h1 {
-					font-size: 10vw;
+					font-size: 8vw;
 					&::after {
 						width: 90%;
 					}
+				}
+				& img {
+					max-width: 9rem;
 				}
 			}
 		}
@@ -223,22 +208,21 @@ header {
 			& .text {
 				& p {
 					color: #eee;
-					font-size: 5vw;
+					font-size: 4vw;
 					margin: 1rem 0rem;
+					max-width: 50%;
 				}
 			}
 			& .actions {
-				width: 100%;
-				display: grid;
-				grid-template-columns: repeat(2, auto);
 				gap: 0.5rem;
 				justify-items: center;
+				grid-template-columns: 1fr;
 				& button {
 					color: #fff;
-					font-size: 1.2rem;
-					width: 35vw;
+					font-size: 2rem;
+					width: 100%;
 					height: 3.5rem;
-					font-weight: 500;
+					font-weight: 900;
 					min-height: 0;
 					&:after {
 						top: 0.4rem;
@@ -254,16 +238,9 @@ header {
 @media screen and (max-width: 600px) {
 	header {
 		overflow: hidden;
-		background: $brand-bg;
-		min-height: 100vh;
+
 		& .bg_svg {
-			& svg {
-				height: 100%;
-				fill: $brand-main;
-			}
-		}
-		& .bg_svg_2 {
-			transform: translate(0%, 0%);
+			transform: translate(0%, -5%);
 		}
 	}
 	.header {
@@ -276,41 +253,47 @@ header {
 						width: 100%;
 					}
 				}
+			}
+		}
+		& .services {
+			& .text {
 				& p {
 					color: #eee;
-					font-size: 6vw;
+					font-size: 7vw;
+					max-width: 90%;
 				}
-				& .services {
-					& button {
-						color: #fff;
-						font-size: 3vw;
-						width: 35vw;
-						height: 3.2rem;
-						font-weight: 500;
-						min-height: 0;
-						&:after {
-							top: 0.4rem;
-							left: 0.4rem;
-							transition: all 0.2s ease-in-out;
-						}
+			}
+			& .actions {
+				grid-template-columns: 1fr;
+				width: 100%;
+				& button {
+					color: #fff;
+					font-size: 2rem;
+					padding: 0;
+					height: 3.2rem;
+					font-weight: 900;
+					min-height: 0;
+					width: 100%;
+					&:after {
+						top: 0.4rem;
+						left: 0.4rem;
+						transition: all 0.2s ease-in-out;
 					}
 				}
 			}
 		}
-		& .bg_svg {
-			visibility: hidden;
-		}
-		& .svg__container {
-			width: 0;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			position: relative;
-			visibility: hidden;
-			& svg:nth-child(1) {
-				width: 40%;
-				height: 100%;
-			}
+	}
+
+	& .svg__container {
+		width: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		position: relative;
+		visibility: hidden;
+		& svg:nth-child(1) {
+			width: 40%;
+			height: 100%;
 		}
 	}
 }

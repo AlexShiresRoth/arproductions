@@ -24,9 +24,9 @@
 		& button {
 			min-height: 3rem;
 			min-width: 12rem;
-			border: 1px solid lighten($brand-main, 20%);
-			background: lighten($brand-main, 20%);
-			box-shadow: 0 1px 10px lighten($brand-main, 20%);
+			border: 0;
+			background: linear-gradient(65deg, $brand-main, $brand-secondary);
+
 			color: #fff;
 			text-transform: uppercase;
 			border-radius: 100px;
@@ -36,9 +36,7 @@
 			}
 			&:hover {
 				cursor: pointer;
-				background: lighten($brand-main, 15%);
-				border: 1px solid lighten($brand-main, 15%);
-				box-shadow: 0 1px 25px lighten($brand-main, 15%);
+				box-shadow: 0 1px 15px darken($brand-main, 5%);
 			}
 			&:focus {
 				outline: 1px solid transparent;

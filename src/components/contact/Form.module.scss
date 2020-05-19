@@ -39,7 +39,7 @@
 	}
 	& button {
 		height: 3.5rem;
-		background: lighten($brand-main, 10%);
+		background: linear-gradient(65deg, $brand-main, $brand-secondary);
 		background-position: 0px 0;
 		color: #fff;
 		font-size: 1vw;
@@ -50,12 +50,10 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		justify-self: flex-end;
-		box-shadow: 0 2px 25px lighten($brand-main, 15%);
+		box-shadow: 0 1px 5px darken($brand-main, 15%);
 		&:hover {
 			cursor: pointer;
-			background: lighten($brand-main, 5%);
-			box-shadow: 0 2px 35px lighten($brand-main, 10%);
-			background-position: -100px 00px;
+			box-shadow: 0 2px 35px darken($brand-main, 10%);
 			transform: scale(1.01);
 		}
 	}
