@@ -238,7 +238,7 @@ header {
 @media screen and (max-width: 600px) {
 	header {
 		overflow: hidden;
-
+		background: $brand-bg;
 		& .bg_svg {
 			transform: translate(0%, -5%);
 		}
