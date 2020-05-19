@@ -98,6 +98,7 @@ header {
 				text-transform: uppercase;
 				font-family: 'Space';
 				z-index: 1;
+				background-clip: text;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				&:hover {

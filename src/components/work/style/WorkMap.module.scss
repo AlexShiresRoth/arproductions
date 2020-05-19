@@ -124,6 +124,8 @@
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;
+			justify-items: center;
+			align-items: flex-start;
 			gap: 2rem;
 			& .item {
 				max-width: 80vw;
