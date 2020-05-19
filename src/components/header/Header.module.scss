@@ -46,15 +46,15 @@ header {
 			align-items: center;
 			position: relative;
 			& img {
-				max-width: 12rem;
+				max-width: 10rem;
 			}
 
 			& h1 {
 				color: #fff;
-				font-size: 5vw;
+				font-size: 5rem;
 				font-family: 'Space';
 				text-align: center;
-				margin: 0.5rem;
+				margin: 2rem 0;
 			}
 		}
 	}
@@ -71,7 +71,7 @@ header {
 			justify-content: center;
 			& p {
 				color: #eee;
-				font-size: 2vw;
+				font-size: 2rem;
 				margin: 0.2rem 0rem;
 				text-align: center;
 				max-width: 40%;
@@ -89,7 +89,7 @@ header {
 				color: #fff;
 				font-size: 2.5rem;
 				height: 3.5rem;
-				font-weight: 700;
+				font-weight: 900;
 				background: linear-gradient(45deg, $brand-accent, $brand-main);
 				box-shadow: 0 1px 5px darken($brand-main, 15%);
 				border: 0;
@@ -130,19 +130,19 @@ header {
 		& .text__box {
 			& .inner {
 				& h1 {
-					font-size: 6vw;
+					font-size: 5rem;
 				}
 			}
 		}
 		& .services {
 			& .text {
 				& p {
-					font-size: 2vw;
+					font-size: 2rem;
 				}
 			}
 			& .actions {
 				& button {
-					font-size: 1.3rem;
+					font-size: 2rem;
 				}
 			}
 		}
@@ -160,12 +160,19 @@ header {
 					font-weight: 500;
 					text-transform: uppercase;
 				}
+				& img {
+					max-width: 9rem;
+				}
+				& h1 {
+					font-size: 4rem;
+					margin: 2rem 0;
+				}
 			}
 		}
 		& .services {
 			& .text {
 				& p {
-					font-size: 2.5vw;
+					font-size: 1.8rem;
 				}
 			}
 		}
@@ -188,13 +195,14 @@ header {
 			padding: 1rem 0;
 			& .inner {
 				& h1 {
-					font-size: 8vw;
+					font-size: 3rem;
+					margin: 1rem 0;
 					&::after {
 						width: 90%;
 					}
 				}
 				& img {
-					max-width: 9rem;
+					max-width: 8rem;
 				}
 			}
 		}
@@ -208,7 +216,7 @@ header {
 			& .text {
 				& p {
 					color: #eee;
-					font-size: 4vw;
+					font-size: 1.5rem;
 					margin: 1rem 0rem;
 					max-width: 50%;
 				}
@@ -248,7 +256,7 @@ header {
 		& .text__box {
 			& .inner {
 				& h1 {
-					font-size: 12vw;
+					font-size: 3rem;
 					&::after {
 						width: 100%;
 					}
@@ -259,7 +267,7 @@ header {
 			& .text {
 				& p {
 					color: #eee;
-					font-size: 7vw;
+					font-size: 1.5rem;
 					max-width: 90%;
 				}
 			}
