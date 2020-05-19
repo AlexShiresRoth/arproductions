@@ -20,6 +20,7 @@
 				text-transform: uppercase;
 				font-weight: 700;
 				font-size: 2rem;
+				text-align: center;
 			}
 			& svg {
 				color: $brand-main;
@@ -35,7 +36,12 @@
 		& .grid {
 			& .col {
 				& svg {
+					width: 3rem;
 					font-size: 2rem;
+				}
+				& p {
+					font-size: 1.5rem;
+					text-align: center;
 				}
 			}
 		}
