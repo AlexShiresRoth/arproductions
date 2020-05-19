@@ -1,13 +1,14 @@
 @import '../../../sass/variables';
 .footer {
-	background: lighten(#000, 5%);
+	background: lighten($brand-bg, 5%);
 	& .grid {
 		display: grid;
-		grid-template-columns: repeat(2, auto);
-		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
 		justify-items: center;
 		align-content: center;
 		min-height: 5rem;
+		padding: 1rem;
 		& .col {
 			height: 100%;
 			display: flex;
@@ -17,11 +18,13 @@
 			& p {
 				color: $brand-main;
 				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 2rem;
 			}
 			& svg {
 				color: $brand-main;
-				width: 10vw;
-				font-size: 2vw;
+				width: 10rem;
+				font-size: 3rem;
 			}
 		}
 	}
@@ -32,7 +35,7 @@
 		& .grid {
 			& .col {
 				& svg {
-					font-size: 4vw;
+					font-size: 2rem;
 				}
 			}
 		}
