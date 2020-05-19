@@ -26,7 +26,7 @@ header {
 	z-index: 99;
 	padding: 0;
 	z-index: 20;
-	margin-top: 0rem;
+	margin-top: 6rem;
 	& .text__box {
 		width: 100%;
 		display: flex;
@@ -87,9 +87,10 @@ header {
 			align-items: center;
 			& button {
 				color: #fff;
-				font-size: 2.5rem;
-				height: 3.5rem;
-				font-weight: 900;
+				font-size: 2rem;
+				height: 3.8rem;
+				width: 17rem;
+				font-weight: 300;
 				background: linear-gradient(45deg, $brand-accent, $brand-main);
 				box-shadow: 0 1px 5px darken($brand-main, 15%);
 				border: 0;
@@ -98,9 +99,10 @@ header {
 				text-transform: uppercase;
 				font-family: 'Space';
 				z-index: 1;
-				background-clip: text;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
+				//doesnt work in safari yet
+				// background-clip: text;
+				// -webkit-background-clip: text;
+				// -webkit-text-fill-color: transparent;
 				&:hover {
 					cursor: pointer;
 					color: #fff;
@@ -120,8 +122,9 @@ header {
 			}
 			& button:nth-child(2) {
 				background: linear-gradient(45deg, $brand-main, $brand-secondary);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
+				//doesnt work in safari :(
+				// -webkit-background-clip: text;
+				// -webkit-text-fill-color: transparent;
 			}
 		}
 	}
@@ -143,7 +146,8 @@ header {
 			}
 			& .actions {
 				& button {
-					font-size: 2rem;
+					font-size: 1.8rem;
+					width: 15rem;
 				}
 			}
 		}
@@ -154,13 +158,6 @@ header {
 	.header {
 		& .text__box {
 			& .inner {
-				& button {
-					color: #fff;
-					font-size: 2vw;
-					width: 20vw;
-					font-weight: 500;
-					text-transform: uppercase;
-				}
 				& img {
 					max-width: 9rem;
 				}
@@ -173,7 +170,15 @@ header {
 		& .services {
 			& .text {
 				& p {
-					font-size: 1.8rem;
+					font-size: 1.7rem;
+					max-width: 50%;
+					line-height: 2;
+				}
+			}
+			& .actions {
+				& button {
+					width: 13rem;
+					font-size: 1.4rem;
 				}
 			}
 		}
@@ -228,8 +233,8 @@ header {
 				grid-template-columns: 1fr;
 				& button {
 					color: #fff;
-					font-size: 2rem;
-					width: 100%;
+					font-size: 1.4rem;
+					width: 15rem;
 					height: 3.5rem;
 					font-weight: 900;
 					min-height: 0;
@@ -257,7 +262,7 @@ header {
 		& .text__box {
 			& .inner {
 				& h1 {
-					font-size: 3rem;
+					font-size: 2.8rem;
 					&::after {
 						width: 100%;
 					}
@@ -268,7 +273,7 @@ header {
 			& .text {
 				& p {
 					color: #eee;
-					font-size: 1.5rem;
+					font-size: 1.4rem;
 					max-width: 90%;
 				}
 			}
@@ -277,7 +282,7 @@ header {
 				width: 100%;
 				& button {
 					color: #fff;
-					font-size: 2rem;
+					font-size: 1.4rem;
 					padding: 0;
 					height: 3.2rem;
 					font-weight: 900;

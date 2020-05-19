@@ -122,12 +122,13 @@
 		& .work__grid {
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: auto;
+			grid-template-rows: repeat(8, 1fr);
 			justify-items: center;
 			align-items: flex-start;
 			gap: 2rem;
 			& .item {
 				max-width: 80vw;
+				height: 100%;
 			}
 		}
 	}
@@ -138,14 +139,14 @@
 		& .work__grid {
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: auto;
+			grid-template-rows: repeat(8, 1fr);
 			justify-items: center;
 			align-items: flex-start;
 			gap: 2rem;
 			& .item {
 				max-width: 80vw;
+				height: 100%;
 				& img {
-					max-height: 17rem;
 				}
 			}
 		}
