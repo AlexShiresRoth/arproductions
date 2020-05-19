@@ -4,6 +4,7 @@ import gameStyle from './Game.module.scss';
 import Carousel from './Carousel';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
+import IntersectionObserver from 'intersection-observer-polyfill';
 
 const Game = ({ addRef, setActive }) => {
 	const gameRef = useRef();

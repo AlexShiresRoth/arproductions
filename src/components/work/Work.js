@@ -4,6 +4,7 @@ import WorkMap from './WorkMap';
 import workStyles from './style/Work.module.scss';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
+import IntersectionObserver from 'intersection-observer-polyfill';
 
 const Work = ({ addRef, setActive }) => {
 	const workRef = useRef();

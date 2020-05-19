@@ -5,6 +5,7 @@ import Form from './Form';
 import About from './About';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
+import IntersectionObserver from 'intersection-observer-polyfill';
 
 const Contact = ({ addRef, setActive }) => {
 	const contactRef = useRef();

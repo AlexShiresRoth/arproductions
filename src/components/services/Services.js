@@ -4,6 +4,7 @@ import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
 import { servicesArray } from './servicesArray';
 import ServiceImgsSlide from './ServiceImgsSlide';
+import IntersectionObserver from 'intersection-observer-polyfill';
 
 const Services = ({ addRef, setActive }) => {
 	const [currentIndex, setIndex] = useState(0);

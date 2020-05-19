@@ -11,6 +11,7 @@
 		"axios": "^0.19.2",
 		"core-js": "^3.6.5",
 		"express": "^4.17.1",
+		"intersection-observer-polyfill": "^0.1.0",
 		"mongoose": "^5.9.5",
 		"proxy": "^1.0.1",
 		"react": "^16.12.0",

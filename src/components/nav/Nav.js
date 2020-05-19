@@ -3,7 +3,6 @@ import navStyles from './Nav.module.scss';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
-import { logo } from '../logo/logoSvg';
 
 const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	const [isMobile, setMobile] = useState(false);

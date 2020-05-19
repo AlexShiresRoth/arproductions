@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import headerStyle from './Header.module.scss';
 import { setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
+import IntersectionObserver from 'intersection-observer-polyfill';
+
 const Header = ({ refs: { refs }, setActive }) => {
 	const scrollToSections = (refs) => {
 		const ref = refs[0];
