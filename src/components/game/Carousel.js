@@ -25,7 +25,14 @@ const Carousel = ({ imgs }) => {
 	}, [animRef, setAnimate]);
 
 	return (
-		<div className={imgStyle.img_container}>
+		<div
+			className={
+				animate
+					? `${imgStyle.img_container} ${imgStyle.in_view}`
+					: `${imgStyle.img_container} ${imgStyle.out_of_view}`
+			}
+			ref={animRef}
+		>
 			{imgs.map((img, i) => {
 				return (
 					<img

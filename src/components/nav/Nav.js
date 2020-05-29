@@ -15,7 +15,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		setResize();
 		window.scrollTo({ top: 0 });
 	}, []);
-	console.log(isMobile);
+
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 	const scrollToSections = (refs) => {

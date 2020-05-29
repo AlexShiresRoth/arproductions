@@ -91,3 +91,13 @@
 		}
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.canvas {
+		& .model_container {
+			height: 250px;
+			width: 80%;
+			max-width: 80%;
+		}
+	}
+}

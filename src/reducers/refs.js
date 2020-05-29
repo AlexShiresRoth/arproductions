@@ -17,7 +17,9 @@ export default (state = initialState, action) => {
 		case ADD_ACTIVE:
 			return {
 				...state,
-				active: payload,
+				//need to fix, only sort of works
+				// active: payload,
+				active: '',
 			};
 		default:
 			return state;

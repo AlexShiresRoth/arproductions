@@ -19,14 +19,13 @@
 	margin: 5rem 0;
 	background: linear-gradient(65deg, lighten($brand-main, 5%), $brand-main, $brand-secondary);
 	padding: 4rem 0;
-	transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
 	& .heading {
 		z-index: 2;
-		& h2,
-		& .out_of_view {
+		& h2 {
 			color: #fff;
 			font-size: 4vw;
-			transition: all 1.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+			transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 		}
 	}
 
@@ -46,6 +45,7 @@
 		border-radius: 10px;
 		border: 5px solid $brand-bg;
 		overflow: hidden;
+		opacity: 1;
 		transition: all 1.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 		& img {
 			position: absolute;

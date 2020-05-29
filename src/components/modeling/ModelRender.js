@@ -139,8 +139,11 @@ const ModelRender = (props) => {
 	}, [modelRef, setIntersecting]);
 
 	return (
-		<section className={intersecting ? modelStyle.canvas : `${modelStyle.canvas} ${modelStyle.out_of_view}`}>
-			<div className={intersecting ? modelStyle.heading : modelStyle.out_of_view} ref={modelRef}>
+		<section
+			className={intersecting ? modelStyle.canvas : `${modelStyle.canvas} ${modelStyle.out_of_view}`}
+			ref={modelRef}
+		>
+			<div className={intersecting ? modelStyle.heading : modelStyle.out_of_view}>
 				<h2>3D Modeling</h2>
 				<p>Scifi gun game asset prototype.</p>
 				<p>Use your cursor or fingers to move the scene around!</p>
