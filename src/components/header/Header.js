@@ -18,11 +18,9 @@ const Header = ({ refs: { refs }, setActive }) => {
 
 	const headerRef = useRef();
 
-	const animRef = useRef();
-
 	//activate other states if header is being intersected
 	useEffect(() => {
-		handleSectionIO(headerRef, 0, 0, setIntersecting);
+		handleSectionIO(headerRef, 0, [0,0,0,0], setIntersecting);
 	}, [setIntersecting]);
 
 	//update state depending on intersecting
@@ -32,7 +30,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 	return (
 		<header>
 			<div className={headerStyle.header} ref={headerRef} id="header">
-				<div className={headerStyle.text__box} ref={animRef}>
+				<div className={headerStyle.text__box}>
 					<div className={headerStyle.inner}>
 						<img
 							src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1589830770/business%20site/fillthevoid_me61wt.png`}
@@ -74,7 +72,6 @@ const Header = ({ refs: { refs }, setActive }) => {
 };
 
 const mapStateToProps = (state) => {
-	console.log(state);
 	return {
 		refs: state.refs,
 	};

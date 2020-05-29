@@ -1,6 +1,4 @@
 import React, { useEffect, useState, createRef } from 'react';
-import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
 import serviceStyle from './GridItem.module.scss';
 import ServiceImgsSlide from './ServiceImgsSlide';
 import { handleIO } from '../customfunctions/handleIO';
@@ -60,7 +58,5 @@ const GridItem = ({ i, service }) => {
 		</div>
 	);
 };
-
-GridItem.propTypes = {};
 
 export default GridItem;

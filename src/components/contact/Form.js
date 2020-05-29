@@ -4,7 +4,7 @@ import PopModal from './PopModal';
 import formStyle from './Form.module.scss';
 import { sendConfirmation } from '../../actions/email';
 import { connect } from 'react-redux';
-const Form = ({ sendConfirmation }) => {
+const Form = ({ sendConfirmation, animate }) => {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -66,7 +66,7 @@ const Form = ({ sendConfirmation }) => {
 	}, []);
 
 	return (
-		<form className={formStyle.form} onSubmit={(e) => formSubmit(e)}>
+		<form className={animate ? formStyle.form : formStyle.out_of_view} onSubmit={(e) => formSubmit(e)}>
 			<PopModal status={status} error={response} loading={loading} />
 			<div className={formStyle.row}>
 				<label>Name</label>

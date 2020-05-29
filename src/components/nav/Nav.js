@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
 
 const Nav = ({ refs: { refs, active }, location: { location } }) => {
-	const [isMobile, setMobile] = useState(false);
+	const [isMobile, setMobile] = useState(window.innerWidth <= 900);
 	const [navState, toggleNav] = useState(false);
 
 	const setResize = (e) => window.addEventListener('resize', (e) => setMobile(window.innerWidth <= 900));

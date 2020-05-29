@@ -1,92 +1,92 @@
 @import '../../../sass/variables';
 
 .in_view {
-  opacity: 1;
-  transform: translate(0, 0);
+	opacity: 1;
+	transform: translate(0, 0);
 }
 
 .out_of_view {
-  opacity: 0;
-  transform: translate(0, 5rem);
+	opacity: 0;
+	transform: translate(0, 5rem);
 }
 
 .canvas {
-  height: 100%;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4rem 0;
-  & .heading,
-  & .in_view {
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 1.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-    & h2 {
-      color: #fff;
-      font-size: 4vw;
-    }
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 4rem 0;
+	transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	& .heading,
+	& .in_view {
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: all 1.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+		& h2 {
+			color: #fff;
+			font-size: 4vw;
+		}
 
-    & p {
-      color: lighten($brand-main, 15%);
-      font-size: 2rem;
-    }
-  }
-  & .model_container {
-    width: 70%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid lighten($brand-bg, 5%);
-    box-shadow: 0 1px 20px lighten($brand-bg, 5%);
-    border-radius: 10px;
-    transition: all 1.5s cubic-bezier(0.86, 0, 0.07, 1);
-    & canvas {
-      max-width: 100%;
-    }
-  }
+		& p {
+			color: lighten($brand-main, 15%);
+			font-size: 2rem;
+		}
+	}
+	& .model_container {
+		height: 500px;
+		max-height: 100%;
+		width: 70%;
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 5px solid lighten($brand-bg, 5%);
+		box-shadow: 0 1px 20px lighten($brand-bg, 5%);
+		border-radius: 10px;
+		& canvas {
+			max-height: 100%;
+			max-width: 100%;
+			width: 100%;
+		}
+	}
 }
 @media screen and (max-width: 900px) {
-  .canvas {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem 0;
-    & .heading {
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      & h2 {
-        color: #fff;
-        font-size: 8vw;
-      }
-      & p {
-        color: lighten($brand-main, 15%);
-        font-size: 1.5rem;
-        text-align: center;
-      }
-    }
-    & .model_container {
-      height: 60%;
-      width: 80%;
-      max-width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 5px solid lighten($brand-bg, 5%);
-      box-shadow: 0 1px 20px lighten($brand-bg, 5%);
-      border-radius: 10px;
-      & canvas {
-        max-width: 100%;
-      }
-    }
-  }
+	.canvas {
+		min-height: 50vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem 0;
+		& .heading {
+			z-index: 2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+			& h2 {
+				color: #fff;
+				font-size: 8vw;
+			}
+			& p {
+				color: lighten($brand-main, 15%);
+				font-size: 1.5rem;
+				text-align: center;
+			}
+		}
+		& .model_container {
+			height: 300px;
+			width: 90%;
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 5px solid lighten($brand-bg, 5%);
+			box-shadow: 0 1px 20px lighten($brand-bg, 5%);
+			border-radius: 10px;
+		}
+	}
 }

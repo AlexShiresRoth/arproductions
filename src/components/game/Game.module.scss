@@ -1,5 +1,13 @@
 @import '../../../sass/variables';
 
+.out_of_view {
+	opacity: 0;
+	transform: translate(0, 5rem);
+}
+.in_view {
+	opacity: 1;
+	transform: translate(0, 0);
+}
 .section {
 	position: relative;
 	display: grid;
@@ -11,16 +19,19 @@
 	margin: 5rem 0;
 	background: linear-gradient(65deg, lighten($brand-main, 5%), $brand-main, $brand-secondary);
 	padding: 4rem 0;
-
+	transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 	& .heading {
 		z-index: 2;
-		& h2 {
+		& h2,
+		& .out_of_view {
 			color: #fff;
 			font-size: 4vw;
+			transition: all 1.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 		}
 	}
 
-	& .img_container {
+	& .img_container,
+	& .out_of_view {
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -30,12 +41,13 @@
 		background: $brand-main;
 		box-shadow: 0 15px 15px darken($brand-main, 10%);
 		width: 75rem;
-		height: 70vh;
+		height: 40rem;
 		z-index: 2;
 		box-shadow: 0 1px 40px darken($brand-main, 15%);
 		border-radius: 10px;
 		border: 5px solid $brand-bg;
 		overflow: hidden;
+		transition: all 1.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 		& img {
 			position: absolute;
 			top: 0;
@@ -125,8 +137,8 @@
 			}
 		}
 		& .img_container {
-			width: 22rem;
-			height: 15rem;
+			width: 30rem;
+			height: 20rem;
 		}
 	}
 }

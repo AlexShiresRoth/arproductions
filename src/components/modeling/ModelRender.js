@@ -6,154 +6,148 @@ import modelStyle from './ModelRenderer.module.scss';
 import { handleIO } from '../customfunctions/handleIO';
 
 const ModelRender = (props) => {
-  let modelerRef = useRef();
+	let modelerRef = useRef();
 
-  const modelRef = useRef();
+	const modelRef = useRef();
 
-  const [initial, addToScene] = useState({
-    scene: {},
-    camera: {},
-    model: {},
-    renderer: {},
-    controls: {},
-  });
+	const [initial, addToScene] = useState({
+		scene: {},
+		camera: {},
+		model: {},
+		renderer: {},
+		controls: {},
+	});
 
-  const { scene, camera, model, renderer, controls } = initial;
+	const { scene, camera, model, renderer, controls } = initial;
 
-  const sceneSetup = () => {
-    if (modelerRef) {
-      const width = modelerRef.clientWidth;
-      const height = modelerRef.clientHeight;
-      console.log(width, height);
-      let newScene = new THREE.Scene();
+	const sceneSetup = () => {
+		if (modelerRef) {
+			const width = modelerRef.clientWidth;
+			const height = modelerRef.clientHeight;
 
-      let newCamera = new THREE.PerspectiveCamera(
-        75, //Field of view
-        width / height,
-        0.01,
-        1000
-      );
+			let newScene = new THREE.Scene();
 
-      let newControls = new OrbitControls(newCamera, modelerRef);
-      newCamera.position.z = 1;
-      newCamera.position.y = 0;
-      newCamera.position.x = 0;
+			let newCamera = new THREE.PerspectiveCamera(
+				75, //Field of view
+				width / height,
+				0.01,
+				1000
+			);
 
-      let newRenderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true,
-      });
-      newRenderer.setSize(width, height);
-      modelerRef.appendChild(newRenderer.domElement);
+			let newControls = new OrbitControls(newCamera, modelerRef);
+			newCamera.position.z = 1;
+			newCamera.position.y = 0;
+			newCamera.position.x = 0;
 
-      addToScene((prev) => ({
-        ...prev,
-        scene: newScene,
-        camera: newCamera,
-        renderer: newRenderer,
-        controls: newControls,
-      }));
-    }
-  };
+			let newRenderer = new THREE.WebGLRenderer({
+				antialias: true,
+				alpha: true,
+			});
+			newRenderer.setSize(width, height);
+			modelerRef.appendChild(newRenderer.domElement);
 
-  const addCustomSceneObject = () => {
-    const geometry = new THREE.BoxGeometry(2, 2, 2);
-    const material = new THREE.MeshPhongMaterial({
-      color: 0x156289,
-      emissive: 0x072534,
-      side: THREE.DoubleSide,
-      flatShading: true,
-    });
-    const loader = new GLTFLoader();
-    loader.load(
-      'models/gun-prototype.glb',
-      function (gltf) {
-        addToScene((prev) => ({
-          ...prev,
-          model: gltf.scene,
-          scene: prev.scene.add(gltf.scene),
-        }));
-      },
-      undefined,
-      function (error) {
-        console.error(error);
-      }
-    );
+			addToScene((prev) => ({
+				...prev,
+				scene: newScene,
+				camera: newCamera,
+				renderer: newRenderer,
+				controls: newControls,
+			}));
+		}
+	};
 
-    let newCube = new THREE.Mesh(geometry, material);
+	const addCustomSceneObject = () => {
+		const geometry = new THREE.BoxGeometry(2, 2, 2);
+		const material = new THREE.MeshPhongMaterial({
+			color: 0x156289,
+			emissive: 0x072534,
+			side: THREE.DoubleSide,
+			flatShading: true,
+		});
+		const loader = new GLTFLoader();
+		loader.load(
+			'models/gun-prototype.glb',
+			function (gltf) {
+				addToScene((prev) => ({
+					...prev,
+					model: gltf.scene,
+					scene: prev.scene.add(gltf.scene),
+				}));
+			},
+			undefined,
+			function (error) {
+				console.error(error);
+			}
+		);
 
-    const lights = [];
-    lights[0] = new THREE.PointLight(0x41057e, 5);
-    lights[1] = new THREE.PointLight(0x4169e1, 10);
-    lights[2] = new THREE.PointLight(0x4169e1, 10);
+		let newCube = new THREE.Mesh(geometry, material);
 
-    lights[0].position.set(0, 10, 0);
-    lights[1].position.set(10, 10, 10);
-    lights[2].position.set(-10, -10, -10);
+		const lights = [];
+		lights[0] = new THREE.PointLight(0x41057e, 5);
+		lights[1] = new THREE.PointLight(0x4169e1, 10);
+		lights[2] = new THREE.PointLight(0x4169e1, 10);
 
-    addToScene((prev) => ({
-      ...prev,
-      model: newCube,
-      scene: prev.scene.add(...lights),
-    }));
-  };
+		lights[0].position.set(0, 10, 0);
+		lights[1].position.set(10, 10, 10);
+		lights[2].position.set(-10, -10, -10);
 
-  useEffect(() => {
-    const startAnimationLoop = () => {
-      if (renderer.render) {
-        model.rotation.x -= 0.001;
-        model.rotation.y += 0.001;
-        renderer.render(scene, camera);
-      }
-      window.requestAnimationFrame(startAnimationLoop);
-    };
-    startAnimationLoop();
-  }, [renderer, camera, scene, model]);
+		addToScene((prev) => ({
+			...prev,
+			model: newCube,
+			scene: prev.scene.add(...lights),
+		}));
+	};
 
-  useEffect(() => {
-    sceneSetup();
-    addCustomSceneObject();
-  }, []);
+	useEffect(() => {
+		const startAnimationLoop = () => {
+			if (renderer.render) {
+				model.rotation.x -= 0.001;
+				model.rotation.y += 0.001;
+				renderer.render(scene, camera);
+			}
+			window.requestAnimationFrame(startAnimationLoop);
+		};
+		startAnimationLoop();
+	}, [renderer, camera, scene, model]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (modelerRef) {
-        const width = modelerRef.clientWidth;
-        const height = modelerRef.clientHeight;
+	useEffect(() => {
+		sceneSetup();
+		addCustomSceneObject();
+	}, []);
 
-        renderer.setSize(width, height);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        console.log(modelerRef);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('onload', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [modelerRef, camera, renderer]);
+	useEffect(() => {
+		const handleResize = () => {
+			if (modelerRef) {
+				const width = modelerRef.clientWidth;
+				const height = modelerRef.clientHeight;
 
-  const [intersecting, setIntersecting] = useState(false);
+				renderer.setSize(width, height);
+				camera.aspect = width / height;
+				camera.updateProjectionMatrix();
+				console.log(modelerRef);
+			}
+		};
+		window.addEventListener('resize', handleResize);
+		window.addEventListener('onload', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, [modelerRef, camera, renderer]);
 
-  useEffect(() => {
-    handleIO(modelRef, 0, 0, setIntersecting);
-  }, [modelRef, setIntersecting]);
+	const [intersecting, setIntersecting] = useState(false);
 
-  return (
-    <section className={modelStyle.canvas}>
-      <div
-        className={intersecting ? modelStyle.heading : modelStyle.out_of_view}
-        ref={modelRef}
-      >
-        <h2>3D Modeling</h2>
-        <p>Scifi gun game asset prototype.</p>
-        <p>Use your cursor or fingers to move the scene around!</p>
-      </div>
-      <div
-        className={modelStyle.model_container}
-        ref={(ref) => (modelerRef = ref)}
-      ></div>
-    </section>
-  );
+	useEffect(() => {
+		handleIO(modelRef, 0, 0, setIntersecting);
+	}, [modelRef, setIntersecting]);
+
+	return (
+		<section className={intersecting ? modelStyle.canvas : `${modelStyle.canvas} ${modelStyle.out_of_view}`}>
+			<div className={intersecting ? modelStyle.heading : modelStyle.out_of_view} ref={modelRef}>
+				<h2>3D Modeling</h2>
+				<p>Scifi gun game asset prototype.</p>
+				<p>Use your cursor or fingers to move the scene around!</p>
+			</div>
+			<div className={modelStyle.model_container} ref={(ref) => (modelerRef = ref)}></div>
+		</section>
+	);
 };
 
 ModelRender.propTypes = {};

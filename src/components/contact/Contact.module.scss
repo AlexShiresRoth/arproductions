@@ -1,3 +1,13 @@
+.in_view {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+.out_of_view {
+	opacity: 0;
+	transform: translate(0, 5rem);
+}
+
 .section {
 	display: flex;
 	flex-direction: column;
@@ -7,6 +17,7 @@
 		margin: 2rem 0;
 		& h2 {
 			font-size: 4vw;
+			transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 		}
 	}
 	& .grid {

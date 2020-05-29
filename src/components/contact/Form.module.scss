@@ -1,4 +1,14 @@
 @import '../../../sass/variables';
+.in_view {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+.out_of_view {
+	opacity: 0;
+	transform: translate(0, 5rem);
+}
+
 .form {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -6,6 +16,7 @@
 	gap: 2rem;
 	width: 100%;
 	position: relative;
+	transition: all 1.2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 	& .row {
 		width: 100%;
 		display: flex;
