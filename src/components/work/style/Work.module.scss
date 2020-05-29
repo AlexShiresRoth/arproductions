@@ -28,7 +28,9 @@
 
 @media screen and (max-width: 900px) {
 	.section {
+		margin-top: 2rem;
 		& .heading {
+			margin-top: 0;
 			& h2 {
 				color: #fff;
 				font-size: 8vw;

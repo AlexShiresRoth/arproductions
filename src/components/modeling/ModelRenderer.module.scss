@@ -12,12 +12,13 @@
 
 .canvas {
 	min-height: 100vh;
-	width: 70%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 4rem 0;
 	transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	overflow: hidden;
 	& .heading,
 	& .in_view {
 		z-index: 2;
