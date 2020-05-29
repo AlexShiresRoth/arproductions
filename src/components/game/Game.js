@@ -36,10 +36,8 @@ const Game = ({ addRef, setActive }) => {
 
 	return (
 		<section className={gameStyle.section} ref={gameRef} id="game">
-			<div className={gameStyle.heading} ref={animRef}>
-				<h2 className={animate ? gameStyle.in_view : gameStyle.out_of_view}>
-					Unreal Engine Game Prototype In Development...
-				</h2>
+			<div className={gameStyle.heading}>
+				<h2>Unreal Engine Game Prototype In Development...</h2>
 			</div>
 			<Carousel imgs={imgs} current={current} setCurrent={setCurrent} />
 		</section>

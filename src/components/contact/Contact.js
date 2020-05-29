@@ -40,8 +40,8 @@ const Contact = ({ addRef, setActive }) => {
 				</h2>
 			</div>
 			<div className={contactStyles.grid}>
-				<About animate={animate} />
-				<Form animate={animate} />
+				<About />
+				<Form />
 			</div>
 		</section>
 	);

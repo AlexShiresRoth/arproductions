@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
 
 const Nav = ({ refs: { refs, active }, location: { location } }) => {
-	const [isMobile, setMobile] = useState(window.innerWidth <= 900);
+	const [isMobile, setMobile] = useState(false);
 	const [navState, toggleNav] = useState(false);
 
 	const setResize = (e) => window.addEventListener('resize', (e) => setMobile(window.innerWidth <= 900));
@@ -15,7 +15,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		setResize();
 		window.scrollTo({ top: 0 });
 	}, []);
-
+	console.log(isMobile);
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 	const scrollToSections = (refs) => {

@@ -18,7 +18,7 @@ const GridItem = ({ i, service }) => {
 	}, [setIntersecting, itemRef]);
 
 	return (
-		<div className={intersecting ? serviceStyle.grid : serviceStyle.out_of_view}>
+		<div className={intersecting ? serviceStyle.grid : `${serviceStyle.grid} ${serviceStyle.out_of_view}`}>
 			<div className={serviceStyle.col} ref={itemRef}>
 				<div className={serviceStyle.col_grid} style={i % 2 !== 0 ? { background: 'transparent' } : null}>
 					<div className={serviceStyle.inner_left} style={i % 2 !== 0 ? { order: '1' } : { order: '0' }}>

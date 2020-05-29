@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import aboutStyle from './About.module.scss';
-const About = ({ animate }) => {
+const About = () => {
 	const profilPic = (
 		<img
 			src="https://res.cloudinary.com/snackmanproductions/image/upload/v1584038425/business%20site/about_pic_qz8dm3.jpg"
@@ -9,7 +9,7 @@ const About = ({ animate }) => {
 		/>
 	);
 	return (
-		<div className={animate ? aboutStyle.about_column : aboutStyle.out_of_view}>
+		<div className={aboutStyle.about_column}>
 			<div className={aboutStyle.col}>
 				{profilPic}
 				<p>

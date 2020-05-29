@@ -30,8 +30,7 @@
 		}
 	}
 
-	& .img_container,
-	& .out_of_view {
+	& .img_container {
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
