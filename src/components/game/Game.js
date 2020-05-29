@@ -11,22 +11,7 @@ const Game = ({ addRef, setActive }) => {
 
 	const [current, setCurrent] = useState(0);
 
-	useEffect(() => {
-		addRef(gameRef);
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					setActive(gameRef.current.id);
-				}
-			},
-			{ rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
-		);
-		if (gameRef.current) {
-			observer.observe(gameRef.current);
-		}
-		return () => clearInterval();
-	}, [gameRef, addRef, setActive]);
-
+	useEffect(() => addRef(gameRef), [addRef]);
 	return (
 		<section className={gameStyle.section} ref={gameRef} id="game">
 			<div className={gameStyle.heading}>

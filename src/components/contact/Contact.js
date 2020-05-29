@@ -1,32 +1,31 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import contactStyles from './Contact.module.scss';
 import Form from './Form';
 import About from './About';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
-import IntersectionObserver from 'intersection-observer-polyfill';
-
+import { handleSectionIO } from '../customfunctions/handleIO';
 const Contact = ({ addRef, setActive }) => {
 	const contactRef = useRef();
+	const [intersecting, setIntersecting] = useState(false);
 
+	//add ref to redux store
 	useEffect(() => {
 		addRef(contactRef);
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					setActive(contactRef.current.id);
-				}
-			},
-			{ rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
-		);
-		if (contactRef.current) {
-			observer.observe(contactRef.current);
-		}
-	}, [addRef, contactRef, setActive]);
+	}, [addRef]);
+
+	//handle intersection observing
+	useEffect(() => {
+		handleSectionIO(contactRef, 0, 0, setIntersecting);
+	}, [setIntersecting]);
+
+	useEffect(() => {
+		setActive('contact');
+	}, [intersecting, setActive]);
 
 	return (
-		<section className={contactStyles.section} id="contact" ref={contactRef}>
+		<section className={contactStyles.section} ref={contactRef} id="contact">
 			<div className={contactStyles.heading}>
 				<h2>Get started on your project.</h2>
 			</div>

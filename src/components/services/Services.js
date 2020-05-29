@@ -2,97 +2,40 @@ import React, { useState, useEffect, useRef } from 'react';
 import serviceStyle from './Services.module.scss';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
-import { servicesArray } from './servicesArray';
-import ServiceImgsSlide from './ServiceImgsSlide';
-import IntersectionObserver from 'intersection-observer-polyfill';
+
+import ServicesGrid from './ServicesGrid';
+import { handleSectionIO } from '../customfunctions/handleIO';
 
 const Services = ({ addRef, setActive }) => {
-	const [currentIndex, setIndex] = useState(0);
-
-	const [transition, setTransition] = useState(false);
-	const changeIndex = (index) => setIndex(index);
+	const [intersecting, setIntersecting] = useState(false);
 
 	const serviceRef = useRef();
 
+	const animRef = useRef();
+
+	//add ref to the store
 	useEffect(() => {
-		setTransition(true);
-
 		addRef(serviceRef);
+	}, [addRef, serviceRef]);
 
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					console.log(entry);
-					setActive(serviceRef.current.id);
-				}
-			},
-			{ rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
-		);
-		if (serviceRef.current) {
-			observer.observe(serviceRef.current);
-		}
+	//handle section intersecting
+	useEffect(() => {
+		handleSectionIO(serviceRef, 0, 0, setIntersecting);
+	}, [serviceRef]);
 
-		setTimeout(() => {
-			setTransition(false);
-		}, 1000);
+	//handle state update for when section is intersecting
+	useEffect(() => {
+		setActive('services');
+	}, [intersecting, setActive]);
 
-		return () => clearTimeout();
-	}, [currentIndex, addRef, serviceRef, setActive]);
-
-	const services = servicesArray.map((service, i) => {
-		return (
-			<div className={serviceStyle.grid}>
-				<div className={serviceStyle.col}>
-					<div className={serviceStyle.col_grid} style={i % 2 !== 0 ? { background: 'transparent' } : null}>
-						<div className={serviceStyle.inner_left} style={i % 2 !== 0 ? { order: '1' } : { order: '0' }}>
-							<h3>{service.title}</h3>
-							<p>{service.text}</p>
-						</div>
-						<div
-							className={service.imgs !== null ? serviceStyle.inner__img__grid : serviceStyle.inner_right}
-						>
-							{service.imgs !== null ? (
-								<>
-									<div class={serviceStyle.grid__inner}>
-										<img
-											src={service.imgs[currentIndex]}
-											alt="website layout"
-											className={transition ? serviceStyle.current_img : ''}
-											key={currentIndex}
-										/>
-										<ServiceImgsSlide
-											imgs={service.imgs}
-											onClick={changeIndex}
-											currentIndex={currentIndex}
-											serviceStyle={serviceStyle}
-											transition={transition}
-										/>
-									</div>
-									<div className={serviceStyle.currentindex__marker}>
-										{service.imgs.map((item, i) => (
-											<span
-												className={currentIndex === i ? serviceStyle.active__span : null}
-											></span>
-										))}
-									</div>
-								</>
-							) : service.img !== null ? (
-								service.img
-							) : (
-								service.icons.map((icon) => icon.icon)
-							)}
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	});
 	return (
-		<section className={serviceStyle.section}>
-			<div className={serviceStyle.heading} ref={serviceRef} id="services">
-				<h2>Need a more impressive web presence?</h2>
+		<section className={serviceStyle.section} ref={serviceRef} id="services">
+			<div className={serviceStyle.heading} ref={animRef}>
+				<h2 className={intersecting ? serviceStyle.in_view : serviceStyle.out_of_view}>
+					Need a more impressive web presence?
+				</h2>
 			</div>
-			{services}
+			<ServicesGrid />
 		</section>
 	);
 };

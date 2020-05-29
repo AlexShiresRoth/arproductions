@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ServiceImgsSlide = ({ imgs, onClick, currentIndex, serviceStyle, transition }) => {
+const ServiceImgsSlide = ({ imgs, onClick, currentIndex, serviceStyle }) => {
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+	}, [transition]);
 	return imgs
 		.map((img, i) => (
 			<div
@@ -10,7 +15,7 @@ const ServiceImgsSlide = ({ imgs, onClick, currentIndex, serviceStyle, transitio
 						? `${serviceStyle.img_container} ${serviceStyle.img_container_transition}`
 						: serviceStyle.img_container
 				}
-				onClick={e => onClick(i)}
+				onClick={(e) => onClick(i)}
 			>
 				<img src={img} alt={img} key={i} />
 			</div>

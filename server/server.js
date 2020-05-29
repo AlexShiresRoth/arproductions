@@ -1,4 +1,8 @@
 require('dotenv').config();
+const fs = require('fs');
+const key = fs.readFileSync('./key.pem');
+const cert = fs.readFileSync('./cert.pem');
+const https = require('https');
 const express = require('express');
 const paymentRouter = require('./routes/payments');
 const app = express();
@@ -14,4 +18,6 @@ app.get('/', (req, res) => res.send('The api is running'));
 app.use('/api/payments', paymentRouter);
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log('arproductions api running on port:' + PORT));
+const server = https.createServer({ key: key, cert: cert }, app);
+
+server.listen(PORT, () => console.log('arproductions api running on port:' + PORT));

@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import headerStyle from './Header.module.scss';
 import { setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
-import IntersectionObserver from 'intersection-observer-polyfill';
+import { handleSectionIO } from '../customfunctions/handleIO';
 
 const Header = ({ refs: { refs }, setActive }) => {
+	const [intersecting, setIntersecting] = useState(false);
+
 	const scrollToSections = (refs) => {
 		const ref = refs[0];
 		window.scrollTo({
@@ -15,24 +17,22 @@ const Header = ({ refs: { refs }, setActive }) => {
 	};
 
 	const headerRef = useRef();
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					setActive('');
-				}
-			},
-			{ rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
-		);
-		if (headerRef.current) {
-			observer.observe(headerRef.current);
-		}
-	}, [setActive]);
 
+	const animRef = useRef();
+
+	//activate other states if header is being intersected
+	useEffect(() => {
+		handleSectionIO(headerRef, 0, 0, setIntersecting);
+	}, [setIntersecting]);
+
+	//update state depending on intersecting
+	useEffect(() => {
+		setActive('');
+	}, [setActive, intersecting]);
 	return (
-		<header ref={headerRef}>
-			<div className={headerStyle.header}>
-				<div className={headerStyle.text__box}>
+		<header>
+			<div className={headerStyle.header} ref={headerRef} id="header">
+				<div className={headerStyle.text__box} ref={animRef}>
 					<div className={headerStyle.inner}>
 						<img
 							src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1589830770/business%20site/fillthevoid_me61wt.png`}
@@ -45,7 +45,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 				</div>
 				<div className={headerStyle.services}>
 					<div className={headerStyle.text}>
-						<p>Web App Development. Mobile App Development. Unreal Engine Game Development.</p>
+						<p>Web/Mobile/Game Development.</p>
 					</div>
 					<div className={headerStyle.actions}>
 						<button
@@ -74,6 +74,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 };
 
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
 		refs: state.refs,
 	};

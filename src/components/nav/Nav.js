@@ -25,7 +25,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		switch (true) {
 			case ref.current.id === 'services':
 				return window.scrollTo({
-					top: ref.current.offsetTop + 800,
+					top: ref.current.offsetTop,
 					left: 0,
 					behavior: 'smooth',
 				});

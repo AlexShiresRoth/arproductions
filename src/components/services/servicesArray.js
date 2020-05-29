@@ -5,14 +5,11 @@ export const servicesArray = [
 	{
 		title: 'Responsively Designed Sites.',
 		text: `Each website is built to be responsive. Responsive design means that your site will look good on various devices: tablets, mobile devices and desktops. `,
-		img: (
-			<img
-				src="https://res.cloudinary.com/snackmanproductions/image/upload/v1582658614/business%20site/responsive-gif_kktmq9.gif"
-				alt="gif"
-			></img>
-		),
+		img:
+			'https://res.cloudinary.com/snackmanproductions/image/upload/v1582658614/business%20site/responsive-gif_kktmq9.gif',
 		imgs: null,
 		icons: null,
+		ref: 'ref1',
 	},
 	{
 		title: 'Unique Layouts.',
@@ -30,6 +27,7 @@ export const servicesArray = [
 			'https://res.cloudinary.com/snackmanproductions/image/upload/v1575660519/portfolio/2019-12-06_1_awxsjf.png',
 		],
 		icons: null,
+		ref: 'ref2',
 	},
 	{
 		title: 'Basic to complex websites.',
@@ -37,5 +35,6 @@ export const servicesArray = [
 		img: null,
 		imgs: null,
 		icons: [{ icon: <AiOutlineFile /> }, { icon: <FiArrowRight /> }, { icon: <FiDatabase /> }],
+		ref: 'ref3',
 	},
 ];

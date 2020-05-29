@@ -10,13 +10,12 @@
 	align-items: center;
 	height: 5rem;
 	background: $brand-bg;
-	box-shadow: 0 3px 3px lighten($brand-bg, 4%);
+	box-shadow: 0 1px 5px darken($brand-bg, 2%);
 	width: 100%;
 	position: fixed;
 	z-index: 9999;
 	opacity: 0;
-	animation: fadein 1s linear forwards;
-	animation-delay: 2s;
+	animation: fadein 1s cubic-bezier(0.895, 0.03, 0.685, 0.22) forwards;
 	& .nav__left {
 		display: flex;
 		justify-content: flex-start;

@@ -5,12 +5,22 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	margin-top: 5rem;
 	& .heading {
 		z-index: 2;
 		margin-top: 10vh;
 		& h2 {
 			color: #fff;
 			font-size: 4vw;
+		}
+		& .in_view {
+			transform: translateY(0);
+			opacity: 1;
+			transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+		}
+		& .out_of_view {
+			transform: translateY(5rem);
+			opacity: 0;
 		}
 	}
 }

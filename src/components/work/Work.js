@@ -1,32 +1,32 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import WorkMap from './WorkMap';
 import workStyles from './style/Work.module.scss';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
-import IntersectionObserver from 'intersection-observer-polyfill';
+import { handleIO } from '../customfunctions/handleIO';
 
 const Work = ({ addRef, setActive }) => {
 	const workRef = useRef();
 
+	const animRef = useRef();
+
+	const [intersecting, setIntersecting] = useState(false);
+
+	//add ref to redux store
+	useEffect(() => addRef(workRef), [addRef, workRef]);
+
 	useEffect(() => {
-		addRef(workRef);
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					setActive(workRef.current.id);
-				}
-			},
-			{ rootMargin: '0px 0px -200px 0px', threshold: 0.5 }
-		);
-		if (workRef.current) {
-			observer.observe(workRef.current);
-		}
-	}, [workRef, addRef, setActive]);
+		handleIO(workRef, 0, 0, setIntersecting);
+	}, [setIntersecting, workRef]);
+
+	useEffect(() => {
+		setActive('work');
+	}, [intersecting, setActive]);
 
 	return (
 		<section className={workStyles.section} ref={workRef} id="work">
-			<div className={workStyles.heading}>
+			<div className={workStyles.heading} ref={animRef}>
 				<h2>Web Apps/Sites.</h2>
 			</div>
 			<WorkMap />
