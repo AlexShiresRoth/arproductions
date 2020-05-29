@@ -25,25 +25,25 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 		switch (true) {
 			case ref.current.id === 'services':
 				return window.scrollTo({
-					top: ref.current.offsetTop,
+					top: ref.current.offsetTop - 100,
 					left: 0,
 					behavior: 'smooth',
 				});
 			case ref.current.id === 'contact':
 				return window.scrollTo({
-					top: ref.current.offsetTop,
+					top: ref.current.offsetTop - 100,
 					left: 0,
 					behavior: 'smooth',
 				});
 			case ref.current.id === 'work':
 				return window.scrollTo({
-					top: ref.current.offsetTop,
+					top: ref.current.offsetTop - 100,
 					left: 0,
 					behavior: 'smooth',
 				});
 			case ref.current.id === 'game':
 				return window.scrollTo({
-					top: ref.current.offsetTop,
+					top: ref.current.offsetTop - 100,
 					left: 0,
 					behavior: 'smooth',
 				});
