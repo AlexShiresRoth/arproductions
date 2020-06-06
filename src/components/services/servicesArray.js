@@ -1,14 +1,14 @@
 import React from 'react';
 import { FiDatabase, FiArrowRight } from 'react-icons/fi';
 import { AiOutlineFile } from 'react-icons/ai';
+import { ResponsiveDisplay } from './ResponsiveDisplay';
 export const servicesArray = [
 	{
 		title: 'Responsively Designed Sites.',
-		text: `Each website is built to be responsive. Responsive design means that your site will look good on various devices: tablets, mobile devices and desktops. `,
-		img:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/v1582658614/business%20site/responsive-gif_kktmq9.gif',
+		text: `Each website is built to be responsive. Responsive design means that your site will adjust to various devices: tablets, mobile devices and desktops. `,
+		img: null,
 		imgs: null,
-		icons: null,
+		icons: [{ icon: <ResponsiveDisplay /> }],
 		ref: 'ref1',
 	},
 	{
