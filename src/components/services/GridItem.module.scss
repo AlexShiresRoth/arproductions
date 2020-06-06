@@ -283,6 +283,11 @@
 					}
 				}
 			}
+			& .col_grid:nth-child(1) {
+				& .inner_right {
+					justify-content: center;
+				}
+			}
 		}
 	}
 }

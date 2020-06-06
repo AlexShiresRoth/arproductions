@@ -105,25 +105,10 @@
 		-moz-animation: resanimextrasmall 10s infinite; /* Fx 5+ */
 		-o-animation: resanimextrasmall 10s infinite; /* Opera 12+ */
 		animation: resanimextrasmall 10s infinite;
-		animation: resanimextrasmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
+		animation: resanimextrasmall 10s 0s forwards infinite;
 		overflow: hidden;
 		justify-self: center;
-		& .nav {
-			width: 100%;
-			display: flex;
-			align-items: center;
-			height: 3rem;
-			border-bottom: 5px solid #eee;
-			margin-bottom: 0.5rem;
-			& span {
-				height: 1rem;
-				width: 1rem;
-				margin-left: 1rem;
-				border-radius: 50%;
-				display: block;
-				border: 5px solid #eee;
-			}
-		}
+
 		& .grid {
 			display: flex;
 			flex-wrap: wrap;
@@ -132,8 +117,8 @@
 			& div {
 				border: 5px solid #eee;
 				display: flex;
-				height: 3rem;
-				width: 6rem;
+				height: 2rem;
+				width: 4rem;
 				border-radius: 5px;
 				flex-shrink: 2;
 			}
@@ -169,7 +154,7 @@
 		width: 90%;
 	}
 	50% {
-		width: 30%;
+		width: 40%;
 	}
 	100% {
 		width: 90%;
