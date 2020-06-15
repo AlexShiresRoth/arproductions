@@ -5,7 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import modelStyle from './ModelRenderer.module.scss';
 import { handleIO } from '../customfunctions/handleIO';
 
-const ModelRender = (props) => {
+const ModelRender = () => {
 	let modelerRef = useRef();
 
 	const modelRef = useRef();
@@ -18,7 +18,7 @@ const ModelRender = (props) => {
 		controls: {},
 	});
 
-	const { scene, camera, model, renderer, controls } = initial;
+	const { scene, camera, model, renderer } = initial;
 
 	const sceneSetup = () => {
 		if (modelerRef) {

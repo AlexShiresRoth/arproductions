@@ -85,7 +85,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 				}
 				className={active === 'services' ? navStyles.active : ''}
 			>
-				<a>Services</a>
+				<button>Services</button>
 			</li>
 			<li
 				onClick={() =>
@@ -93,7 +93,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 				}
 				className={active === 'work' ? navStyles.active : ''}
 			>
-				<a>Web</a>
+				<button>Web</button>
 			</li>
 			<li
 				onClick={() =>
@@ -101,7 +101,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 				}
 				className={active === 'game' ? navStyles.active : ''}
 			>
-				<a>Game Development</a>
+				<button>Game Development</button>
 			</li>
 			<li
 				onClick={() =>
@@ -109,7 +109,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 				}
 				className={active === 'contact' ? navStyles.active : ''}
 			>
-				<a>Contact</a>
+				<button>Contact</button>
 			</li>
 		</ul>
 	);
@@ -139,7 +139,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	return (
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
-				<a onClick={(e) => scrollToTop()}>
+				<a onClick={(e) => scrollToTop()} href="#!">
 					<div className={navStyles.logo}>
 						<img
 							src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1589830770/business%20site/fillthevoid_me61wt.png`}

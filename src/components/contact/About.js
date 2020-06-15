@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import aboutStyle from './About.module.scss';
 const About = () => {
 	const profilPic = (
@@ -22,7 +21,5 @@ const About = () => {
 		</div>
 	);
 };
-
-About.propTypes = {};
 
 export default About;

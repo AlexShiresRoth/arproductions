@@ -62,6 +62,7 @@
 				cursor: pointer;
 			}
 		}
+
 		& .col {
 			margin-left: 1rem;
 			display: flex;
@@ -91,7 +92,8 @@
 				list-style: none;
 				height: 100%;
 				width: 100%;
-				& a {
+				& a,
+				& button {
 					height: 100%;
 					width: 100%;
 					display: flex;
@@ -102,6 +104,8 @@
 					transition: all 0.3s ease-in-out;
 					color: #f3f3f3;
 					text-decoration: none;
+					background: transparent;
+					border: 2px solid transparent;
 					&::after {
 						content: '';
 						position: absolute;
@@ -118,6 +122,10 @@
 					&:hover {
 						cursor: pointer;
 						color: $brand-main;
+					}
+					&:active,
+					&:focus {
+						outline: 2px solid transparent;
 					}
 				}
 			}
