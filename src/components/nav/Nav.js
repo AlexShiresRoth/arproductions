@@ -13,7 +13,6 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	useEffect(() => {
 		setMobile(window.innerWidth <= 900);
 		setResize();
-		window.scrollTo({ top: 0 });
 	}, []);
 
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });

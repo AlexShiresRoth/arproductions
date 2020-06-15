@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '../header/Header';
 import Services from '../services/Services';
 import Work from '../work/Work';
@@ -11,12 +11,12 @@ import { connect } from 'react-redux';
 import ModelRender from '../modeling/ModelRender';
 
 const Home = ({ history, getLocation }) => {
-	useEffect(() => {
-		getLocation(history.location.pathname);
-		setTimeout(() => {
-			window.scrollTo({ top: 0 });
-		}, 1000);
-	}, [getLocation, history]);
+	// useEffect(() => {
+	// 	getLocation(history.location.pathname);
+	// 	setTimeout(() => {
+	// 		window.scrollTo({ top: 0 });
+	// 	}, 100);
+	// }, [getLocation, history]);
 
 	return (
 		<Layout>
