@@ -17,7 +17,9 @@ const Game = ({ addRef, setActive }) => {
 
 	const [animate, setAnimate] = useState(false);
 
-	useEffect(() => addRef(gameRef), [addRef]);
+	useEffect(() => {
+		addRef(gameRef);
+	}, [addRef]);
 
 	//get value for intersecting
 	useEffect(() => {

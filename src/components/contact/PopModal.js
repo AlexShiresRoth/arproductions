@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import modalStyle from './PopModal.module.scss';
 
 const PopModal = ({ status, error, loading }) => {
@@ -14,11 +13,6 @@ const PopModal = ({ status, error, loading }) => {
 			) : null}
 		</>
 	);
-};
-
-PopModal.propTypes = {
-	status: PropTypes.string.isRequired,
-	error: PropTypes.string.isRequired,
 };
 
 export default PopModal;

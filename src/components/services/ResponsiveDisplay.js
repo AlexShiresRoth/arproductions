@@ -3,11 +3,11 @@ import style from './ResponsiveDisplay.module.scss';
 
 export const ResponsiveDisplay = () => {
 	return (
-		<div class={style.responsive_block}>
-			<div class={style.nav}>
+		<div className={style.responsive_block}>
+			<div className={style.nav}>
 				<span></span>
 			</div>
-			<div class={style.grid}>
+			<div className={style.grid}>
 				<div></div>
 				<div></div>
 				<div></div>

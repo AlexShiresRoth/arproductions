@@ -15,6 +15,7 @@ const ServiceImgsSlide = ({ imgs, onClick, currentIndex, serviceStyle }) => {
 						? `${serviceStyle.img_container} ${serviceStyle.img_container_transition}`
 						: serviceStyle.img_container
 				}
+				key={i}
 				onClick={(e) => onClick(i)}
 			>
 				<img src={img} alt={img} key={i} />
@@ -28,7 +29,6 @@ ServiceImgsSlide.propTypes = {
 	onClick: PropTypes.func.isRequired,
 	serviceStyle: PropTypes.object.isRequired,
 	currentIndex: PropTypes.number.isRequired,
-	transition: PropTypes.bool.isRequired,
 };
 
 export default ServiceImgsSlide;

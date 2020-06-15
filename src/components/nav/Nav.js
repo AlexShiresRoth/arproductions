@@ -53,23 +53,23 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	};
 
 	const mobileMenu = (
-		<svg viewBox="0 0 100 100" class="menu" onClick={() => toggleNav(!navState)}>
+		<svg viewBox="0 0 100 100" className="menu" onClick={() => toggleNav(!navState)}>
 			<g>
 				<path
 					d="M 0 50 L100 50 Z"
-					stroke-width="3px"
+					strokeWidth="3px"
 					stroke="#fff"
 					className={navState ? navStyles.rotated : ''}
 				/>
 				<path
 					d="M 0, 30 L100, 30 Z"
-					stroke-width="3px"
+					strokeWidth="3px"
 					stroke="#fff"
 					className={navState ? navStyles.rotated : ''}
 				/>
 				<path
 					d="M 0, 70 L100, 70 Z"
-					stroke-width="3px"
+					strokeWidth="3px"
 					stroke="#fff"
 					className={navState ? navStyles.rotated : ''}
 				/>

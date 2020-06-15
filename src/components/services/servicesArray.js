@@ -8,7 +8,7 @@ export const servicesArray = [
 		text: `Each website is built to be responsive. Responsive design means that your site will adjust to various devices: tablets, mobile devices and desktops. `,
 		img: null,
 		imgs: null,
-		icons: [{ icon: <ResponsiveDisplay /> }],
+		icons: [{ icon: <ResponsiveDisplay key="responsivedisplay" /> }],
 		ref: 'ref1',
 	},
 	{
@@ -34,7 +34,11 @@ export const servicesArray = [
 		text: `Need an informational website or something a bit more complex that needs to handle user data?`,
 		img: null,
 		imgs: null,
-		icons: [{ icon: <AiOutlineFile /> }, { icon: <FiArrowRight /> }, { icon: <FiDatabase /> }],
+		icons: [
+			{ icon: <AiOutlineFile key={`icon1`} /> },
+			{ icon: <FiArrowRight key={`icon2`} /> },
+			{ icon: <FiDatabase key={`icon3`} /> },
+		],
 		ref: 'ref3',
 	},
 ];

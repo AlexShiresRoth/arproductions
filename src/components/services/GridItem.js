@@ -18,7 +18,7 @@ const GridItem = ({ i, service }) => {
 	}, [setIntersecting, itemRef]);
 
 	return (
-		<div className={intersecting ? serviceStyle.grid : `${serviceStyle.grid} ${serviceStyle.out_of_view}`}>
+		<div className={intersecting ? serviceStyle.grid : `${serviceStyle.grid} ${serviceStyle.out_of_view}`} key={i}>
 			<div className={serviceStyle.col} ref={itemRef}>
 				<div className={serviceStyle.col_grid} style={i % 2 !== 0 ? { background: 'transparent' } : null}>
 					<div className={serviceStyle.inner_left} style={i % 2 !== 0 ? { order: '1' } : { order: '0' }}>
@@ -28,7 +28,7 @@ const GridItem = ({ i, service }) => {
 					<div className={service.imgs !== null ? serviceStyle.inner__img__grid : serviceStyle.inner_right}>
 						{service.imgs !== null ? (
 							<>
-								<div class={intersecting ? serviceStyle.grid__inner : serviceStyle.out_of_view}>
+								<div className={intersecting ? serviceStyle.grid__inner : serviceStyle.out_of_view}>
 									<img src={service.imgs[currentIndex]} alt="website layout" />
 									<ServiceImgsSlide
 										imgs={service.imgs}
@@ -39,7 +39,10 @@ const GridItem = ({ i, service }) => {
 								</div>
 								<div className={serviceStyle.currentindex__marker}>
 									{service.imgs.map((item, i) => (
-										<span className={currentIndex === i ? serviceStyle.active__span : null}></span>
+										<span
+											className={currentIndex === i ? serviceStyle.active__span : null}
+											key={i}
+										></span>
 									))}
 								</div>
 							</>
