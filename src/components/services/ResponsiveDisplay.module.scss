@@ -6,10 +6,10 @@
 	height: 25rem;
 	border: 10px solid #eee;
 	border-radius: 5px;
-	// -webkit-animation: resanim 10s 0s ease forwards infinite; /* Safari 4+ */
-	// -moz-animation: resanim 10s 0s ease forwards infinite; /* Fx 5+ */
-	// -o-animation: resanim 10s 0s ease forwards infinite; /* Opera 12+ */
-	// animation: resanim 10s 0s ease forwards infinite;
+	-webkit-animation: resanim 10s 0s ease forwards infinite; /* Safari 4+ */
+	-moz-animation: resanim 10s 0s ease forwards infinite; /* Fx 5+ */
+	-o-animation: resanim 10s 0s ease forwards infinite; /* Opera 12+ */
+	animation: resanim 10s 0s ease forwards infinite;
 	overflow: hidden;
 	& .nav {
 		width: 100%;
@@ -54,10 +54,11 @@
 		height: 15rem;
 		border: 5px solid #eee;
 		border-radius: 5px;
-		// -webkit-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Safari 4+ */
-		// -moz-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Fx 5+ */
-		// -o-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Opera 12+ */
-		// animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
+		-webkit-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Safari 4+ */
+		-moz-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Fx 5+ */
+		-o-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Opera 12+ */
+		animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
+		animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
 		overflow: hidden;
 		& .nav {
 			width: 100%;
@@ -100,10 +101,10 @@
 		height: 12rem;
 		border: 5px solid #eee;
 		border-radius: 5px;
-		// -webkit-animation: resanimextrasmall 10s 0s forwards infinite; /* Safari 4+ */
-		// -moz-animation: resanimextrasmall 10s 0s forwards infinite; /* Fx 5+ */
-		// -o-animation: resanimextrasmall 10s 0s forwards infinite; /* Opera 12+ */
-		// animation: resanimextrasmall 10s 0s forwards infinite;
+		-webkit-animation: resanimextrasmall 10s 0s forwards infinite; /* Safari 4+ */
+		-moz-animation: resanimextrasmall 10s 0s forwards infinite; /* Fx 5+ */
+		-o-animation: resanimextrasmall 10s 0s forwards infinite; /* Opera 12+ */
+		animation: resanimextrasmall 10s 0s forwards infinite;
 		overflow: hidden;
 		justify-self: center;
 
