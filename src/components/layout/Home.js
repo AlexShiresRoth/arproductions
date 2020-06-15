@@ -8,22 +8,15 @@ import Footer from '../footer/Footer';
 import Layout from './Layout';
 import { getLocation } from '../../actions/location';
 import { connect } from 'react-redux';
-import ModelRender from '../modeling/ModelRender';
+// import ModelRender from '../modeling/ModelRender';
 
-const Home = ({ history, getLocation }) => {
-	// useEffect(() => {
-	// 	getLocation(history.location.pathname);
-	// 	setTimeout(() => {
-	// 		window.scrollTo({ top: 0 });
-	// 	}, 100);
-	// }, [getLocation, history]);
-
+const Home = () => {
 	return (
 		<Layout>
 			<Header />
 			<Services />
 			<Work />
-			<ModelRender />
+			{/* <ModelRender /> */}
 			<Game />
 			<Contact />
 			<Footer />
