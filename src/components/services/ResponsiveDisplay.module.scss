@@ -58,7 +58,6 @@
 		-moz-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Fx 5+ */
 		-o-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Opera 12+ */
 		animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
-		animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
 		overflow: hidden;
 		& .nav {
 			width: 100%;
@@ -104,7 +103,6 @@
 		-webkit-animation: resanimextrasmall 10s 0s forwards infinite; /* Safari 4+ */
 		-moz-animation: resanimextrasmall 10s 0s forwards infinite; /* Fx 5+ */
 		-o-animation: resanimextrasmall 10s 0s forwards infinite; /* Opera 12+ */
-		animation: resanimextrasmall 10s 0s forwards infinite;
 		animation: resanimextrasmall 10s 0s forwards infinite;
 		overflow: hidden;
 		justify-self: center;
