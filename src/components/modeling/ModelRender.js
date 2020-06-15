@@ -128,7 +128,7 @@ const ModelRender = () => {
 			}
 		};
 		window.addEventListener('resize', handleResize);
-		window.addEventListener('onload', handleResize);
+
 		return () => window.removeEventListener('resize', handleResize);
 	}, [modelerRef, camera, renderer]);
 
