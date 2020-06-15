@@ -25,7 +25,6 @@ export const handleSectionIO = (ref = null, threshold = 0.2, rootMargin = [0, 0,
 	const observer = new IntersectionObserver(
 		([entry]) => {
 			if (entry.isIntersecting) {
-				console.log(ref.current);
 				callBack(true);
 			}
 			if (!entry.isIntersecting) {

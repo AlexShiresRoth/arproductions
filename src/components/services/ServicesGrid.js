@@ -1,4 +1,4 @@
-import React, { useRef, createRef } from 'react';
+import React from 'react';
 import { servicesArray } from './servicesArray';
 import GridItem from './GridItem';
 
