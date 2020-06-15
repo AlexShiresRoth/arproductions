@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import navStyles from './Nav.module.scss';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
 
 const Nav = ({ refs: { refs, active }, location: { location } }) => {
-	const [isMobile, setMobile] = useState(false);
 	const [navState, toggleNav] = useState(false);
-
-	const setResize = (e) => window.addEventListener('resize', (e) => setMobile(window.innerWidth <= 900));
-
-	useEffect(() => {
-		setMobile(window.innerWidth <= 900);
-		setResize();
-	}, []);
 
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -167,14 +159,11 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 					</a>
 				</div>
 			</div>
-			{isMobile ? (
-				<>
-					<div className={navStyles.mobile_nav__right}>{mobileMenu}</div>
-					{sideMenu}
-				</>
-			) : (
-				<div className={navStyles.nav__right}>{location === '/store' ? storeNav : navList} </div>
-			)}
+
+			<div className={navStyles.mobile_nav__right}>{mobileMenu}</div>
+			{sideMenu}
+
+			<div className={navStyles.nav__right}>{location === '/store' ? storeNav : navList} </div>
 		</nav>
 	);
 };
