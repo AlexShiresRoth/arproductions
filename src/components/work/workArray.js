@@ -1,48 +1,26 @@
 export const workArray = [
 	{
-		title: 'Italiano Bros. Enterprise',
+		title: 'Italiano Bros. Enterprise Website',
 		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1588898050/business%20site/2020-05-07_5_runhpx.png',
+			'https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_66,w_1630/v1593288297/business%20site/italiano-display_ul14mx.jpg',
 		url: 'https://www.italianobrosenterprise.com/',
 	},
 	{
-		title: 'The Clerk of Oxford Company',
+		title: 'The Clerk of Oxford Company Website',
 		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1582755367/business%20site/2020-02-26_p0vg8y.png',
+			'https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_66,w_1609/v1593289095/business%20site/clerk-display_koiwtx.jpg',
 		url: 'https://theclerkofoxfordcompany.com/#/',
 	},
 	{
-		title: 'Consurgo International Inc.',
+		title: 'Gerry McKeveny Website',
 		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1588898151/business%20site/2020-05-07_3_tvw2ro.png',
-		url: 'https://consurgointl.com/',
+			'https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_65,w_1630/v1593287957/business%20site/gerry-display_yv0tur.jpg',
+		url: 'https://gerrymckeveny.netlify.app/#/',
 	},
 	{
-		title: 'Fancy Active Wear',
+		title: 'SATACTSENSE Website',
 		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1588899829/business%20site/2020-05-07_9_gygryb.png',
-		url: 'https://fancyactivewear.netlify.com/',
-	},
-	{
-		title: 'Progress Journal App',
-		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1588898596/business%20site/2020-05-07_2_v0tte9.png',
-		url: 'https://www.progressjournalsapp.com/',
-	},
-	{
-		title: 'SATACTSENSE',
-		src: `https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1589306417/business%20site/2020-05-12_1_rd0z2l.png`,
-		url: 'https://www.satactsense.com/',
-	},
-	{
-		title: 'Rothenberg Law Offices',
-		src: `https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1590686487/business%20site/2020-05-28_1_zfvhkn.png`,
-		url: 'https://www.urmyattorney.com/',
-	},
-	{
-		title: 'Send Noods App',
-		src:
-			'https://res.cloudinary.com/snackmanproductions/image/upload/q_59,c_scale,h_1080,w_1755/v1588898363/business%20site/2020-05-07_6_h8ae19.png',
-		url: 'https://send-noods.netlify.com/',
+			'https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_65,w_1587/v1593287310/business%20site/sat-display_ls96pb.jpg',
+		url: 'https://satactsense.com/#/',
 	},
 ];

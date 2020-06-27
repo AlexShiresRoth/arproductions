@@ -61,52 +61,64 @@
 	}
 	& .work__grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(3, auto);
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: auto;
 		justify-items: center;
 		align-items: center;
-		gap: 0rem;
+		gap: 2rem;
 		max-width: 90%;
 		overflow: visible;
-		perspective: 5000px;
 		& a {
 			text-decoration: none;
 			width: 100%;
 			display: flex;
 		}
 
-		& .item {
-			position: relative;
-			padding: 0;
-			margin: 0;
-			overflow: visible;
-			transition: all 0.3s ease-in-out;
-			& img {
-				width: 100%;
-			}
-			&:hover {
-				box-shadow: inset 0 1px 105px $brand-main;
-				cursor: pointer;
-				transform: translateZ(0) rotateX(-20deg);
-			}
-			&:before {
-				content: 'View Site';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				color: #fff;
-				background: rgba(64, 0, 130, 0.6);
-				opacity: 0;
-				transition: all 0.3s ease-in-out;
-			}
-			&:hover:before {
-				opacity: 1;
+		& .project_container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+			align-items: center;
+			& h2 {
 				font-size: 3vw;
+				padding: 1rem 0;
+				border-bottom: 3px solid $brand-main;
+			}
+			& .item {
+				position: relative;
+				padding: 0;
+				margin: 0;
+				overflow: visible;
+				transition: all 0.3s ease-in-out;
+				order: 1;
+				& img {
+					width: 100%;
+				}
+				&:hover {
+					cursor: pointer;
+				}
+				&:before {
+					content: 'View Site';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: #fff;
+					background: rgba(64, 0, 130, 0.6);
+					opacity: 0;
+					transition: all 0.3s ease-in-out;
+				}
+				&:hover:before {
+					opacity: 1;
+					font-size: 3vw;
+				}
+			}
+			& .left {
+				order: 0;
 			}
 		}
 	}
@@ -135,15 +147,31 @@
 		& .work__grid {
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: repeat(8, 1fr);
+			grid-template-rows: auto;
 			justify-items: center;
 			align-items: flex-start;
-			gap: 2rem;
-			& .item {
-				max-width: 80vw;
-
-				& img {
-					height: 100%;
+			gap: 10rem;
+			& .project_container {
+				display: grid;
+				grid-template-columns: 1fr;
+				justify-items: center;
+				align-items: center;
+				& h2 {
+					font-size: 2rem;
+					padding: 1rem 0;
+					border-bottom: 3px solid $brand-main;
+					text-align: center;
+				}
+				& .item {
+					position: relative;
+					padding: 0;
+					margin: 0;
+					overflow: visible;
+					transition: all 0.3s ease-in-out;
+					order: 0;
+				}
+				& .left {
+					order: 0;
 				}
 			}
 		}
@@ -155,15 +183,20 @@
 		& .work__grid {
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: repeat(8, 1fr);
 			justify-items: center;
 			align-items: flex-start;
-			gap: 2rem;
-			& .item {
-				max-width: 90vw;
-				& img {
-					height: 100%;
-					width: 100%;
+			gap: 8rem;
+			& .project_container {
+				& h2 {
+					font-size: 1.6rem;
+					border-bottom: 0;
+				}
+				& .item {
+					max-width: 90vw;
+					& img {
+						height: 100%;
+						width: 100%;
+					}
 				}
 			}
 		}

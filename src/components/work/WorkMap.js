@@ -56,9 +56,17 @@ const WorkMap = (_) => {
 
 	const works = shuffledArr.slice(0, end).map((item, i) => {
 		return (
-			<a href={item.url} target="_blank" rel="noopener noreferrer" className={workStyle.item} key={i}>
-				<img src={item.src} alt={item.title}></img>
-			</a>
+			<div className={workStyle.project_container} key={i}>
+				<a
+					href={item.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					className={(i + 1) % 2 === 0 ? `${workStyle.item} ${workStyle.left}` : workStyle.item}
+				>
+					<img src={item.src} alt={item.title}></img>
+				</a>
+				<h2>{item.title}</h2>
+			</div>
 		);
 	});
 
@@ -68,15 +76,9 @@ const WorkMap = (_) => {
 				className={intersecting ? workStyle.heading : `${workStyle.heading} ${workStyle.out_of_view}`}
 				ref={itemRef}
 			>
-				<button onClick={(e) => setStart((prev) => (prev <= 0 ? (prev = workArray.length - 1) : prev - 1))}>
-					<IoIosArrowBack />
-				</button>
 				<p>
 					Total Projects: <span>{workArray.length}</span>
 				</p>
-				<button onClick={(e) => setStart((prev) => (prev < workArray.length - 1 ? prev + 1 : (prev = 0)))}>
-					<IoIosArrowForward />
-				</button>
 			</div>
 			<div className={intersecting ? workStyle.work__grid : workStyle.out_of_view}>{works}</div>
 		</section>
