@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import workStyle from './style/WorkMap.module.scss';
 import { workArray } from './workArray';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { handleIO } from '../customfunctions/handleIO';
 
 const WorkMap = (_) => {
