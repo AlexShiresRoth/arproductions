@@ -36,8 +36,7 @@ const Form = ({ sendConfirmation }) => {
 			},
 		})
 			.then((res) => {
-				console.log(res);
-				setFormData({ status: 'success', loading: false });
+				setFormData({ ...formData, status: 'success', loading: false });
 				sendConfirmation(formData);
 				setTimeout(() => {
 					setFormData({ name: '', email: '', message: '', subject: '', deadline: '', status: '' });
@@ -76,7 +75,7 @@ const Form = ({ sendConfirmation }) => {
 					value={name}
 					placeholder="Enter your name"
 					onChange={(e) => onChange(e)}
-					required
+					required={true}
 				/>
 			</div>
 			<div className={formStyle.row}>
@@ -87,7 +86,7 @@ const Form = ({ sendConfirmation }) => {
 					value={email}
 					placeholder="Enter your email"
 					onChange={(e) => onChange(e)}
-					required
+					required={true}
 				/>
 			</div>
 			<div className={formStyle.row}>
@@ -98,7 +97,7 @@ const Form = ({ sendConfirmation }) => {
 					value={subject}
 					placeholder="Enter your project type"
 					onChange={(e) => onChange(e)}
-					required
+					required={true}
 				/>
 			</div>
 			<div className={formStyle.row}>
@@ -109,7 +108,7 @@ const Form = ({ sendConfirmation }) => {
 					value={deadline}
 					placeholder="Enter your project deadline"
 					onChange={(e) => onChange(e)}
-					required
+					required={true}
 				/>
 			</div>
 			<div className={formStyle.row}>
@@ -119,10 +118,10 @@ const Form = ({ sendConfirmation }) => {
 					value={message}
 					placeholder="Enter your message"
 					onChange={(e) => onChange(e)}
-					required
+					required={true}
 				></textarea>
 			</div>
-			<button onClick={(e) => formSubmit(e)}>Send</button>
+			<button onSubmit={(e) => formSubmit(e)}>Send</button>
 		</form>
 	);
 };
