@@ -70,17 +70,13 @@ const WorkMap = (_) => {
 	});
 
 	return (
-		<section className={workStyle.section}>
+		<div className={workStyle.section}>
 			<div
 				className={intersecting ? workStyle.heading : `${workStyle.heading} ${workStyle.out_of_view}`}
 				ref={itemRef}
-			>
-				<p>
-					Total Projects: <span>{workArray.length}</span>
-				</p>
-			</div>
+			></div>
 			<div className={intersecting ? workStyle.work__grid : workStyle.out_of_view}>{works}</div>
-		</section>
+		</div>
 	);
 };
 
