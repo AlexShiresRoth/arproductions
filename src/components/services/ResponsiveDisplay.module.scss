@@ -1,161 +1,168 @@
 .responsive_block {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	height: 25rem;
-	border: 10px solid #eee;
-	border-radius: 5px;
-	-webkit-animation: resanim 10s 0s ease forwards infinite; /* Safari 4+ */
-	-moz-animation: resanim 10s 0s ease forwards infinite; /* Fx 5+ */
-	-o-animation: resanim 10s 0s ease forwards infinite; /* Opera 12+ */
-	animation: resanim 10s 0s ease forwards infinite;
-	overflow: hidden;
-	& .nav {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		height: 3rem;
-		border-bottom: 10px solid #eee;
-		& span {
-			height: 1.5rem;
-			width: 1.5rem;
-			margin: 1rem;
-			border-radius: 50%;
-			display: block;
-			border: 5px solid #eee;
-		}
-	}
-	& .grid {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		align-items: center;
-		& div {
-			border: 10px solid #eee;
-			display: flex;
-			height: 4rem;
-			width: 8rem;
-			border-radius: 5px;
-			flex-shrink: 2;
-			margin: 0.5rem;
-		}
-	}
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 23rem;
+  max-width: 40vw;
+  border: 10px solid #eee;
+  border-radius: 5px;
+  -webkit-animation: resanim 10s 0s ease forwards infinite; /* Safari 4+ */
+  -moz-animation: resanim 10s 0s ease forwards infinite; /* Fx 5+ */
+  -o-animation: resanim 10s 0s ease forwards infinite; /* Opera 12+ */
+  animation: resanim 10s 0s ease forwards infinite;
+  overflow: hidden;
+  & .nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    border-bottom: 10px solid #eee;
+    & span {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin: 1rem;
+      border-radius: 50%;
+      display: block;
+      border: 5px solid #eee;
+    }
+  }
+  & .grid {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    & div {
+      border: 10px solid #eee;
+      display: flex;
+      height: 4rem;
+      width: 8rem;
+      border-radius: 5px;
+      flex-shrink: 2;
+      margin: 0.5rem;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
-	.responsive_block {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		height: 15rem;
-		border: 5px solid #eee;
-		border-radius: 5px;
-		-webkit-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Safari 4+ */
-		-moz-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Fx 5+ */
-		-o-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite; /* Opera 12+ */
-		animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
-		animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards infinite;
-		overflow: hidden;
-		& .nav {
-			width: 100%;
-			display: flex;
-			align-items: center;
-			height: 3rem;
-			border-bottom: 5px solid #eee;
-			margin-bottom: 0.5rem;
-			& span {
-				height: 1rem;
-				width: 1rem;
-				margin-left: 1rem;
-				border-radius: 50%;
-				display: block;
-				border: 5px solid #eee;
-			}
-		}
-		& .grid {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			align-items: center;
-			& div {
-				border: 5px solid #eee;
-				display: flex;
-				height: 3rem;
-				width: 6rem;
-				border-radius: 5px;
-				flex-shrink: 2;
-			}
-		}
-	}
+  .responsive_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 15rem;
+    border: 5px solid #eee;
+    border-radius: 5px;
+    -webkit-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards
+      infinite; /* Safari 4+ */
+    -moz-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards
+      infinite; /* Fx 5+ */
+    -o-animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards
+      infinite; /* Opera 12+ */
+    animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards
+      infinite;
+    animation: resanimsmall 10s 0s cubic-bezier(0.5, 1, 0.5, 1) forwards
+      infinite;
+    overflow: hidden;
+    & .nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      border-bottom: 5px solid #eee;
+      margin-bottom: 0.5rem;
+      & span {
+        height: 1rem;
+        width: 1rem;
+        margin-left: 1rem;
+        border-radius: 50%;
+        display: block;
+        border: 5px solid #eee;
+      }
+    }
+    & .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      & div {
+        border: 5px solid #eee;
+        display: flex;
+        height: 3rem;
+        width: 6rem;
+        border-radius: 5px;
+        flex-shrink: 2;
+      }
+    }
+  }
 }
-@media screen and (max-width: 700px) {
-	.responsive_block {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		height: 12rem;
-		border: 5px solid #eee;
-		border-radius: 5px;
-		-webkit-animation: resanimextrasmall 10s 0s forwards infinite; /* Safari 4+ */
-		-moz-animation: resanimextrasmall 10s 0s forwards infinite; /* Fx 5+ */
-		-o-animation: resanimextrasmall 10s 0s forwards infinite; /* Opera 12+ */
-		animation: resanimextrasmall 10s 0s forwards infinite;
-		overflow: hidden;
-		justify-self: center;
+@media screen and (max-width: 900px) {
+  .responsive_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 20rem;
+    border: 5px solid #eee;
+    max-width: 100%;
+    border-radius: 5px;
+    -webkit-animation: resanimextrasmall 10s 0s forwards infinite; /* Safari 4+ */
+    -moz-animation: resanimextrasmall 10s 0s forwards infinite; /* Fx 5+ */
+    -o-animation: resanimextrasmall 10s 0s forwards infinite; /* Opera 12+ */
+    animation: resanimextrasmall 10s 0s forwards infinite;
+    overflow: hidden;
+    justify-self: center;
 
-		& .grid {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			align-items: center;
-			& div {
-				border: 5px solid #eee;
-				display: flex;
-				height: 2rem;
-				width: 4rem;
-				border-radius: 5px;
-				flex-shrink: 2;
-			}
-		}
-	}
+    & .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      & div {
+        border: 5px solid #eee;
+        display: flex;
+        height: 4rem;
+        width: 8rem;
+        border-radius: 5px;
+        flex-shrink: 2;
+      }
+    }
+  }
 }
 @keyframes resanim {
-	0% {
-		width: 40rem;
-	}
-	50% {
-		width: 15rem;
-	}
-	100% {
-		width: 40rem;
-	}
+  0% {
+    width: 40vw;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    width: 40vw;
+  }
 }
 
 @keyframes resanimsmall {
-	0% {
-		width: 25rem;
-	}
-	50% {
-		width: 10rem;
-	}
-	100% {
-		width: 25rem;
-	}
+  0% {
+    width: 40vw;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    width: 40vw;
+  }
 }
 
 @keyframes resanimextrasmall {
-	0% {
-		width: 90%;
-	}
-	50% {
-		width: 40%;
-	}
-	100% {
-		width: 90%;
-	}
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 40%;
+  }
+  100% {
+    width: 100%;
+  }
 }
