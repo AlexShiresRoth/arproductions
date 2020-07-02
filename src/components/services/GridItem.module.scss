@@ -63,7 +63,7 @@
 				}
 			}
 			& .inner_right {
-				overflow: hidden;
+				overflow: visible;
 				background: transparent;
 				display: flex;
 				flex-direction: row;
@@ -71,17 +71,10 @@
 				align-items: center;
 				flex: 1;
 				height: 100%;
-				width: 40vw;
+				min-width: 40vw;
 				& img {
 					width: 100%;
 					transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
-				}
-
-				& svg {
-					width: 10vw;
-					height: 20vh;
-					color: #fff;
-					position: relative;
 				}
 			}
 
@@ -198,6 +191,59 @@
 	}
 }
 
+.grid:nth-of-type(4) {
+	& .col {
+		& .col_grid {
+			& .inner_right {
+				& .icons_grid {
+					max-width: 40vw;
+					overflow: hidden;
+					position: relative;
+					& .ends {
+						position: absolute;
+						z-index: 4;
+					}
+					& .ends:nth-child(1) {
+						display: flex;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 5rem;
+						background: linear-gradient(90deg, $brand-main, transparent);
+						opacity: 0.7;
+					}
+					& .ends:nth-child(3) {
+						display: flex;
+						top: 0;
+						right: 0%;
+						height: 100%;
+						width: 5rem;
+						background: linear-gradient(90deg, transparent, #741849);
+						opacity: 0.7;
+						z-index: 5;
+					}
+					& .icons {
+						display: flex;
+						animation: infiniteCycle 30s linear infinite;
+						width: 40vw;
+						& span {
+							font-size: 4rem;
+							color: #fff;
+							font-weight: 900;
+							margin: 2rem;
+							display: flex;
+							align-items: center;
+							& svg {
+								color: $brand-accent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	.grid {
 		& .col {
@@ -289,5 +335,63 @@
 				}
 			}
 		}
+	}
+	.grid:nth-of-type(4) {
+		& .col {
+			& .col_grid {
+				& .inner_right {
+					& .icons_grid {
+						max-width: 80vw;
+						overflow: hidden;
+						position: relative;
+						& .ends {
+							position: absolute;
+							z-index: 4;
+						}
+						& .ends:nth-child(1) {
+							display: flex;
+							top: 0;
+							left: 0;
+							height: 100%;
+							width: 5rem;
+							background: linear-gradient(90deg, #4c0693, transparent);
+							opacity: 0.7;
+						}
+						& .ends:nth-child(3) {
+							display: flex;
+							top: 0;
+							right: 0%;
+							height: 100%;
+							width: 5rem;
+							background: linear-gradient(90deg, transparent, #590e64);
+							opacity: 0.7;
+							z-index: 5;
+						}
+						& .icons {
+							display: flex;
+							animation: infiniteCycle 30s linear infinite;
+							width: 80vw;
+							& span {
+								font-size: 2.5rem;
+								color: #fff;
+								font-weight: 900;
+								margin: 2rem;
+								display: flex;
+								align-items: center;
+								& svg {
+									color: $brand-accent;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes infiniteCycle {
+	100% {
+		transform: translateX(-263.77%);
 	}
 }

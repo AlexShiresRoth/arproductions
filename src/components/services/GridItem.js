@@ -52,8 +52,14 @@ const GridItem = ({ i, service }) => {
 								alt="responsive layout"
 								className={intersecting ? serviceStyle.in_view : serviceStyle.out_of_view}
 							/>
+						) : service.animIcons !== null ? (
+							service.animIcons.map((icon) => icon.icon)
 						) : (
-							service.icons.map((icon) => icon.icon)
+							<div className={serviceStyle.icons_grid}>
+								<div className={serviceStyle.ends}></div>
+								<div className={serviceStyle.icons}>{service.icons.map((icon) => icon.icon)}</div>
+								<div className={serviceStyle.ends}></div>
+							</div>
 						)}
 					</div>
 				</div>
