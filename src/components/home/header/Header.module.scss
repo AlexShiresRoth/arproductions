@@ -1,7 +1,7 @@
-@import '../../../sass/variables';
+@import '../../../../sass/variables';
 @font-face {
 	font-family: 'Space';
-	src: url('../../fonts/Potra.ttf') format('truetype');
+	src: url('../../../fonts/Potra.ttf') format('truetype');
 }
 header {
 	background-color: $brand-bg;

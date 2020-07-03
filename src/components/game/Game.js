@@ -4,7 +4,7 @@ import gameStyle from './Game.module.scss';
 import Carousel from './Carousel';
 import { addRef, setActive } from '../../actions/refs';
 import { connect } from 'react-redux';
-import { handleSectionIO, handleIO } from '../customfunctions/handleIO';
+import { handleIO } from '../customfunctions/handleIO';
 
 const Game = ({ addRef, setActive }) => {
 	const gameRef = useRef();
@@ -13,23 +13,16 @@ const Game = ({ addRef, setActive }) => {
 
 	const [current, setCurrent] = useState(0);
 
-	const [intersecting, setIntersecting] = useState(false);
-
 	const [animate, setAnimate] = useState(false);
 
 	useEffect(() => {
 		addRef(gameRef);
 	}, [addRef]);
 
-	//get value for intersecting
-	useEffect(() => {
-		handleSectionIO(gameRef, 0, [0, 0, 0, 0], setIntersecting);
-	}, [setIntersecting, gameRef]);
-
 	//add active state
 	useEffect(() => {
 		setActive('game');
-	}, [intersecting, setActive]);
+	}, [setActive]);
 
 	//animate on overlap
 	useEffect(() => {

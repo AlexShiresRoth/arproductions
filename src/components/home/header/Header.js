@@ -1,12 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import headerStyle from './Header.module.scss';
-import { setActive } from '../../actions/refs';
+import { setActive } from '../../../actions/refs';
 import { connect } from 'react-redux';
-import { handleSectionIO } from '../customfunctions/handleIO';
 
 const Header = ({ refs: { refs }, setActive }) => {
-	const [intersecting, setIntersecting] = useState(false);
-
 	const scrollToSections = (refs) => {
 		const ref = refs[0];
 		window.scrollTo({
@@ -18,15 +15,10 @@ const Header = ({ refs: { refs }, setActive }) => {
 
 	const headerRef = useRef();
 
-	//activate other states if header is being intersected
-	useEffect(() => {
-		handleSectionIO(headerRef, 0, [0,0,0,0], setIntersecting);
-	}, [setIntersecting]);
-
 	//update state depending on intersecting
 	useEffect(() => {
 		setActive('');
-	}, [setActive, intersecting]);
+	}, [setActive]);
 	return (
 		<header>
 			<div className={headerStyle.header} ref={headerRef} id="header">

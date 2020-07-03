@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import navStyles from './Nav.module.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
 
-const Nav = ({ refs: { refs, active }, location: { location } }) => {
+const Nav = ({ refs: { refs, active }, location: { location }, history }) => {
 	const [navState, toggleNav] = useState(false);
 
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -48,19 +48,19 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 			<g>
 				<path
 					d="M 0 50 L100 50 Z"
-					strokeWidth="3px"
+					strokeWidth="8px"
 					stroke="#fff"
 					className={navState ? navStyles.rotated : ''}
 				/>
 				<path
 					d="M 0, 30 L100, 30 Z"
-					strokeWidth="3px"
+					strokeWidth="8px"
 					stroke="#fff"
 					className={navState ? navStyles.rotated : ''}
 				/>
 				<path
 					d="M 0, 70 L100, 70 Z"
-					strokeWidth="3px"
+					strokeWidth="8px"
 					stroke="#fff"
 					className={navState ? navStyles.rotated : ''}
 				/>
@@ -84,15 +84,12 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 				}
 				className={active === 'work' ? navStyles.active : ''}
 			>
-				<button>Web</button>
+				<button>Portfolio</button>
 			</li>
-			<li
-				onClick={() =>
-					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'game'))
-				}
-				className={active === 'game' ? navStyles.active : ''}
-			>
-				<button>Game Development</button>
+			<li>
+				<NavLink to="/gamedev">
+					<button>Game Development</button>
+				</NavLink>
 			</li>
 			<li
 				onClick={() =>
@@ -113,16 +110,24 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 				</NavLink>
 			</li>
 			<li>
-				<NavLink exact to="/store" activeClassName={navStyles.active} style={{ textDecoration: 'none' }}>
-					Store
+				<NavLink to="/gamedev">
+					<button>Game Development</button>
 				</NavLink>
+			</li>
+			<li
+				onClick={() =>
+					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
+				}
+				className={active === 'contact' ? navStyles.active : ''}
+			>
+				<button>Contact</button>
 			</li>
 		</ul>
 	);
 
 	const sideMenu = (
 		<div className={navState ? `${navStyles.side_menu}` : `${navStyles.side_menu} ${navStyles.hidden}`}>
-			{navList}
+			{history.location.pathname !== '/' ? storeNav : navList}
 			<div className={navStyles.side_menu_close} onClick={() => toggleNav(!navState)}></div>
 		</div>
 	);
@@ -130,7 +135,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 	return (
 		<nav className={navStyles.nav}>
 			<div className={navStyles.nav__left}>
-				<a onClick={(e) => scrollToTop()} href="#!">
+				<NavLink to="/" onClick={(e) => scrollToTop()}>
 					<div className={navStyles.logo}>
 						<img
 							src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1589830770/business%20site/fillthevoid_me61wt.png`}
@@ -138,7 +143,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 						/>
 					</div>
 					FillTheVoid.io
-				</a>
+				</NavLink>
 				<div className={navStyles.col}>
 					<a
 						href="https://www.instagram.com/fillthevoid_productions/"
@@ -163,7 +168,7 @@ const Nav = ({ refs: { refs, active }, location: { location } }) => {
 			<div className={navStyles.mobile_nav__right}>{mobileMenu}</div>
 			{sideMenu}
 
-			<div className={navStyles.nav__right}>{location === '/store' ? storeNav : navList} </div>
+			<div className={navStyles.nav__right}>{history.location.pathname !== '/' ? storeNav : navList} </div>
 		</nav>
 	);
 };
@@ -176,4 +181,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, null)(Nav);
+export default connect(mapStateToProps, null)(withRouter(Nav));

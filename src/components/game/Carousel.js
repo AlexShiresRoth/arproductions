@@ -43,11 +43,6 @@ const Carousel = ({ imgs }) => {
 					></img>
 				);
 			})}
-			<div className={imgStyle.index_marker}>
-				{imgs.map((item, i) => {
-					return <span key={i} className={current === i ? imgStyle.marker_current : imgStyle.marker}></span>;
-				})}
-			</div>
 		</div>
 	);
 };

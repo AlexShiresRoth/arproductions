@@ -8,7 +8,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	height: 5rem;
+	min-height: 6rem;
 	background: $brand-bg;
 	box-shadow: 0 1px 5px darken($brand-bg, 2%);
 	width: 100%;
@@ -108,26 +108,14 @@
 					border: 2px solid transparent;
 					font-size: 1rem;
 					font-weight: 900;
-					&::after {
-						content: '';
-						position: absolute;
-						bottom: 0;
-						width: 0;
-						height: 3px;
-						display: block;
-						transition: all 0.3s ease-in-out;
-					}
-					&:hover::after {
-						width: 100%;
-						background: $brand-main;
-					}
+
 					&:hover {
 						cursor: pointer;
 						color: $brand-main;
 					}
 					&:active,
 					&:focus {
-						outline: 2px solid transparent;
+						outline: 0px solid transparent;
 					}
 				}
 			}

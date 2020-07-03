@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import serviceStyle from './Services.module.scss';
-import { addRef, setActive } from '../../actions/refs';
+import { addRef, setActive } from '../../../actions/refs';
 import { connect } from 'react-redux';
-
 import ServicesGrid from './ServicesGrid';
-import { handleSectionIO, handleIO } from '../customfunctions/handleIO';
+import { handleSectionIO, handleIO } from '../../customfunctions/handleIO';
 
 const Services = ({ addRef, setActive }) => {
 	const [intersecting, setIntersecting] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import workStyle from './style/WorkMap.module.scss';
 import { workArray } from './workArray';
-import { handleIO } from '../customfunctions/handleIO';
+import { handleIO } from '../../customfunctions/handleIO';
 
 const WorkMap = (_) => {
 	const [start, setStart] = useState(0);

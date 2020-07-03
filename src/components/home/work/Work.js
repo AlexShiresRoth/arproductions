@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import WorkMap from './WorkMap';
 import workStyles from './style/Work.module.scss';
-import { addRef, setActive } from '../../actions/refs';
+import { addRef, setActive } from '../../../actions/refs';
 import { connect } from 'react-redux';
-import { handleIO, handleSectionIO } from '../customfunctions/handleIO';
+import { handleIO, handleSectionIO } from '../../customfunctions/handleIO';
 
 const Work = ({ addRef, setActive }) => {
 	const workRef = useRef();
@@ -38,7 +38,7 @@ const Work = ({ addRef, setActive }) => {
 	return (
 		<section className={workStyles.section} ref={workRef} id="work">
 			<div className={workStyles.heading} ref={animRef}>
-				<h2 className={animate ? workStyles.in_view : workStyles.out_of_view}>Web Apps/Sites.</h2>
+				<h2 className={animate ? workStyles.in_view : workStyles.out_of_view}>Portfolio.</h2>
 			</div>
 			<WorkMap />
 		</section>

@@ -1,0 +1,224 @@
+@import '../../../../sass/variables';
+
+.section_container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: -10rem 0;
+	position: relative;
+	overflow: visible;
+	& .top_svg {
+		width: 100%;
+	}
+	& .bottom_svg {
+		width: 100%;
+	}
+	& .section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+		width: 100%;
+		background: lighten($brand-bg, 5%);
+
+		& .heading {
+			z-index: 2;
+			& h2 {
+				color: #fff;
+				font-size: 4vw;
+				transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			}
+		}
+		& .container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
+			width: 90%;
+			align-items: center;
+			justify-items: center;
+			z-index: 2;
+			& .col {
+				max-width: 30vw;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				& svg {
+					padding: 2rem;
+					background: linear-gradient(145deg, $brand-secondary, $brand-main);
+					border-radius: 50%;
+					filter: drop-shadow(0 1px 20px darken($brand-secondary, 10%));
+					font-size: 6vw;
+					stroke: #fff !important;
+					color: #fff !important;
+					overflow: visible;
+					& path {
+						stroke: #fff !important;
+						color: #fff !important;
+					}
+				}
+				& h3 {
+					color: $brand-secondary;
+					font-size: 2vw;
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					position: relative;
+					&::after {
+						position: absolute;
+						content: '';
+						width: 20%;
+						height: 5px;
+						background: $brand-main;
+						display: block;
+						bottom: -40%;
+					}
+				}
+				& p {
+					font-size: 1.2vw;
+					color: #fff;
+					text-align: center;
+					max-width: 80%;
+					line-height: 1.5;
+				}
+				& button {
+					margin: 2rem 0;
+					width: 15rem;
+					height: 3rem;
+					border-radius: 100px;
+					border: 0;
+					color: #fff;
+					font-weight: 900;
+					font-size: 1rem;
+					background: linear-gradient(145deg, $brand-main, $brand-secondary);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.section_container {
+		margin: -5rem 0;
+		& .section {
+			& .heading {
+				z-index: 2;
+				& h2 {
+					color: #fff;
+					font-size: 4vw;
+					text-align: center;
+				}
+			}
+			& .container {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 4rem;
+				width: 90%;
+				& .col {
+					max-width: 80vw;
+					& svg {
+						font-size: 10vw;
+					}
+					& h3 {
+						color: $brand-secondary;
+						font-size: 5vw;
+					}
+					& p {
+						font-size: 3vw;
+					}
+					& button {
+						margin: 2rem 0;
+						width: 15rem;
+						height: 3rem;
+						border-radius: 100px;
+						border: 0;
+						color: #fff;
+						font-weight: 900;
+						font-size: 1rem;
+						background: linear-gradient(145deg, $brand-main, $brand-secondary);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.section {
+		& .heading {
+			& h2 {
+				font-size: 8vw;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.section_container {
+		& .section {
+			& .heading {
+				& h2 {
+					font-size: 8vw;
+				}
+			}
+			& .container {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 4rem;
+				width: 90%;
+				& .col {
+					max-width: 80vw;
+					& svg {
+						font-size: 12vw;
+					}
+					& h3 {
+						color: $brand-secondary;
+						font-size: 8vw;
+						&::after {
+							bottom: -20%;
+						}
+					}
+					& p {
+						font-size: 4vw;
+					}
+					& button {
+						margin: 2rem 0;
+						width: 15rem;
+						height: 3rem;
+						border-radius: 100px;
+						border: 0;
+						color: #fff;
+						font-weight: 900;
+						font-size: 1rem;
+						background: linear-gradient(145deg, $brand-main, $brand-secondary);
+					}
+				}
+			}
+		}
+	}
+}
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slidein {
+	0% {
+		opacity: 0;
+		transform: translateX(-20vw);
+	}
+	50% {
+		opacity: 0.9;
+		transform: translateX(5vw);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
