@@ -5,6 +5,7 @@
 .out_of_view {
 	transform: translateY(5rem);
 	opacity: 0;
+	min-height: 100vh;
 }
 
 .section {
@@ -15,6 +16,7 @@
 	justify-content: center;
 	overflow: hidden;
 	margin-top: 5rem;
+
 	& .heading {
 		z-index: 2;
 		margin-top: 10vh;

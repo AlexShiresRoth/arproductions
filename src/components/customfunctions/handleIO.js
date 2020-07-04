@@ -1,6 +1,9 @@
 import IntersectionObserver from 'intersection-observer-polyfill';
 
 export const handleIO = (ref = null, threshold = 0.5, rootMargin = 0, callBack) => {
+	if (ref === null) {
+		throw new Error('Ref cannot be null!');
+	}
 	const observer = new IntersectionObserver(
 		([entry]) => {
 			if (entry.intersectionRatio > 0) {

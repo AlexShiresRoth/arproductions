@@ -10,9 +10,15 @@
 	overflow: visible;
 	& .top_svg {
 		width: 100%;
+		opacity: 1;
+		transform: translate(0, 0);
+		transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 	}
 	& .bottom_svg {
 		width: 100%;
+		opacity: 1;
+		transform: translate(0, 0);
+		transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 	}
 	& .section {
 		display: flex;
@@ -21,13 +27,14 @@
 		overflow: hidden;
 		width: 100%;
 		background: lighten($brand-bg, 5%);
-
+		opacity: 1;
+		transform: translate(0, 0);
+		transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 		& .heading {
 			z-index: 2;
 			& h2 {
 				color: #fff;
 				font-size: 4vw;
-				transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 			}
 		}
 		& .container {
@@ -38,64 +45,12 @@
 			align-items: center;
 			justify-items: center;
 			z-index: 2;
-			& .col {
-				max-width: 30vw;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: space-between;
-				& svg {
-					padding: 2rem;
-					background: linear-gradient(145deg, $brand-secondary, $brand-main);
-					border-radius: 50%;
-					filter: drop-shadow(0 1px 20px darken($brand-secondary, 10%));
-					font-size: 6vw;
-					stroke: #fff !important;
-					color: #fff !important;
-					overflow: visible;
-					& path {
-						stroke: #fff !important;
-						color: #fff !important;
-					}
-				}
-				& h3 {
-					color: $brand-secondary;
-					font-size: 2vw;
-					text-align: center;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					position: relative;
-					&::after {
-						position: absolute;
-						content: '';
-						width: 20%;
-						height: 5px;
-						background: $brand-main;
-						display: block;
-						bottom: -40%;
-					}
-				}
-				& p {
-					font-size: 1.2vw;
-					color: #fff;
-					text-align: center;
-					max-width: 80%;
-					line-height: 1.5;
-				}
-				& button {
-					margin: 2rem 0;
-					width: 15rem;
-					height: 3rem;
-					border-radius: 100px;
-					border: 0;
-					color: #fff;
-					font-weight: 900;
-					font-size: 1rem;
-					background: linear-gradient(145deg, $brand-main, $brand-secondary);
-				}
-			}
 		}
+	}
+	& .section_out_of_view,
+	& .out_of_view {
+		transform: translate(0, 10vh);
+		opacity: 0;
 	}
 }
 
@@ -114,42 +69,21 @@
 			& .container {
 				display: grid;
 				grid-template-columns: 1fr;
-				gap: 4rem;
+				gap: 8rem;
 				width: 90%;
-				& .col {
-					max-width: 80vw;
-					& svg {
-						font-size: 10vw;
-					}
-					& h3 {
-						color: $brand-secondary;
-						font-size: 5vw;
-					}
-					& p {
-						font-size: 3vw;
-					}
-					& button {
-						margin: 2rem 0;
-						width: 15rem;
-						height: 3rem;
-						border-radius: 100px;
-						border: 0;
-						color: #fff;
-						font-weight: 900;
-						font-size: 1rem;
-						background: linear-gradient(145deg, $brand-main, $brand-secondary);
-					}
-				}
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 900px) {
-	.section {
-		& .heading {
-			& h2 {
-				font-size: 8vw;
+	.section_container {
+		margin: 0;
+		&.section {
+			& .heading {
+				& h2 {
+					font-size: 8vw;
+				}
 			}
 		}
 	}
@@ -166,35 +100,8 @@
 			& .container {
 				display: grid;
 				grid-template-columns: 1fr;
-				gap: 4rem;
+				gap: 6rem;
 				width: 90%;
-				& .col {
-					max-width: 80vw;
-					& svg {
-						font-size: 12vw;
-					}
-					& h3 {
-						color: $brand-secondary;
-						font-size: 8vw;
-						&::after {
-							bottom: -20%;
-						}
-					}
-					& p {
-						font-size: 4vw;
-					}
-					& button {
-						margin: 2rem 0;
-						width: 15rem;
-						height: 3rem;
-						border-radius: 100px;
-						border: 0;
-						color: #fff;
-						font-weight: 900;
-						font-size: 1rem;
-						background: linear-gradient(145deg, $brand-main, $brand-secondary);
-					}
-				}
 			}
 		}
 	}

@@ -78,60 +78,53 @@
 	& .nav__right {
 		margin-right: 1rem;
 		height: 100%;
-		& ul {
-			display: grid;
-			grid-template-columns: repeat(5, auto);
-			grid-template-rows: 1fr;
-			justify-items: center;
-			align-content: center;
+		display: grid;
+		grid-template-columns: repeat(5, auto);
+		grid-template-rows: 1fr;
+		justify-items: center;
+		align-content: center;
+		height: 100%;
+		margin: 0;
+		gap: 2rem;
+		& a,
+		& button {
 			height: 100%;
-			margin: 0;
-			gap: 2rem;
-			& li {
-				color: #f3f3f3;
-				list-style: none;
-				height: 100%;
-				width: 100%;
-				& a,
-				& button {
-					height: 100%;
-					width: 100%;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					position: relative;
-					transition: all 0.3s ease-in-out;
-					color: #f3f3f3;
-					text-decoration: none;
-					background: transparent;
-					border: 2px solid transparent;
-					font-size: 1rem;
-					font-weight: 900;
-
-					&:hover {
-						cursor: pointer;
-						color: $brand-main;
-					}
-					&:active,
-					&:focus {
-						outline: 0px solid transparent;
-					}
-				}
-			}
-			& .active {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			transition: all 0.3s ease-in-out;
+			color: #f3f3f3;
+			text-decoration: none;
+			background: transparent;
+			border: 2px solid transparent;
+			font-size: 1rem;
+			font-weight: 700;
+			font-family: proxima-nova, sans-serif;
+			&:hover {
+				cursor: pointer;
 				color: $brand-main;
-				& a {
-					&::after {
-						content: '';
-						position: absolute;
-						bottom: 0;
-						height: 3px;
-						display: block;
-						transition: all 0.3s ease-in-out;
-						width: 100%;
-						background: $brand-main;
-					}
+			}
+			&:active,
+			&:focus {
+				outline: 0px solid transparent;
+			}
+		}
+
+		& .active {
+			color: $brand-main;
+			& a {
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					height: 3px;
+					display: block;
+					transition: all 0.3s ease-in-out;
+					width: 100%;
+					background: $brand-main;
 				}
 			}
 		}
@@ -215,64 +208,59 @@
 			transform: translateX(0);
 			transition: all 0.3s ease-in-out;
 
-			& ul {
+			& .menu {
 				display: grid;
 				grid-template-rows: repeat(3, auto);
 				justify-items: center;
 				align-content: center;
-				gap: 0.5rem;
+				gap: 2rem;
 				width: 50%;
 				height: 100%;
 				background: $brand-bg;
 				padding: 0;
 				margin: 0;
-				& li {
-					color: #fff;
-					list-style: none;
 
+				& a,
+				& button {
+					height: 100%;
 					width: 100%;
-					text-align: center;
-					padding: 1rem 0;
-					& a,
-					& button {
-						height: 100%;
-						width: 100%;
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						font-size: 1rem;
-						font-weight: 900;
-						align-items: center;
-						position: relative;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					font-size: 1rem;
+					font-weight: 300;
+					align-items: center;
+					position: relative;
+					transition: all 0.3s ease-in-out;
+					color: #f3f3f3;
+					text-decoration: none;
+					background: transparent;
+					border: 2px solid transparent;
+					&::after {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						width: 0;
+						height: 3px;
+						display: block;
 						transition: all 0.3s ease-in-out;
-						color: #f3f3f3;
-						text-decoration: none;
-						background: transparent;
-						border: 2px solid transparent;
-						&::after {
-							content: '';
-							position: absolute;
-							bottom: 0;
-							width: 0;
-							height: 3px;
-							display: block;
-							transition: all 0.3s ease-in-out;
-						}
-						&:hover::after {
-							width: 100%;
-							background: $brand-main;
-						}
-						&:hover {
-							cursor: pointer;
-							color: $brand-main;
-						}
-						&:active,
-						&:focus {
-							outline: 2px solid transparent;
-						}
+					}
+					&:hover::after {
+						width: 100%;
+						background: $brand-main;
+					}
+					&:hover {
+						cursor: pointer;
+						color: $brand-main;
+					}
+					&:active,
+					&:focus {
+						outline: 2px solid transparent;
 					}
 				}
-				& li:not(:first-child) {
+
+				& a:not(:first-child),
+				& button:not(:first-child) {
 					border-top: 1px solid lighten(#000, 5%);
 				}
 			}

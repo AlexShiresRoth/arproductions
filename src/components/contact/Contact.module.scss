@@ -35,19 +35,21 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: auto;
 		min-height: 100vh;
-		margin: 0 0 3rem;
+		margin: 5rem 0 3rem;
 		padding: 0;
 		& .heading {
-			margin: 1rem 0;
+			margin-top: 2rem;
 			& h2 {
 				font-size: 8vw;
 				text-align: center;
+				margin: 0;
 			}
 		}
 		& .grid {
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;
+			align-items: flex-start;
 		}
 	}
 }

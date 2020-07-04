@@ -17,7 +17,7 @@ const Services = ({ addRef, setActive }) => {
 	//add ref to the store
 	useEffect(() => {
 		addRef(serviceRef);
-	}, [addRef, serviceRef]);
+	}, [addRef]);
 
 	//handle section intersecting
 	useEffect(() => {

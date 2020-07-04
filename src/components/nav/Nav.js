@@ -4,7 +4,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TiSocialInstagram, TiSocialFacebookCircular, TiSocialTwitterCircular } from 'react-icons/ti';
 
-const Nav = ({ refs: { refs, active }, location: { location }, history }) => {
+const Nav = ({ refs: { refs, active }, history }) => {
 	const [navState, toggleNav] = useState(false);
 
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -32,7 +32,7 @@ const Nav = ({ refs: { refs, active }, location: { location }, history }) => {
 					left: 0,
 					behavior: 'smooth',
 				});
-			case ref.current.id === 'game':
+			case ref.current.id === 'packages':
 				return window.scrollTo({
 					top: ref.current.offsetTop,
 					left: 0,
@@ -69,65 +69,67 @@ const Nav = ({ refs: { refs, active }, location: { location }, history }) => {
 	);
 
 	const navList = (
-		<ul>
-			<li
+		<>
+			<button
 				onClick={() =>
 					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'services'))
 				}
 				className={active === 'services' ? navStyles.active : ''}
 			>
-				<button>Services</button>
-			</li>
-			<li
+				Services
+			</button>
+			<button
 				onClick={() =>
 					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'work'))
 				}
 				className={active === 'work' ? navStyles.active : ''}
 			>
-				<button>Portfolio</button>
-			</li>
-			<li>
-				<NavLink to="/gamedev">
-					<button>Game Development</button>
-				</NavLink>
-			</li>
-			<li
+				Portfolio
+			</button>
+			<button
+				onClick={() =>
+					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'packages'))
+				}
+				className={active === 'packages' ? navStyles.active : ''}
+			>
+				Packages
+			</button>
+			<button>
+				<NavLink to="/gamedev">Game Development</NavLink>
+			</button>
+			<button
 				onClick={() =>
 					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
 				}
 				className={active === 'contact' ? navStyles.active : ''}
 			>
-				<button>Contact</button>
-			</li>
-		</ul>
+				Contact
+			</button>
+		</>
 	);
 
 	const storeNav = (
-		<ul>
-			<li>
-				<NavLink exact to="/">
-					Home
-				</NavLink>
-			</li>
-			<li>
-				<NavLink to="/gamedev">
-					<button>Game Development</button>
-				</NavLink>
-			</li>
-			<li
+		<>
+			<NavLink exact to="/">
+				Home
+			</NavLink>
+
+			<NavLink to="/gamedev">Game Development</NavLink>
+
+			<button
 				onClick={() =>
 					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
 				}
 				className={active === 'contact' ? navStyles.active : ''}
 			>
-				<button>Contact</button>
-			</li>
-		</ul>
+				Contact
+			</button>
+		</>
 	);
 
 	const sideMenu = (
 		<div className={navState ? `${navStyles.side_menu}` : `${navStyles.side_menu} ${navStyles.hidden}`}>
-			{history.location.pathname !== '/' ? storeNav : navList}
+			<div className={navStyles.menu}>{history.location.pathname !== '/' ? storeNav : navList}</div>
 			<div className={navStyles.side_menu_close} onClick={() => toggleNav(!navState)}></div>
 		</div>
 	);

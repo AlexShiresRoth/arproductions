@@ -1,0 +1,180 @@
+@import '../../../../sass/variables';
+
+.col {
+	max-width: 30vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	& svg {
+		padding: 2rem;
+		background: linear-gradient(145deg, $brand-secondary, $brand-main);
+		border-radius: 50%;
+		filter: drop-shadow(0 1px 20px darken($brand-secondary, 10%));
+		font-size: 6vw;
+		stroke: #fff !important;
+		color: #fff !important;
+		overflow: visible;
+		& path {
+			stroke: #fff !important;
+			color: #fff !important;
+		}
+	}
+	& h3 {
+		color: $brand-secondary;
+		font-size: 2vw;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		&::after {
+			position: absolute;
+			content: '';
+			width: 20%;
+			height: 5px;
+			background: $brand-main;
+			display: block;
+			bottom: -40%;
+		}
+	}
+	& p {
+		font-size: 1.2vw;
+		color: #fff;
+		text-align: center;
+		max-width: 80%;
+		line-height: 1.5;
+	}
+	& button {
+		margin: 2rem 0;
+		width: 15rem;
+		height: 3rem;
+		border-radius: 100px;
+		border: 0;
+		color: #fff;
+		font-weight: 900;
+		font-size: 1rem;
+		background: linear-gradient(145deg, $brand-main, $brand-secondary);
+		filter: drop-shadow(0 1px 20px darken($brand-secondary, 20%));
+		font-family: proxima-nova, sans-serif;
+		transition: all 0.3s ease;
+		&:hover {
+			cursor: pointer;
+			filter: none;
+			transform: translate3d(0, 0.5rem, 1rem) scale(0.95);
+		}
+		&:active,
+		&:focus {
+			outline: 0px solid transparent;
+			filter: none;
+			animation: popBtn 0.2s linear forwards;
+		}
+	}
+	& .details {
+		max-height: 100vh;
+		opacity: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+		& li {
+			color: $brand-secondary;
+			list-style: circle;
+			margin: 0.5rem 0;
+			font-size: 1.2rem;
+			font-weight: 700;
+			max-height: 100vh;
+			text-align: center;
+			opacity: 1;
+			transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+		}
+	}
+	& .hidden {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-height: 0;
+		opacity: 0;
+		transition: all 0.5s ease;
+		& li {
+			color: $brand-secondary;
+			list-style: circle;
+			margin: 0.5rem 0;
+			font-size: 1.2rem;
+			font-weight: 700;
+			max-height: 00vh;
+			text-align: center;
+			opacity: 0;
+			transition: all 0.7s ease;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.col {
+		max-width: 80vw;
+		& svg {
+			font-size: 10vw;
+		}
+		& h3 {
+			color: $brand-secondary;
+			font-size: 5vw;
+		}
+		& p {
+			font-size: 3vw;
+		}
+		& button {
+			margin: 2rem 0;
+			width: 15rem;
+			height: 3rem;
+			border-radius: 100px;
+			border: 0;
+			color: #fff;
+			font-weight: 900;
+			font-size: 1rem;
+			background: linear-gradient(145deg, $brand-main, $brand-secondary);
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.col {
+		max-width: 80vw;
+		& svg {
+			font-size: 12vw;
+		}
+		& h3 {
+			color: $brand-secondary;
+			font-size: 8vw;
+			&::after {
+				bottom: -20%;
+			}
+		}
+		& p {
+			font-size: 4vw;
+		}
+		& button {
+			margin: 2rem 0;
+			width: 15rem;
+			height: 3rem;
+			border-radius: 100px;
+			border: 0;
+			color: #fff;
+			font-weight: 900;
+			font-size: 1rem;
+			background: linear-gradient(145deg, $brand-main, $brand-secondary);
+		}
+	}
+}
+
+@keyframes popBtn {
+	0% {
+		transform: translate3d(0, 0.5rem, 0) scale(0.95);
+	}
+	50% {
+		transform: translate3d(0, 0.8rem, 0) scale(1.01);
+	}
+	100% {
+		transform: translate3d(0, 0.5rem, 0) scale(0.95);
+	}
+}

@@ -17,8 +17,8 @@ const Home = () => {
 		<Layout>
 			<Header />
 			<Services />
-			<Packages />
 			<Work />
+			<Packages />
 		</Layout>
 	);
 };

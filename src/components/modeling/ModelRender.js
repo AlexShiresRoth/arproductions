@@ -3,12 +3,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import modelStyle from './ModelRenderer.module.scss';
-import { handleIO } from '../customfunctions/handleIO';
 
 const ModelRender = () => {
 	let modelerRef = useRef();
-
-	const modelRef = useRef();
 
 	const [initial, addToScene] = useState({
 		scene: {},
@@ -132,15 +129,9 @@ const ModelRender = () => {
 		return () => window.removeEventListener('resize', handleResize);
 	}, [modelerRef, camera, renderer]);
 
-	const [intersecting, setIntersecting] = useState(false);
-
-	useEffect(() => {
-		handleIO(modelRef, 0, 0, setIntersecting);
-	}, [modelRef, setIntersecting]);
-
 	return (
-		<section className={modelStyle.canvas} ref={modelRef}>
-			<div className={intersecting ? modelStyle.heading : modelStyle.out_of_view}>
+		<section className={modelStyle.canvas}>
+			<div className={modelStyle.heading}>
 				<h2>3D Modeling</h2>
 				<p>Scifi gun game asset prototype.</p>
 				<p>Use your cursor or fingers to move the scene around!</p>
@@ -149,7 +140,5 @@ const ModelRender = () => {
 		</section>
 	);
 };
-
-ModelRender.propTypes = {};
 
 export default ModelRender;
