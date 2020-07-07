@@ -18,7 +18,7 @@ const Work = ({ addRef, setActive }) => {
 	//add ref to redux store
 	useEffect(() => {
 		addRef(workRef);
-	}, [addRef]);
+	}, [addRef, workRef]);
 
 	//handle if section is being overlapped
 	useEffect(() => {

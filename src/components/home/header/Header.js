@@ -19,6 +19,13 @@ const Header = ({ refs: { refs }, setActive }) => {
 	useEffect(() => {
 		setActive('');
 	}, [setActive]);
+
+	const bottomSvg = (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className={headerStyle.svg_btm}>
+			<path fill="#1a1a33" fillOpacity="1" d="M0,192L1440,288L1440,320L0,320Z"></path>
+		</svg>
+	);
+
 	return (
 		<header>
 			<div className={headerStyle.header} ref={headerRef} id="header">
@@ -59,6 +66,7 @@ const Header = ({ refs: { refs }, setActive }) => {
 					</div>
 				</div>
 			</div>
+			{bottomSvg}
 		</header>
 	);
 };

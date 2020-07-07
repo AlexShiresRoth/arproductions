@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
 		case ADD_REF:
 			return {
 				...state,
-				refs: [payload, ...state.refs],
+				refs: [...state.refs, payload],
 			};
 		case ADD_ACTIVE:
 			return {

@@ -30,9 +30,6 @@ export const handleSectionIO = (ref = null, threshold = 0.2, rootMargin = [0, 0,
 			if (entry.isIntersecting) {
 				callBack(true);
 			}
-			if (!entry.isIntersecting) {
-				callBack(false);
-			}
 		},
 		{
 			rootMargin: rootMargin.forEach((margin) => margin + 'px'),

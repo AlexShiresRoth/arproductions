@@ -33,7 +33,6 @@ const Nav = ({ refs: { refs, active }, history }) => {
 			</g>
 		</svg>
 	);
-
 	const navList = (
 		<>
 			<button
@@ -60,9 +59,8 @@ const Nav = ({ refs: { refs, active }, history }) => {
 			>
 				Packages
 			</button>
-			<button>
-				<NavLink to="/gamedev">Game Development</NavLink>
-			</button>
+			<NavLink to="/gamedev">Game Development</NavLink>
+
 			<button
 				onClick={() =>
 					scrollToSections(refs.filter((ref) => ref.current !== null && ref.current.id === 'contact'))
@@ -100,14 +98,14 @@ const Nav = ({ refs: { refs, active }, history }) => {
 		</div>
 	);
 
-	const scrollToSections = (refs) => {
+	const scrollToSections = (refsArray) => {
 		toggleNav(!navState);
-		if (refs.length <= 0) return;
-		console.log(refs[0]);
-		const ref = refs[0];
+		if (refsArray.length <= 0) return;
+		console.log(refsArray[0]);
+		const ref = refsArray[0];
 		console.log(ref.current.offsetTop, ref);
 		window.scrollTo({
-			top: ref ? ref.current.offsetTop - 100 : 0,
+			top: ref ? ref.current.offsetTop - 70 : 0,
 			left: 0,
 			behavior: 'smooth',
 		});

@@ -19,11 +19,6 @@ const Services = ({ addRef, setActive }) => {
 		addRef(serviceRef);
 	}, [addRef, serviceRef]);
 
-	//handle section intersecting
-	useEffect(() => {
-		handleSectionIO(serviceRef, 0, [0, -200, 0, 0], setIntersecting);
-	}, [serviceRef]);
-
 	//handle state update for when section is intersecting
 	useEffect(() => {
 		setActive(intersecting ? 'services' : '');
@@ -34,15 +29,32 @@ const Services = ({ addRef, setActive }) => {
 		handleIO(animRef, 0, 0, setAnimate);
 	}, [animRef, setAnimate]);
 
+	//handle section intersecting
+	useEffect(() => {
+		handleSectionIO(serviceRef, 0, [0, -200, 0, 0], setIntersecting);
+		return () => {
+			console.log('Cleaned up');
+		};
+	}, [serviceRef]);
+
+	const bottomSvg = (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path fill="#1a1a33" fillOpacity="1" d="M0,64L1440,256L1440,0L0,0Z"></path>
+		</svg>
+	);
+
 	return (
-		<section className={serviceStyle.section} ref={serviceRef} id="services">
-			<div className={serviceStyle.heading}>
-				<h2 className={animate ? serviceStyle.in_view : serviceStyle.out_of_view} ref={animRef}>
-					Need a more impressive web presence?
-				</h2>
-			</div>
-			<ServicesGrid />
-		</section>
+		<div className={serviceStyle.container}>
+			<section className={serviceStyle.section} ref={serviceRef} id="services">
+				<div className={serviceStyle.heading}>
+					<h2 className={animate ? serviceStyle.in_view : serviceStyle.out_of_view} ref={animRef}>
+						Need a more impressive web presence?
+					</h2>
+				</div>
+				<ServicesGrid />
+			</section>
+			{bottomSvg}
+		</div>
 	);
 };
 
