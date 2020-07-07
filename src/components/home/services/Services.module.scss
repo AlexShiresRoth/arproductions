@@ -1,14 +1,5 @@
 @import '../../../../sass/variables';
 
-//handle transition on scroll
-.out_of_view {
-	opacity: 0;
-	transform: translate(0, 5rem);
-}
-.in_view {
-	opacity: 1;
-	transform: translate(0, 0);
-}
 ////////////////////////////////
 
 .section {
@@ -26,6 +17,15 @@
 			font-size: 4vw;
 			transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 		}
+	}
+	//handle transition on scroll
+	& .out_of_view {
+		opacity: 0;
+		transform: translate(0, 5rem);
+	}
+	& .in_view {
+		opacity: 1;
+		transform: translate(0, 0);
 	}
 }
 @media screen and (max-width: 1000px) {

@@ -14,7 +14,8 @@
 	transform: translate(0, 5rem);
 }
 
-.grid {
+.grid,
+.out_of_view {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
@@ -23,6 +24,7 @@
 	gap: 2rem;
 	width: 100%;
 	transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+
 	& .col {
 		display: grid;
 		grid-template-columns: 1fr;

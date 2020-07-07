@@ -9,40 +9,6 @@ const Nav = ({ refs: { refs, active }, history }) => {
 
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-	const scrollToSections = (refs) => {
-		toggleNav(!navState);
-		if (refs.length <= 0) return;
-		const ref = refs[0];
-		switch (true) {
-			case ref.current.id === 'services':
-				return window.scrollTo({
-					top: ref.current.offsetTop,
-					left: 0,
-					behavior: 'smooth',
-				});
-			case ref.current.id === 'contact':
-				return window.scrollTo({
-					top: ref.current.offsetTop,
-					left: 0,
-					behavior: 'smooth',
-				});
-			case ref.current.id === 'work':
-				return window.scrollTo({
-					top: ref.current.offsetTop,
-					left: 0,
-					behavior: 'smooth',
-				});
-			case ref.current.id === 'packages':
-				return window.scrollTo({
-					top: ref.current.offsetTop,
-					left: 0,
-					behavior: 'smooth',
-				});
-			default:
-				return window.scrollTo({ top: 0 });
-		}
-	};
-
 	const mobileMenu = (
 		<svg viewBox="0 0 100 100" className="menu" onClick={() => toggleNav(!navState)}>
 			<g>
@@ -133,6 +99,19 @@ const Nav = ({ refs: { refs, active }, history }) => {
 			<div className={navStyles.side_menu_close} onClick={() => toggleNav(!navState)}></div>
 		</div>
 	);
+
+	const scrollToSections = (refs) => {
+		toggleNav(!navState);
+		if (refs.length <= 0) return;
+		console.log(refs[0]);
+		const ref = refs[0];
+		console.log(ref.current.offsetTop, ref);
+		window.scrollTo({
+			top: ref ? ref.current.offsetTop - 100 : 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+	};
 
 	return (
 		<nav className={navStyles.nav}>

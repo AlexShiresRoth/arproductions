@@ -35,7 +35,7 @@ const Packages = ({ addRef, setActive }) => {
 	useEffect(() => {
 		//add this ref to redux store
 		addRef(pkgsRef);
-	}, [addRef]);
+	}, [addRef, pkgsRef]);
 
 	useEffect(() => {
 		handleSectionIO(pkgsRef, 0, [0, -200, 0, 0], setIntersecting);
@@ -83,7 +83,7 @@ const Packages = ({ addRef, setActive }) => {
 			{topSvg}
 			<section className={animate ? style.section : `${style.section} ${style.section_out_of_view}`}>
 				<div className={style.heading} ref={animRef}>
-					<h2 className={style.heading}>What we offer.</h2>
+					<h2 className={style.heading}>Packages.</h2>
 				</div>
 				<div className={style.container}>
 					{packages.map((item, i) => {
