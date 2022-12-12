@@ -16,7 +16,7 @@
 		"apollo-link-http": "^1.5.17",
 		"axios": "^0.19.2",
 		"core-js": "^3.6.5",
-		"express": "^4.17.1",
+		"express": "^4.17.3",
 		"graphql": "^15.0.0",
 		"graphql-tag": "^2.10.3",
 		"grommet-styles": "^0.2.0",
